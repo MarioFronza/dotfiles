@@ -17,6 +17,9 @@ export PATH=$PATH:/usr/local/go/bin
 # Nvim path
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
+# QMK path
+export PATH="$PATH:$HOME/.local/bin"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
