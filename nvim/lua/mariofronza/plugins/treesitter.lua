@@ -4,40 +4,31 @@ return {
   build = ":TSUpdate",
   dependencies = {
     "windwp/nvim-ts-autotag",
+    "nvim-treesitter/nvim-treesitter-context",
+    "nvim-treesitter/playground",
+    "HiPhish/rainbow-delimiters.nvim",
   },
   config = function()
-    -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
-    -- configure treesitter
-    treesitter.setup({ -- enable syntax highlighting
+    local config = {
+      modules = {},
+      sync_install = false,
+      auto_install = true,
+      ignore_install = {},
+      parser_install_dir = nil,
+      ensure_installed = {
+        "json", "yaml", "html", "css", "markdown", "markdown_inline",
+        "graphql", "bash", "lua", "vim", "dockerfile", "gitignore",
+        "vimdoc", "java", "go", "kotlin", "javascript", "typescript",
+        "python", "sql", "c", "cpp", "rust", "elixir",
+      },
       highlight = {
         enable = true,
+        additional_vim_regex_highlighting = false,
       },
-      -- enable indentation
       indent = { enable = true },
-      -- enable autotagging (w/ nvim-ts-autotag plugin)
-      autotag = {
-        enable = true,
-      },
-      -- ensure these language parsers are installed
-      ensure_installed = {
-        "json",
-        "yaml",
-        "html",
-        "css",
-        "markdown",
-        "markdown_inline",
-        "graphql",
-        "bash",
-        "lua",
-        "vim",
-        "dockerfile",
-        "gitignore",
-        "vimdoc",
-        "java",
-        "go"
-      },
+      autotag = { enable = true },
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -47,6 +38,8 @@ return {
           node_decremental = "<bs>",
         },
       },
-    })
+    }
+
+    treesitter.setup(config)
   end,
 }
