@@ -14,9 +14,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Go path
 export PATH=$PATH:/usr/local/go/bin
 
-# Nvim path
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-
 # QMK path
 export PATH="$PATH:$HOME/.local/bin"
 
@@ -129,5 +126,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/Workspaces/github/dotfiles/p10k/p10k.zsh.
 [[ ! -f ~/Workspaces/github/dotfiles/p10k/p10k.zsh ]] || source ~/Workspaces/github/dotfiles/p10k/p10k.zsh
-
-export PATH=$PATH:/usr/local/go/bin
