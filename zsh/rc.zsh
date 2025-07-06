@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH=$PATH:/usr/local/go/bin
 
 # Nvim path
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # QMK path
 export PATH="$PATH:$HOME/.local/bin"

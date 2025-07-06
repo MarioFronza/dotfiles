@@ -8,6 +8,7 @@ return {
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
+    local lsp_config = require("lspconfig")
 
     mason.setup({
       ui = {
@@ -20,6 +21,7 @@ return {
     })
 
     mason_lspconfig.setup({
+      automatic_installation = true,
       ensure_installed = {
         "kotlin_language_server",
         "gopls",
@@ -50,5 +52,18 @@ return {
         "elixir-ls",     -- Elixir LSP also used for tools
       },
     })
+
+    lsp_config.lua_ls.setup({
+      settings = {
+        Lua = {
+          workspace = {
+            userThirdParty = { os.getenv("HOME") .. ".local/share/LuaAddons" },
+            checkThirdParty = "Apply"
+          }
+        }
+      }
+    })
+
+    lsp_config.html.setup({})
   end,
 }
