@@ -19,3 +19,4 @@ Then follow the README in whichever folder you need:
 - [`nvim/`](nvim/README.md) — editor (LazyVim)
 - [`git/`](git/README.md) — git config
 - [`github/`](github/README.md) — gh CLI config
+- [`claude/`](claude/README.md) — Claude Code config
