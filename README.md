@@ -16,7 +16,7 @@ Then follow the README in whichever folder you need:
 - [`alacritty/`](alacritty/README.md) — terminal emulator
 - [`tmux/`](tmux/README.md) — terminal multiplexer
 - [`zsh/`](zsh/README.md) — shell
-- [`nvim/`](nvim/README.md) — editor (LazyVim)
+- [`nvim/`](nvim/README.md) — editor (LazyVim, just my navigator override — rest is Omarchy's default Neovim setup)
 - [`git/`](git/README.md) — git config
 - [`github/`](github/README.md) — gh CLI config
 - [`claude/`](claude/README.md) — Claude Code config
