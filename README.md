@@ -17,3 +17,5 @@ Then follow the README in whichever folder you need:
 - [`tmux/`](tmux/README.md) — terminal multiplexer
 - [`zsh/`](zsh/README.md) — shell
 - [`nvim/`](nvim/README.md) — editor (LazyVim)
+- [`git/`](git/README.md) — git config
+- [`github/`](github/README.md) — gh CLI config

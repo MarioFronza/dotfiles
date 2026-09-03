@@ -1,0 +1,53 @@
+# See https://git-scm.com/docs/git-config
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	a = add
+	ps = push
+	pl = pull
+	l = log
+	c = commit -m
+	s = status
+	b = branch
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true 			 # Rebase (instead of merge) on pull
+[push]
+	autoSetupRemote = true   # Automatically set upstream branch on push
+	default = simple
+[diff]
+	algorithm = histogram    # Clearer diffs on moved/edited lines
+	colorMoved = plain       # Highlight moved blocks in diffs
+	mnemonicPrefix = true    # More intuitive refs in diff output
+[commit]
+	verbose = true           # Include diff comment in commit message template
+	gpgsign = true
+[column]
+	ui = auto 			     # Output in columns when possible
+[branch]
+	sort = -committerdate    # Sort branches by most recent commit first
+[tag]
+	sort = -version:refname  # Sort version numbers as you would expect
+	gpgsign = true
+[rerere]
+	enabled = true           # Record and reuse conflict resolutions
+	autoupdate = true        # Apply stored conflict resolutions automatically
+[user]
+	name = Mario Fronza
+	email = mariofronza1@gmail.com
+	signingkey = /home/mlfronza/.ssh/id_ed25519_github.pub
+[gpg]
+	format = ssh
+[transfer]
+	fsckobjects = true
+[fetch]
+	fsckobjects = true
+	prune = true
+[receive]
+	fsckObjects = true
+[merge]
+	ff = only
