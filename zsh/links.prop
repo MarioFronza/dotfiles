@@ -1,1 +1,7 @@
-$DOTFILES/zsh/rc.zsh=$HOME/.zshrc
+$DOTFILES/zsh/zshrc=$HOME/.zshrc
+$DOTFILES/zsh/shell=$HOME/.config/zsh/shell
+$DOTFILES/zsh/init=$HOME/.config/zsh/init
+$DOTFILES/zsh/envs=$HOME/.config/zsh/envs
+$DOTFILES/zsh/aliases=$HOME/.config/zsh/aliases
+$DOTFILES/zsh/prompt=$HOME/.config/zsh/prompt
+$DOTFILES/zsh/inputrc=$HOME/.config/zsh/inputrc

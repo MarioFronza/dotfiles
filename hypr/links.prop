@@ -1,0 +1,10 @@
+$DOTFILES/hypr/hyprland.lua=$HOME/.config/hypr/hyprland.lua
+$DOTFILES/hypr/monitors.lua=$HOME/.config/hypr/monitors.lua
+$DOTFILES/hypr/input.lua=$HOME/.config/hypr/input.lua
+$DOTFILES/hypr/bindings.lua=$HOME/.config/hypr/bindings.lua
+$DOTFILES/hypr/looknfeel.lua=$HOME/.config/hypr/looknfeel.lua
+$DOTFILES/hypr/autostart.lua=$HOME/.config/hypr/autostart.lua
+$DOTFILES/hypr/hypridle.conf=$HOME/.config/hypr/hypridle.conf
+$DOTFILES/hypr/hyprlock.conf=$HOME/.config/hypr/hyprlock.conf
+$DOTFILES/hypr/hyprsunset.conf=$HOME/.config/hypr/hyprsunset.conf
+$DOTFILES/hypr/xdph.conf=$HOME/.config/hypr/xdph.conf
