@@ -1,13 +1,15 @@
 # nvim
 
-[LazyVim](https://lazyvim.github.io) config. This whole folder maps 1:1 onto
-`~/.config/nvim` (personal overrides in `lua/config/` and `lua/plugins/`,
-rest is LazyVim boilerplate).
+Just my personal plugin overrides for [LazyVim](https://lazyvim.github.io).
+Everything else (`init.lua`, `lua/config/*`, lockfile, etc.) is the stock
+LazyVim starter — not tracked here.
 
 ## Install (Arch)
 
 ```bash
 sudo pacman -S neovim git ripgrep fd unzip lazygit base-devel
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 ```
 
 A Nerd Font is required for icons (Omarchy already ships one; otherwise
@@ -16,8 +18,10 @@ install e.g. `ttf-jetbrains-mono-nerd`).
 ## Link
 
 ```bash
-mv ~/.config/nvim ~/.config/nvim.bak   # back up if it exists
-ln -sfn "$(pwd)" ~/.config/nvim
+mkdir -p ~/.config/nvim/lua/plugins
+for f in lua/plugins/*.lua; do
+  ln -sf "$(pwd)/$f" ~/.config/nvim/"$f"
+done
 ```
 
 ## Apply
@@ -26,6 +30,7 @@ ln -sfn "$(pwd)" ~/.config/nvim
 nvim
 ```
 
-Plugins install automatically on first launch (lazy.nvim bootstraps
-itself). `lazy-lock.json` is machine-generated and gitignored — don't
-commit it.
+Note: `~/.config/nvim/lua/config/options.lua` (loading
+`~/.config/nvim/lua/config/remote_clipboard.lua`, OSC 52 clipboard over
+tmux/SSH) comes from Omarchy's own Neovim setup guide, not from this repo —
+re-add it manually from Omarchy's docs if you want it.
