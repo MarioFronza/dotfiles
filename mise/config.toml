@@ -1,10 +1,22 @@
 [tools]
 claude = "latest"
 codex = "latest"
+gh = "latest"
+
+# Languages/runtimes
+ruby = "latest"
+node = "26.2.0"
+bun = "latest"
+deno = "latest"
+go = "latest"
+php = "latest"
+python = "latest"
 elixir = "latest"
 erlang = "latest"
-gh = "latest"
-go = "latest"
+rust = "latest"
 java = "latest"
-node = "26.2.0"
-python = "latest"
+zig = "latest"
+dotnet = "latest"
+clojure = "latest"
+scala = "latest"
+opam = "latest" # OCaml's package/compiler manager; run `opam switch create` after install
