@@ -6,12 +6,11 @@
 sudo pacman -S git
 ```
 
-## Link
+## Copy
 
 ```bash
 mkdir -p ~/.config/git
-ln -sf "$(pwd)/config" ~/.config/git/config
-ln -sf "$(pwd)/ignore" ~/.config/git/ignore
+cp config ignore ~/.config/git/
 ```
 
 ## Notes

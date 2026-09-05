@@ -1,9 +1,12 @@
 # Dotfiles
 
-Config for an [Omarchy](https://omarchy.org) (Arch Linux + Hyprland) machine.
+Config for an Arch Linux + Hyprland machine, standalone (no distro layer,
+no dynamic theming system — Tokyo Night everywhere, hardcoded).
 
-No install script — each folder has its own `README.md` with the Arch
-packages to install and the exact commands to symlink it into place.
+No install script and no symlinks — each folder has its own `README.md`
+with the Arch packages to install and the exact `cp` commands to copy it
+into place. Plain copies on purpose: no live sync back to this repo, just
+a one-time setup for a new machine.
 
 ```
 git clone git@github.com:MarioFronza/dotfiles.git
@@ -13,10 +16,10 @@ cd dotfiles
 Then follow the README in whichever folder you need:
 
 - [`hypr/`](hypr/README.md) — Hyprland window manager
-- [`alacritty/`](alacritty/README.md) — terminal emulator
+- [`alacritty/`](alacritty/README.md) — terminal emulator (Tokyo Night)
 - [`tmux/`](tmux/README.md) — terminal multiplexer
 - [`zsh/`](zsh/README.md) — shell
-- [`nvim/`](nvim/README.md) — editor (LazyVim, just my navigator override — rest is Omarchy's default Neovim setup)
+- [`nvim/`](nvim/README.md) — editor (LazyVim, just my navigator override)
 - [`git/`](git/README.md) — git config
 - [`github/`](github/README.md) — gh CLI config
-- [`claude/`](claude/README.md) — Claude Code config
+- [`claude/`](claude/README.md) — Claude Code config (Tokyo Night theme)

@@ -9,11 +9,11 @@ each machine.
 sudo pacman -S github-cli
 ```
 
-## Link
+## Copy
 
 ```bash
 mkdir -p ~/.config/gh
-ln -sf "$(pwd)/config.yml" ~/.config/gh/config.yml
+cp config.yml ~/.config/gh/config.yml
 ```
 
 ## Apply

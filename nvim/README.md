@@ -1,17 +1,19 @@
 # nvim
 
-Just my one personal plugin override for [LazyVim](https://lazyvim.github.io)
-(everything else comes from Omarchy's own Neovim setup).
+Just my one personal plugin override for [LazyVim](https://lazyvim.github.io).
+Everything else is the stock [LazyVim starter](https://github.com/LazyVim/starter).
 
 ## Install (Arch)
 
 ```bash
 sudo pacman -S neovim git ripgrep fd unzip lazygit base-devel
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 ```
 
-## Link
+## Copy
 
 ```bash
 mkdir -p ~/.config/nvim/lua/plugins
-ln -sf "$(pwd)/lua/plugins/navigator.lua" ~/.config/nvim/lua/plugins/navigator.lua
+cp lua/plugins/navigator.lua ~/.config/nvim/lua/plugins/navigator.lua
 ```

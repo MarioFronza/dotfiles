@@ -1,7 +1,7 @@
 # alacritty
 
-Terminal emulator config. Theme colors come from Omarchy's active theme via
-`general.import`, so this expects an [Omarchy](https://omarchy.org) system.
+Terminal emulator config. Theme is Tokyo Night, loaded from a local file in
+`themes/` (no dynamic theme system, no external dependency).
 
 ## Install (Arch)
 
@@ -9,19 +9,14 @@ Terminal emulator config. Theme colors come from Omarchy's active theme via
 sudo pacman -S alacritty
 ```
 
-## Link
+## Copy
 
 ```bash
-mkdir -p ~/.config/alacritty
-ln -sf "$(pwd)/alacritty.toml" ~/.config/alacritty/alacritty.toml
+mkdir -p ~/.config/alacritty/themes
+cp alacritty.toml ~/.config/alacritty/alacritty.toml
+cp themes/tokyo_night.toml ~/.config/alacritty/themes/tokyo_night.toml
 ```
 
 ## Apply
 
-```bash
-omarchy restart terminal
-```
-
-Without Omarchy, drop the `general.import` line at the top of
-`alacritty.toml` first — it points at
-`~/.local/state/omarchy/current/theme/alacritty.toml`.
+Restart alacritty (or reload with `Ctrl+Shift+,` if `live_config_reload` is on).

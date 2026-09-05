@@ -7,11 +7,11 @@ sudo pacman -S tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## Link
+## Copy
 
 ```bash
 mkdir -p ~/.config/tmux
-ln -sf "$(pwd)/tmux.conf" ~/.config/tmux/tmux.conf
+cp tmux.conf ~/.config/tmux/tmux.conf
 ```
 
 ## Apply
