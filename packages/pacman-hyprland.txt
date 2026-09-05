@@ -1,0 +1,15 @@
+# Hyprland-only packages — not needed on a Sway (or any other compositor)
+# machine, kept separate on purpose. Matches hypr/README.md. Install with:
+#   grep -v '^#' pacman-hyprland.txt | xargs sudo pacman -S --needed
+#
+# AUR side: hyprmoncfg, hyprland-preview-share-picker-git (see aur.txt).
+
+hyprland
+hyprland-guiutils
+hypridle
+hyprlock
+hyprsunset
+hyprpicker
+hyprshot
+xdg-desktop-portal-hyprland
+uwsm

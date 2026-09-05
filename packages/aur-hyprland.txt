@@ -1,0 +1,5 @@
+# Hyprland-only AUR packages. Install with:
+#   grep -v '^#' aur-hyprland.txt | xargs yay -S --needed
+
+hyprmoncfg
+hyprland-preview-share-picker-git

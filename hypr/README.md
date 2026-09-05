@@ -6,21 +6,20 @@ not a framework on top of it.
 
 ## Install (Arch)
 
+Everything Hyprland-specific (`hyprland`, `hypridle`, `hyprlock`,
+`hyprsunset`, `hyprpicker`, `hyprshot`, `xdg-desktop-portal-hyprland`,
+`uwsm`) is in [`../packages/pacman-hyprland.txt`](../packages/README.md),
+kept out of the default install since not every machine here runs
+Hyprland:
+
 ```bash
-sudo pacman -S hyprland hypridle hyprlock hyprsunset hyprshot xdg-desktop-portal-hyprland \
-  wofi wlogout mako hyprpicker udiskie brightnessctl playerctl cliphist wl-clipboard nautilus
+grep -v '^#' ../packages/pacman-hyprland.txt | xargs sudo pacman -S --needed
 ```
 
-What each one is for:
-- `wofi` — app launcher (`SUPER+SPACE`) and clipboard picker
-- `wlogout` — power menu (`SUPER+ESCAPE`)
-- `mako` — notification daemon (autostart)
-- `hyprpicker` — color picker (`SUPER+PRINT`)
-- `udiskie` — automount removable drives (autostart)
-- `brightnessctl` / `playerctl` — brightness and media keys
-- `cliphist` / `wl-clipboard` — clipboard history (`SUPER+CTRL+V`)
-- `hyprshot` — screenshots (`PRINT`, `SUPER+SHIFT+S`)
-- `nautilus` — file manager (`SUPER+SHIFT+F`), swap the bind in `bindings.lua` if you use something else
+The rest of what `bindings.lua` calls (`wofi`, `wlogout`, `mako`,
+`cliphist`, `wl-clipboard`, `brightnessctl`, `playerctl`, `udiskie`,
+`nautilus` for the file-manager bind) is compositor-agnostic and already
+in `../packages/pacman.txt`.
 
 ## Copy
 

@@ -2,21 +2,22 @@
 # with `pacman -Ss ^name$` against this machine's repos. Nothing from a
 # third-party repo. Installed by install.sh, or manually with:
 #   grep -v '^#' pacman.txt | xargs sudo pacman -S --needed
+#
+# Not listed here on purpose (already comes from the Arch install itself):
+# base, linux, linux-firmware. GPU drivers are vendor-specific — see
+# gpu-amd.txt / gpu-intel.txt / gpu-nvidia.txt. Sway/Hyprland packages are
+# split out too — see pacman-hyprland.txt.
 
-# --- Base system (usually already present from the Arch install itself) ---
-base
+# --- Build essentials / core utilities ---
 base-devel
-linux
-linux-firmware
-amd-ucode
 sudo
 man-db
 bash-completion
 pacman-contrib
 expac
-fakeroot
 
-# --- Bootloader / snapshots (hardware/partition-scheme specific, review before running) ---
+# --- Bootloader / snapshots (this machine used Limine — swap for your
+#     installer's bootloader, e.g. grub or systemd-boot) ---
 limine
 snapper
 plymouth
@@ -61,22 +62,15 @@ alsa-utils
 libpulse
 pamixer
 
-# --- GPU (AMD — swap for your hardware) ---
-vulkan-radeon
-lib32-vulkan-radeon
+# --- Graphics (vendor-agnostic base; see gpu-*.txt for the driver) ---
+mesa
+lib32-mesa
+vulkan-icd-loader
+lib32-vulkan-icd-loader
 libva-utils
 
-# --- Hyprland desktop ---
-hyprland
-hyprland-guiutils
-hypridle
-hyprlock
-hyprsunset
-hyprpicker
-hyprshot
-xdg-desktop-portal-hyprland
+# --- Wayland desktop basics (compositor-agnostic — works under Sway too) ---
 xdg-desktop-portal-gtk
-uwsm
 sddm
 wofi
 wlogout
@@ -87,6 +81,7 @@ slurp
 wl-clipboard
 wtype
 brightnessctl
+playerctl
 power-profiles-daemon
 qrencode
 xmlstarlet

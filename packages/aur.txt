@@ -2,9 +2,10 @@
 # (https://aur.archlinux.org/rpc/v5/info) before being listed. Installed by
 # install.sh, or manually with:
 #   grep -v '^#' aur.txt | xargs yay -S --needed
+#
+# Hyprland-only AUR packages live in aur-hyprland.txt instead.
 
-# --- Apps (this machine had these via Omarchy's own binary repo, which
-#     mirrors AUR — same packages, just built by Omarchy's CI instead) ---
+# --- Apps ---
 1password
 1password-cli
 spotify
@@ -12,16 +13,12 @@ typora
 nordvpn-bin
 localsend
 
-# --- Hyprland ecosystem ---
-hyprmoncfg
-hyprland-preview-share-picker-git
-xdg-terminal-exec
-
 # --- Bootloader (Limine + Snapper integration) ---
 limine-mkinitcpio-hook
 limine-snapper-sync
 
 # --- Misc tools ---
+xdg-terminal-exec
 herdr
 cliamp
 tensaku

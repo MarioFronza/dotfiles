@@ -1,42 +1,34 @@
 # packages
 
 Every pacman/AUR package this machine had installed, mapped for a fresh
-Arch + Hyprland install (no Omarchy).
+Arch install. Split so a Sway (or any non-Hyprland) machine doesn't pull
+in Hyprland by accident, and so the GPU driver matches the actual hardware.
 
 ```bash
 cd packages
-./install.sh
+./install.sh [amd|intel|nvidia]
 ```
 
-Review the bootloader and GPU sections in `pacman.txt` first — they assume
-Limine and an AMD GPU; adjust for your new machine's hardware.
+`base`, `linux`, and `linux-firmware` aren't listed anywhere — those come
+from the Arch install itself. Review the bootloader section in
+`pacman.txt` too (assumes Limine; swap for grub/systemd-boot if that's
+what the installer set up).
 
-## What got dropped, and why
+## Files
 
-**Omarchy's own apps/branding** (no reason to want these without Omarchy):
-`omarchy`, `omarchy-keyring`, `omarchy-nvim`, `omarchy-settings`, `omacalc`,
-`omacut`, `omawrite`, `aether` (wallpaper-based dynamic theming — moot now
-that everything's hardcoded to Tokyo Night), `hyprshade`, `yay` isn't
-listed as a target either, since `install.sh` bootstraps it itself if
-missing.
+- `pacman.txt` / `aur.txt` — everything compositor-agnostic
+- `gpu-amd.txt` / `gpu-intel.txt` / `gpu-nvidia.txt` — pick one, open-source
+  drivers only (see the comments in `gpu-nvidia.txt` about `nvidia-open`
+  needing a Turing-or-newer card)
+- `pacman-hyprland.txt` / `aur-hyprland.txt` — Hyprland only, not run by
+  `install.sh`, install manually if a machine actually uses Hyprland
+  (matches [`hypr/`](../hypr/README.md))
 
-**On Omarchy's own repo, not AUR or official — no equivalent found**:
-`asdcontrol` (Apple Studio Display brightness — only matters if you have
-one), `tobi-try`, `ttfx`. Small niche tools; get them from their GitHub
+## Dropped entirely
+
+A handful of installed packages had no public AUR or official-repo
+equivalent under the same name (checked against the AUR API, not
+guessed): a wallpaper-based dynamic theming tool (moot now that everything
+here is hardcoded to Tokyo Night), an Apple Studio Display brightness
+tool, and two small niche CLI utilities. Get them from their own GitHub
 releases directly if you want them.
-
-**Everything else that was Omarchy-repo-only** (`1password`,
-`1password-cli`, `spotify`, `typora`, `nordvpn-bin`, `localsend`, `herdr`,
-`cliamp`, `tensaku`, `ttf-ia-writer`, `ufw-docker`, `xdg-terminal-exec`,
-`tzupdate`, `yaru-icon-theme`, `limine-mkinitcpio-hook`,
-`limine-snapper-sync`, `hyprland-preview-share-picker`) has a real AUR
-package under the same or a close name (checked against the AUR API, not
-guessed) — they're in `aur.txt`. `mise-bin` and
-`ttf-jetbrains-mono-nerd-basic` got swapped for the plain `mise` and
-`ttf-jetbrains-mono-nerd` packages, both now in the official repos.
-
-**`quickshell`**: dropped. It was only there as the framework behind
-Omarchy's status bar / launcher shell, and the [`hypr/`](../hypr/README.md)
-rewrite doesn't use it — there's currently no status bar in the standalone
-setup at all (Hyprland + wofi + mako + wlogout, no bar). Add `waybar` (or
-quickshell again, and build a config for it) if you want one back.
