@@ -9,7 +9,6 @@
 1password
 1password-cli
 spotify
-typora
 nordvpn-bin
 localsend
 

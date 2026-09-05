@@ -1,0 +1,10 @@
+[tools]
+claude = "latest"
+codex = "latest"
+elixir = "latest"
+erlang = "latest"
+gh = "latest"
+go = "latest"
+java = "latest"
+node = "26.2.0"
+python = "latest"

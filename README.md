@@ -1,7 +1,7 @@
 # Dotfiles
 
-Config for an Arch Linux + Hyprland machine, standalone (no distro layer,
-no dynamic theming system — Tokyo Night everywhere, hardcoded).
+Config for an Arch Linux machine, standalone (no distro layer, no dynamic
+theming system — Tokyo Night everywhere, hardcoded).
 
 No symlinks — each folder has its own `README.md` with the Arch packages
 it needs and the exact `cp` commands to copy it into place. Plain copies
@@ -11,13 +11,14 @@ new machine.
 ```
 git clone git@github.com:MarioFronza/dotfiles.git
 cd dotfiles
-packages/install.sh   # every pacman/AUR package this setup needs, one shot
+packages/install.sh [amd|intel|nvidia]   # pacman + AUR + mise, one shot
 ```
 
 Then follow the README in whichever folder you need:
 
 - [`packages/`](packages/README.md) — the full pacman/AUR package list
-- [`hypr/`](hypr/README.md) — Hyprland window manager
+- [`mise/`](mise/README.md) — global language/tool versions
+- [`hypr/`](hypr/README.md) — Hyprland window manager (optional, not every machine runs it)
 - [`alacritty/`](alacritty/README.md) — terminal emulator (Tokyo Night)
 - [`tmux/`](tmux/README.md) — terminal multiplexer
 - [`zsh/`](zsh/README.md) — shell

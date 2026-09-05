@@ -41,4 +41,9 @@ fi
 echo "==> Installing AUR packages"
 grep -v '^#' aur.txt | grep -v '^$' | xargs yay -S --needed
 
+echo "==> Installing mise tool versions"
+mkdir -p ~/.config/mise
+cp ../mise/config.toml ~/.config/mise/config.toml
+mise install
+
 echo "==> Done"

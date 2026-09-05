@@ -191,10 +191,8 @@ libqalculate
 tesseract
 tesseract-data-eng
 
-# --- Browsers / chat ---
+# --- Browsers ---
 firefox
-chromium
-signal-desktop
 
 # --- Virtualization / gaming ---
 virtualbox
