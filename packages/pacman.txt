@@ -36,14 +36,15 @@ gvfs-nfs
 gvfs-smb
 udiskie
 
-# --- Networking ---
-networkmanager
+# --- Networking (iwd for wifi, systemd-networkd for wired/DHCP — no
+#     NetworkManager. See wifi-bluetooth.md for setup) ---
+iwd
+impala
 avahi
 nss-mdns
 inetutils
 wireless-regdb
 bluez
-bluez-tools
 bluez-utils
 tailscale
 ufw
@@ -140,14 +141,15 @@ docker-compose
 tree-sitter-cli
 clang
 llvm
-rust
-ruby
 libyaml
 mariadb-libs
 postgresql-libs
-dotnet-runtime
-dotnet-runtime-9.0
 mise
+
+# rust/ruby/dotnet aren't listed here — mise manages them (see ../mise/).
+# Exception: if an AUR build needs cargo/rustc and mise isn't active in
+# that shell, install rust system-wide too:
+# rust
 
 # --- File manager ---
 nautilus

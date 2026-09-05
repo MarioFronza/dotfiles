@@ -23,6 +23,8 @@ what the installer set up).
 - `pacman-hyprland.txt` / `aur-hyprland.txt` — Hyprland only, not run by
   `install.sh`, install manually if a machine actually uses Hyprland
   (matches [`hypr/`](../hypr/README.md))
+- [`wifi-bluetooth.md`](wifi-bluetooth.md) — enabling `iwd`/`impala` and
+  `bluetooth`/`bluetuith` after install.sh (no NetworkManager here)
 
 ## Dropped entirely
 

@@ -5,6 +5,9 @@
 #
 # Hyprland-only AUR packages live in aur-hyprland.txt instead.
 
+# --- Networking (bluetooth TUI, wifi's impala is in pacman.txt) ---
+bluetuith
+
 # --- Apps ---
 1password
 1password-cli
