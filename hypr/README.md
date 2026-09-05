@@ -7,9 +7,8 @@ not a framework on top of it.
 ## Install (Arch)
 
 ```bash
-sudo pacman -S hyprland hypridle hyprlock hyprsunset xdg-desktop-portal-hyprland \
+sudo pacman -S hyprland hypridle hyprlock hyprsunset hyprshot xdg-desktop-portal-hyprland \
   wofi wlogout mako hyprpicker udiskie brightnessctl playerctl cliphist wl-clipboard nautilus
-yay -S hyprshot
 ```
 
 What each one is for:

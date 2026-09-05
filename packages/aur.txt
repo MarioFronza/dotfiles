@@ -1,0 +1,45 @@
+# AUR packages — every name here was confirmed to exist via the AUR RPC API
+# (https://aur.archlinux.org/rpc/v5/info) before being listed. Installed by
+# install.sh, or manually with:
+#   grep -v '^#' aur.txt | xargs yay -S --needed
+
+# --- Apps (this machine had these via Omarchy's own binary repo, which
+#     mirrors AUR — same packages, just built by Omarchy's CI instead) ---
+1password
+1password-cli
+spotify
+typora
+nordvpn-bin
+localsend
+
+# --- Hyprland ecosystem ---
+hyprmoncfg
+hyprland-preview-share-picker-git
+xdg-terminal-exec
+
+# --- Bootloader (Limine + Snapper integration) ---
+limine-mkinitcpio-hook
+limine-snapper-sync
+
+# --- Misc tools ---
+herdr
+cliamp
+tensaku
+ttf-ia-writer
+ufw-docker
+tzupdate
+yaru-icon-theme
+
+# --- Android / mobile RE ---
+android-apktool
+android-sdk-build-tools-36
+
+# --- Security / reverse engineering ---
+burpsuite
+dex2jar
+python-frida
+python-frida-tools
+
+# --- OBS plugins ---
+obs-shaderfilter-git
+obs-shaderfilter-git-debug
