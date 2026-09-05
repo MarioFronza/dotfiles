@@ -104,7 +104,6 @@ fcitx5-qt
 
 # --- Terminal / shell ---
 alacritty
-foot
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
