@@ -59,9 +59,9 @@ From another machine:
 ssh <user>@<ip>
 ```
 
-## 5. Clone the dotfiles
+## 5. Bootstrap
 
 See [`bootstrap/README.md`](bootstrap/README.md) — installs `git` +
-`base-devel`, clones this repo. From there, work through each folder's
-own README by hand.
+`base-devel`. No clone yet: browse the repo on GitHub and type each
+folder's README commands by hand, one at a time.
 

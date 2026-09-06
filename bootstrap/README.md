@@ -14,20 +14,7 @@ sudo pacman -Sy --needed git base-devel
 - `git` — clone this repo
 - `base-devel` — needed later to build AUR packages with `yay`
 
-## Clone
+## From here
 
-No SSH key exists yet at this point (that's set up in
-[`../git/README.md`](../git/README.md)), so clone over HTTPS first:
-
-```bash
-git clone https://github.com/MarioFronza/dotfiles.git
-cd dotfiles
-```
-
-Switch the remote to SSH later once a signing/auth key is set up:
-
-```bash
-git remote set-url origin git@github.com:MarioFronza/dotfiles.git
-```
-
-From here, work through each folder's own README, one at a time.
+No clone yet — browse [the repo on GitHub](https://github.com/MarioFronza/dotfiles)
+and type each folder's README commands by hand, one at a time.
