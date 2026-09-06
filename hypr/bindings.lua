@@ -1,4 +1,4 @@
--- Keybindings. See https://wiki.hypr.land/Configuring/Binds/
+-- Keybindings. See https://wiki.hypr.land/Configuring/Basics/Binds/
 -- List everything currently bound: hyprctl binds
 
 -- Apps ---------------------------------------------------------------------

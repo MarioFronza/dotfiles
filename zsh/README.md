@@ -7,15 +7,11 @@ optional `secrets` (untracked, local only).
 
 ## Install (Arch)
 
-```bash
-sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting starship zoxide fzf eza bat gum
-
-# mise (runtime version manager)
-curl https://mise.run | sh
-
-# atuin (shell history)
-yay -S atuin
-```
+`zsh` and everything it depends on (`zsh-autosuggestions`,
+`zsh-syntax-highlighting`, `starship`, `zoxide`, `fzf`, `eza`, `bat`,
+`gum`, `mise`, `atuin`) is already in
+[`../packages/pacman.txt`](../packages/README.md), covered by
+`packages/install.sh`.
 
 Set zsh as your login shell:
 

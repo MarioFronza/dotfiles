@@ -29,3 +29,5 @@ cp CLAUDE.md RTK.md settings.json statusline-command.sh ~/.claude/
 cp -r rules agents hooks themes ~/.claude/
 cp -r skills/* ~/.claude/skills/
 ```
+
+`settings.json` still says `"theme": "dark"` (the built-in one) — `themes/flexoki_dark.json` is copied in but not switched to automatically. Pick it with `/theme` inside Claude Code.

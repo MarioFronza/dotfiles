@@ -8,6 +8,9 @@
 # --- Networking (bluetooth TUI, wifi's impala is in pacman.txt) ---
 bluetuith
 
+# --- Wayland desktop (compositor-agnostic, rest is in pacman.txt) ---
+wlogout
+
 # --- Apps ---
 1password
 1password-cli
@@ -37,8 +40,7 @@ android-sdk-build-tools-36
 burpsuite
 dex2jar
 python-frida
-python-frida-tools
+frida-tools
 
 # --- OBS plugins ---
 obs-shaderfilter-git
-obs-shaderfilter-git-debug

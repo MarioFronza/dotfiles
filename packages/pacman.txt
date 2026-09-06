@@ -74,7 +74,6 @@ libva-utils
 xdg-desktop-portal-gtk
 sddm
 wofi
-wlogout
 mako
 cliphist
 grim

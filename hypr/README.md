@@ -16,10 +16,11 @@ Hyprland:
 grep -v '^#' ../packages/pacman-hyprland.txt | xargs sudo pacman -S --needed
 ```
 
-The rest of what `bindings.lua` calls (`wofi`, `wlogout`, `mako`,
-`cliphist`, `wl-clipboard`, `brightnessctl`, `playerctl`, `udiskie`,
-`nautilus` for the file-manager bind) is compositor-agnostic and already
-in `../packages/pacman.txt`.
+The rest of what `bindings.lua` calls (`wofi`, `mako`, `cliphist`,
+`wl-clipboard`, `brightnessctl`, `playerctl`, `udiskie`, `nautilus` for
+the file-manager bind) is compositor-agnostic and already in
+`../packages/pacman.txt`. `wlogout` is the one exception — it's AUR-only,
+see `../packages/aur.txt`.
 
 ## Copy
 
@@ -31,7 +32,7 @@ cp hyprland.lua envs.lua monitors.lua input.lua looknfeel.lua windowrules.lua \
 ```
 
 `hyprmoncfg-monitors.lua` isn't here on purpose — it's generated per-machine
-by [hyprmoncfg](https://github.com/PaperBoardOfficial/hyprmoncfg) (optional)
+by [hyprmoncfg](https://github.com/crmne/hyprmoncfg) (optional)
 and `hyprland.lua` only loads it if present. Without it, edit `monitors.lua`
 directly.
 
