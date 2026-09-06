@@ -6,31 +6,52 @@
 sudo pacman -S --needed zsh zsh-autosuggestions zsh-syntax-highlighting starship zoxide fzf eza bat gum mise atuin
 ```
 
-Each is loaded conditionally (`command -v` checks in `init`/`functions`),
-but this is the full set needed for everything below to actually work:
-`zsh-autosuggestions`/`zsh-syntax-highlighting` (plugins sourced from
-`/usr/share/zsh/plugins/`), `starship` (prompt), `zoxide`/`fzf`/`bat`
-(the `zd`/`ff`/`eff` functions), `gum` (the `gd` worktree-removal
-confirmation), `mise`, `atuin` (`Ctrl+R` history search).
+| Package | Used for |
+|---|---|
+| `zsh` | the shell itself |
+| `zsh-autosuggestions` | plugin, sourced from `/usr/share/zsh/plugins/` in `init` |
+| `zsh-syntax-highlighting` | plugin, sourced from `/usr/share/zsh/plugins/` in `init` |
+| `starship` | prompt, initialized in `init` and configured by `prompt` |
+| `zoxide` | frecency-based `cd`, backs the `zd`/`cd` function in `functions` |
+| `fzf` | fuzzy finder, backs `ff`/`eff` in `functions` |
+| `bat` | file preview inside `ff`/`eff` |
+| `gum` | confirmation prompt in the `gd` (remove worktree) function |
+| `mise` | tool/language version manager, activated in `init` |
+| `atuin` | shell history, bound to `Ctrl+R` in `init` |
 
-Also used by specific aliases/functions, install if you use them: `tmux`
-(`t`), `docker` (`sgpt`), `ddcutil` (`monhd`/`mondp` — DDC-capable
-external monitor only), `git` (`ga`/`gd`, see
+Optional, only needed if you actually use the alias/function that calls
+them: `tmux` (`t`), `docker` (`sgpt`), `ddcutil` (`monhd`/`mondp` —
+DDC-capable external monitor only), `git` (`ga`/`gd`, see
 [`../git/README.md`](../git/README.md)).
 
-Set zsh as your login shell:
+Set zsh as your login shell, then log out and back in (or reboot) for it
+to take effect — `exec zsh` in the current session isn't enough for a
+*login* shell change:
 
 ```bash
 chsh -s /usr/bin/zsh
+reboot
 ```
 
 ## Copy
 
+No clone — create each file below by hand and paste in the content from
+its GitHub page:
+
+| File | Target |
+|---|---|
+| [`zshrc`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/zshrc) | `~/.zshrc` |
+| [`shell`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/shell) | `~/.config/zsh/shell` |
+| [`init`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/init) | `~/.config/zsh/init` |
+| [`envs`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/envs) | `~/.config/zsh/envs` |
+| [`aliases`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/aliases) | `~/.config/zsh/aliases` |
+| [`functions`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/functions) | `~/.config/zsh/functions` |
+| [`prompt`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/prompt) | `~/.config/zsh/prompt` |
+| [`inputrc`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/inputrc) | `~/.config/zsh/inputrc` **and** `~/.inputrc` |
+
 ```bash
 mkdir -p ~/.config/zsh
-cp zshrc ~/.zshrc
-cp shell init envs aliases functions prompt inputrc ~/.config/zsh/
-cp inputrc ~/.inputrc
+nano ~/.config/zsh/shell   # paste, save (Ctrl+O, Enter, Ctrl+X), repeat per file
 ```
 
 ## Apply

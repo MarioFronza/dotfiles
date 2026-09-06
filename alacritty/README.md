@@ -6,26 +6,34 @@ Terminal emulator config. Theme is Flexoki Dark, pulled from the
 
 ## Install (Arch)
 
+| Item | Install via | Used for |
+|---|---|---|
+| `alacritty` | `sudo pacman -S alacritty` | terminal emulator |
+| [`alacritty-theme`](https://github.com/alacritty/alacritty-theme) | `git clone` (below) | provides `themes/flexoki.toml`, the Flexoki Dark colorscheme |
+
 ```bash
 sudo pacman -S alacritty
-```
-
-Clone the theme collection into Alacritty's config dir:
-
-```bash
 mkdir -p ~/.config/alacritty/themes
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 ```
 
 ## Copy
 
+No clone of this repo — create the file by hand and paste in the content
+from its GitHub page:
+
+| File | Target |
+|---|---|
+| [`alacritty.toml`](https://github.com/MarioFronza/dotfiles/blob/main/alacritty/alacritty.toml) | `~/.config/alacritty/alacritty.toml` |
+
 ```bash
-cp alacritty.toml ~/.config/alacritty/alacritty.toml
+mkdir -p ~/.config/alacritty
+nano ~/.config/alacritty/alacritty.toml   # paste, save (Ctrl+O, Enter, Ctrl+X)
 ```
 
 `alacritty.toml` imports `~/.config/alacritty/themes/themes/flexoki.toml`
-from that clone (Flexoki's dark variant — `flexoki-light.toml` is the
-other one in the collection).
+from the clone above (Flexoki's dark variant — `flexoki-light.toml` is
+the other one in the collection).
 
 ## Apply
 
