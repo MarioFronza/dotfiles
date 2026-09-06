@@ -16,5 +16,11 @@ sudo pacman -Sy --needed git base-devel
 
 ## From here
 
-No clone yet — browse [the repo on GitHub](https://github.com/MarioFronza/dotfiles)
-and type each folder's README commands by hand, one at a time.
+No clone yet — browse [the repo on GitHub](https://github.com/MarioFronza/dotfiles),
+open each folder's README, and copy its commands by hand: install (Arch),
+then copy the config into place. No scripts.
+
+## Order
+
+Suggested order after this one: `alacritty/`, `zsh/`, `tmux/`, `git/`,
+`github/`, `mise/`, `nvim/`, `sway/` (+ `fuzzel/` + `plymouth/`), `claude/`.
