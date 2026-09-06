@@ -23,6 +23,10 @@ what the installer set up).
 - `pacman-hyprland.txt` / `aur-hyprland.txt` — Hyprland only, not run by
   `install.sh`, install manually if a machine actually uses Hyprland
   (matches [`hypr/`](../hypr/README.md))
+- `pacman-sway.txt` — Sway only (`sway`, `swaylock`, `swayidle`,
+  `fuzzel`), not run by `install.sh`, install manually if a machine
+  actually uses Sway (matches [`sway/`](../sway/README.md) and
+  [`fuzzel/`](../fuzzel/README.md))
 - [`wifi-bluetooth.md`](wifi-bluetooth.md) — enabling `iwd`/`impala` and
   `bluetooth`/`bluetuith` after install.sh (no NetworkManager here)
 

@@ -15,6 +15,9 @@ packages/install.sh [amd|intel|nvidia]
 - [`packages/`](packages/README.md) — pacman/AUR packages
 - [`mise/`](mise/README.md) — language/tool versions
 - [`hypr/`](hypr/README.md) — Hyprland (optional)
+- [`sway/`](sway/README.md) — Sway (optional, alternative to Hyprland)
+- [`fuzzel/`](fuzzel/README.md) — app launcher (used by Sway)
+- [`plymouth/`](plymouth/README.md) — boot/LUKS unlock screen theme
 - [`alacritty/`](alacritty/README.md) — terminal
 - [`tmux/`](tmux/README.md) — terminal multiplexer
 - [`zsh/`](zsh/README.md) — shell

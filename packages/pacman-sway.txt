@@ -1,0 +1,8 @@
+# Sway-only packages — not needed on a Hyprland (or any other compositor)
+# machine, kept separate on purpose. Matches ../sway/README.md. Install with:
+#   grep -v '^#' pacman-sway.txt | xargs sudo pacman -S --needed
+
+sway
+swaylock
+swayidle
+fuzzel
