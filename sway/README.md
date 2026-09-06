@@ -7,7 +7,7 @@ Hyprland.
 
 ## Install (Arch)
 
-Sway, `swaylock`, `swayidle`, and `fuzzel` are in
+Sway, `swaybg`, `swaylock`, `swayidle`, and `fuzzel` are in
 [`../packages/pacman-sway.txt`](../packages/README.md) (kept out of the
 default install, same split as Hyprland's `pacman-hyprland.txt`):
 

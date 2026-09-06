@@ -3,6 +3,7 @@
 #   grep -v '^#' pacman-sway.txt | xargs sudo pacman -S --needed
 
 sway
+swaybg
 swaylock
 swayidle
 fuzzel

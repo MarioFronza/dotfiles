@@ -26,36 +26,21 @@ archinstall
 | Section | Setting |
 |---|---|
 | Mirrors and repositories | Select regions > your country |
-| Disk configuration | Partitioning > default layout > select disk |
+| Disk configuration | Partitioning > select disk > Use a best-effort default partition layout |
 | Disk > File system | btrfs (default subvolumes, use compression) |
-| Disk > Disk encryption | LUKS, set a password (recommended, not required) |
-| Hostname | whatever you want |
+| Disk > Disk encryption | Encryption type: LUKS > set password > Partitions: select which one to encrypt (recommended, not required) |
 | Bootloader | Limine |
+| Hostname | whatever you want |
 | Authentication > Root password | set one |
 | Authentication > User account | add yourself, Superuser: yes |
+| Profile | Type: Desktop > Sway |
 | Applications > Audio | pipewire |
 | Network configuration | copy ISO network config |
 | Timezone | yours |
 
 Reboot, log in as the user you created.
 
-## 4. Fix the console font
-
-The default TTY font is tiny. Before doing anything else:
-
-```bash
-sudo pacman -S --needed terminus-font
-setfont ter-132b                        # bigger, right now
-ls /usr/share/kbd/consolefonts/         # other sizes, if 132b is too much/little
-```
-
-Persist it:
-
-```bash
-echo "FONT=ter-132b" | sudo tee -a /etc/vconsole.conf
-```
-
-## 5. Enable SSH, finish setup from another machine
+## 4. Enable SSH, finish setup from another machine
 
 Doing the rest over SSH from a real terminal beats fighting the console
 font forever.
@@ -74,14 +59,3 @@ From another machine:
 ssh <user>@<ip>
 ```
 
-## 6. Clone and install
-
-```bash
-git clone git@github.com:MarioFronza/dotfiles.git
-cd dotfiles
-packages/install.sh [amd|intel|nvidia]
-```
-
-Then work through the README in each folder you need (see the main
-[`README.md`](README.md) for the list) — every one of them is just a
-handful of `cp` commands.

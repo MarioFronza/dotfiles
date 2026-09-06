@@ -87,6 +87,7 @@ qrencode
 xmlstarlet
 qt5-wayland
 qt6-imageformats
+xorg-xwayland
 
 # --- Fonts / theming ---
 fontconfig
