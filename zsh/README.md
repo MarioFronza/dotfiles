@@ -25,6 +25,7 @@ chsh -s /usr/bin/zsh
 mkdir -p ~/.config/zsh
 cp zshrc ~/.zshrc
 cp shell init envs aliases functions prompt inputrc ~/.config/zsh/
+cp inputrc ~/.inputrc
 ```
 
 ## Apply
@@ -40,6 +41,12 @@ keys, etc.) — sourced automatically if present, never tracked in this repo.
 `n` (nvim, defaults to `.`), `ssh` (auto-reconnect + terminal cleanup),
 `fip`/`dip`/`lip` (SSH port forwarding), `ga`/`gd` (git worktree
 create/remove).
+
+`inputrc` is GNU Readline syntax, not zsh: the `bindkey` lines work when
+zsh sources it, but the `set ...` lines are readline-only and no-ops
+under zsh. That's why it's also copied straight to `~/.inputrc` — that
+copy is what actually applies them, for any readline program (bash,
+`python3`'s REPL, etc), independent of zsh.
 
 ## Reorg suggestion
 

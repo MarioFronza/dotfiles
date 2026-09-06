@@ -202,6 +202,7 @@ steam
 # --- Hardware-specific utilities ---
 ddcutil
 bolt
+fwupd
 android-tools
 
 # --- Security / reverse engineering (dual-use, personal research tooling) ---
