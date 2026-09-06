@@ -3,6 +3,9 @@
 Arch Linux, standalone. No symlinks — copy files into place, per folder's
 own `README.md`.
 
+Starting from a blank machine? See [`QUICKSTART.md`](QUICKSTART.md)
+(install media through a working, SSH-reachable base system).
+
 ```
 git clone git@github.com:MarioFronza/dotfiles.git
 cd dotfiles
