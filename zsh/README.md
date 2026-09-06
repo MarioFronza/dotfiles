@@ -1,17 +1,22 @@
 # zsh
 
-`zshrc` isn't itself linked anywhere — it's copied to `~/.zshrc`, and its
-job is just to `source` the real files from `~/.config/zsh/`, in order:
-`shell`, `init`, `envs`, `aliases`, `functions`, `prompt`, `inputrc`, then an
-optional `secrets` (untracked, local only).
-
 ## Install (Arch)
 
-`zsh` and everything it depends on (`zsh-autosuggestions`,
-`zsh-syntax-highlighting`, `starship`, `zoxide`, `fzf`, `eza`, `bat`,
-`gum`, `mise`, `atuin`) is already in
-[`../packages/pacman.txt`](../packages/README.md), covered by
-`packages/install.sh`.
+```bash
+sudo pacman -S --needed zsh zsh-autosuggestions zsh-syntax-highlighting starship zoxide fzf eza bat gum mise atuin
+```
+
+Each is loaded conditionally (`command -v` checks in `init`/`functions`),
+but this is the full set needed for everything below to actually work:
+`zsh-autosuggestions`/`zsh-syntax-highlighting` (plugins sourced from
+`/usr/share/zsh/plugins/`), `starship` (prompt), `zoxide`/`fzf`/`bat`
+(the `zd`/`ff`/`eff` functions), `gum` (the `gd` worktree-removal
+confirmation), `mise`, `atuin` (`Ctrl+R` history search).
+
+Also used by specific aliases/functions, install if you use them: `tmux`
+(`t`), `docker` (`sgpt`), `ddcutil` (`monhd`/`mondp` — DDC-capable
+external monitor only), `git` (`ga`/`gd`, see
+[`../git/README.md`](../git/README.md)).
 
 Set zsh as your login shell:
 
