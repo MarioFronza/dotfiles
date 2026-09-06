@@ -6,5 +6,3 @@ source ~/.config/zsh/functions
 source ~/.config/zsh/prompt
 source ~/.config/zsh/inputrc
 [[ -r ~/.config/zsh/secrets ]] && source ~/.config/zsh/secrets
-
-. "$HOME/.local/share/../bin/env"
