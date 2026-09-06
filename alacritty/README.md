@@ -1,7 +1,8 @@
 # alacritty
 
-Terminal emulator config. Theme is Flexoki Dark, loaded from a local file
-in `themes/` (no dynamic theme system, no external dependency).
+Terminal emulator config. Theme is Flexoki Dark, pulled from the
+[alacritty-theme](https://github.com/alacritty/alacritty-theme) collection
+(the standard way to install Alacritty themes) — not bundled in this repo.
 
 ## Install (Arch)
 
@@ -9,13 +10,22 @@ in `themes/` (no dynamic theme system, no external dependency).
 sudo pacman -S alacritty
 ```
 
-## Copy
+Clone the theme collection into Alacritty's config dir:
 
 ```bash
 mkdir -p ~/.config/alacritty/themes
-cp alacritty.toml ~/.config/alacritty/alacritty.toml
-cp themes/flexoki_dark.toml ~/.config/alacritty/themes/flexoki_dark.toml
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 ```
+
+## Copy
+
+```bash
+cp alacritty.toml ~/.config/alacritty/alacritty.toml
+```
+
+`alacritty.toml` imports `~/.config/alacritty/themes/themes/flexoki.toml`
+from that clone (Flexoki's dark variant — `flexoki-light.toml` is the
+other one in the collection).
 
 ## Apply
 
