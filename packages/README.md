@@ -31,6 +31,6 @@ what the installer set up).
 A handful of installed packages had no public AUR or official-repo
 equivalent under the same name (checked against the AUR API, not
 guessed): a wallpaper-based dynamic theming tool (moot now that everything
-here is hardcoded to Tokyo Night), an Apple Studio Display brightness
+here is hardcoded to Flexoki Dark), an Apple Studio Display brightness
 tool, and two small niche CLI utilities. Get them from their own GitHub
 releases directly if you want them.

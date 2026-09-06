@@ -46,7 +46,7 @@ hyprctl configerrors   # check for errors after reload
 
 - `hyprlock.conf` has a placeholder wallpaper path
   (`~/Pictures/wallpaper.png`) — point it at a real image, or drop the
-  `background.path` line to keep the solid Tokyo Night background.
+  `background.path` line to keep the solid Flexoki Dark background.
 - Night light (`hyprsunset`) is wired for manual toggle
   (`SUPER+CTRL+N`) but not autostarted — add `hl.exec_cmd("hyprsunset")` to
   `autostart.lua` if you want it always on.
