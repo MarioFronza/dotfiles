@@ -1,6 +1,6 @@
 # sway
 
-Sway config for the ThinkPad. Flexoki Dark everywhere (bar, borders,
+Sway config for the ThinkPad. Tokyo Night everywhere (bar, borders,
 swaylock), no icons in the status bar — just plain text. Alternative to
 [`../hypr/`](../hypr/README.md) for machines that run Sway instead of
 Hyprland.
@@ -22,10 +22,15 @@ Everything else the config below calls (`mako`, `grim`/`slurp`,
 
 ## Copy
 
+| File | Target |
+| --- | --- |
+| [`config`](https://github.com/MarioFronza/dotfiles/blob/main/sway/config) | `~/.config/sway/config` |
+| [`statusbar.sh`](https://github.com/MarioFronza/dotfiles/blob/main/sway/statusbar.sh) | `~/.config/sway/statusbar.sh` |
+| [`swaylock.conf`](https://github.com/MarioFronza/dotfiles/blob/main/sway/swaylock.conf) | `~/.config/swaylock/config` |
+
 ```bash
 mkdir -p ~/.config/sway ~/.config/swaylock
-cp config statusbar.sh ~/.config/sway/
-cp swaylock.conf ~/.config/swaylock/config
+vim ~/.config/sway/config
 chmod +x ~/.config/sway/statusbar.sh
 ```
 
@@ -46,7 +51,7 @@ swaymsg reload
   affected. On another machine, find the right device name with `swaymsg
   -t get_inputs` and update the identifier, or drop the block entirely.
 - **swaylock.conf** points `image=` at
-  `/usr/share/plymouth/themes/flexoki-dark/logo.png` — install
+  `/usr/share/plymouth/themes/tokyo-night/logo.png` — install
   [`../plymouth/`](../plymouth/README.md) first (or repoint it at any
   image) so swaylock visually matches the LUKS unlock screen.
 - Status bar has no icons on purpose (network/volume/battery/date as

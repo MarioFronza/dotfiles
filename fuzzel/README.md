@@ -1,6 +1,6 @@
 # fuzzel
 
-Application launcher, Flexoki Dark themed. Used as `$menu` in
+Application launcher, Tokyo Night themed. Used as `$menu` in
 [`../sway/config`](../sway/README.md) (not `wofi` — Sway's config only
 calls `fuzzel`, `wofi` is a Hyprland-side thing in `../hypr/`).
 
@@ -15,9 +15,11 @@ grep -v '^#' ../packages/pacman-sway.txt | xargs sudo pacman -S --needed
 
 ## Copy
 
+[`fuzzel.ini`](https://github.com/MarioFronza/dotfiles/blob/main/fuzzel/fuzzel.ini) → `~/.config/fuzzel/fuzzel.ini`
+
 ```bash
 mkdir -p ~/.config/fuzzel
-cp fuzzel.ini ~/.config/fuzzel/fuzzel.ini
+vim ~/.config/fuzzel/fuzzel.ini
 ```
 
 ## Apply

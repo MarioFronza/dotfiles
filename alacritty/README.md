@@ -5,10 +5,11 @@
 | Item | Used for |
 |---|---|
 | `alacritty` | terminal emulator |
-| [`alacritty-theme`](https://github.com/alacritty/alacritty-theme) | Flexoki Dark (`themes/flexoki.toml`) |
+| `adwaita-fonts` | font (Adwaita Mono) |
+| [`alacritty-theme`](https://github.com/alacritty/alacritty-theme) | Tokyo Night (`themes/tokyo_night.toml`) |
 
 ```bash
-sudo pacman -S alacritty
+sudo pacman -S alacritty adwaita-fonts
 mkdir -p ~/.config/alacritty/themes
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 ```
@@ -26,7 +27,7 @@ mkdir -p ~/.config/alacritty
 vim ~/.config/alacritty/alacritty.toml
 ```
 
-`alacritty.toml` imports `themes/flexoki.toml` from the clone above.
+`alacritty.toml` imports `themes/tokyo_night.toml` from the clone above.
 
 ## Apply
 

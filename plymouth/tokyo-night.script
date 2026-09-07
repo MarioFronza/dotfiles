@@ -1,7 +1,7 @@
-# Flexoki Dark Plymouth Theme (adapted from a Tokyo Night version, itself from omarchy, MIT licensed)
+# Tokyo Night Plymouth Theme (originally from omarchy, MIT licensed)
 
-Window.SetBackgroundTopColor(0.157, 0.153, 0.149);
-Window.SetBackgroundBottomColor(0.157, 0.153, 0.149);
+Window.SetBackgroundTopColor(0.102, 0.106, 0.149);
+Window.SetBackgroundBottomColor(0.102, 0.106, 0.149);
 
 logo.image = Image("logo.png");
 logo.sprite = Sprite(logo.image);

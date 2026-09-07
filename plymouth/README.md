@@ -1,6 +1,6 @@
 # plymouth
 
-Flexoki Dark Plymouth theme (Arch Linux logo, Flexoki Dark colors) — the
+Tokyo Night Plymouth theme (Arch Linux logo, Tokyo Night colors) — the
 screen shown while typing the LUKS disk-decryption password on boot.
 Matches [`../sway/swaylock.conf`](../sway/README.md) so the boot unlock
 screen and the desktop lock screen look the same.
@@ -12,12 +12,17 @@ Already in [`../packages/pacman.txt`](../packages/README.md) is
 
 ## Copy
 
+The `.png` files are binary — pasting via an editor doesn't work, `curl`
+each one straight from GitHub instead:
+
 ```bash
-sudo mkdir -p /usr/share/plymouth/themes/flexoki-dark
-sudo cp bullet.png entry.png lock.png logo.png progress_bar.png \
-        progress_box.png flexoki-dark.plymouth flexoki-dark.script \
-        /usr/share/plymouth/themes/flexoki-dark/
-sudo plymouth-set-default-theme -R flexoki-dark
+sudo mkdir -p /usr/share/plymouth/themes/tokyo-night
+cd /usr/share/plymouth/themes/tokyo-night
+for f in bullet.png entry.png lock.png logo.png progress_bar.png progress_box.png \
+         tokyo-night.plymouth tokyo-night.script; do
+  sudo curl -fLo "$f" "https://raw.githubusercontent.com/MarioFronza/dotfiles/main/plymouth/$f"
+done
+sudo plymouth-set-default-theme -R tokyo-night
 ```
 
 `-R` rebuilds the initramfs; without it the new theme won't show up on

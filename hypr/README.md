@@ -24,11 +24,23 @@ see `../packages/aur.txt`.
 
 ## Copy
 
+All go to `~/.config/hypr/`:
+[`hyprland.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/hyprland.lua),
+[`envs.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/envs.lua),
+[`monitors.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/monitors.lua),
+[`input.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/input.lua),
+[`looknfeel.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/looknfeel.lua),
+[`windowrules.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/windowrules.lua),
+[`bindings.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/bindings.lua),
+[`autostart.lua`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/autostart.lua),
+[`hypridle.conf`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/hypridle.conf),
+[`hyprlock.conf`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/hyprlock.conf),
+[`hyprsunset.conf`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/hyprsunset.conf),
+[`xdph.conf`](https://github.com/MarioFronza/dotfiles/blob/main/hypr/xdph.conf)
+
 ```bash
 mkdir -p ~/.config/hypr
-cp hyprland.lua envs.lua monitors.lua input.lua looknfeel.lua windowrules.lua \
-   bindings.lua autostart.lua hypridle.conf hyprlock.conf hyprsunset.conf xdph.conf \
-   ~/.config/hypr/
+vim ~/.config/hypr/hyprland.lua
 ```
 
 `hyprmoncfg-monitors.lua` isn't here on purpose — it's generated per-machine
@@ -47,7 +59,7 @@ hyprctl configerrors   # check for errors after reload
 
 - `hyprlock.conf` has a placeholder wallpaper path
   (`~/Pictures/wallpaper.png`) — point it at a real image, or drop the
-  `background.path` line to keep the solid Flexoki Dark background.
+  `background.path` line to keep the solid Tokyo Night background.
 - Night light (`hyprsunset`) is wired for manual toggle
   (`SUPER+CTRL+N`) but not autostarted — add `hl.exec_cmd("hyprsunset")` to
   `autostart.lua` if you want it always on.

@@ -169,17 +169,17 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # Move focus to the parent container
     bindsym $mod+a focus parent
 #
-# Appearance (Flexoki Dark):
+# Appearance (Tokyo Night):
 #
     gaps inner 4
     default_border pixel 2
     default_floating_border pixel 2
 
     # class                   border    backgr.   text      indicator  child_border
-    client.focused            #4385BE   #282726   #FFFCF0   #4385BE    #4385BE
-    client.focused_inactive   #403E3C   #282726   #FFFCF0   #403E3C    #403E3C
-    client.unfocused          #282726   #282726   #878580   #282726    #282726
-    client.urgent             #D14D41   #282726   #FFFCF0   #D14D41    #D14D41
+    client.focused            #7aa2f7   #1a1b26   #c0caf5   #7aa2f7    #7aa2f7
+    client.focused_inactive   #414868   #1a1b26   #c0caf5   #414868    #414868
+    client.unfocused          #1a1b26   #1a1b26   #a9b1d6   #1a1b26    #1a1b26
+    client.urgent             #f7768e   #1a1b26   #c0caf5   #f7768e    #f7768e
 #
 # Scratchpad:
 #
@@ -249,17 +249,17 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     status_command ~/.config/sway/statusbar.sh
 
-    # Flexoki Dark
+    # Tokyo Night
     colors {
-        background         #282726
-        statusline         #FFFCF0
-        focused_statusline #FFFCF0
-        focused_separator  #282726
+        background         #1a1b26
+        statusline         #c0caf5
+        focused_statusline #c0caf5
+        focused_separator  #1a1b26
 
-        focused_workspace  #282726 #282726 #4385BE
-        active_workspace   #282726 #282726 #4385BE
-        inactive_workspace #282726 #282726 #878580
-        urgent_workspace   #282726 #282726 #D14D41
+        focused_workspace  #1a1b26 #1a1b26 #7aa2f7
+        active_workspace   #1a1b26 #1a1b26 #7aa2f7
+        inactive_workspace #1a1b26 #1a1b26 #a9b1d6
+        urgent_workspace   #1a1b26 #1a1b26 #f7768e
     }
 }
 
