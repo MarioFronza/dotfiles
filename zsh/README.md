@@ -7,7 +7,7 @@ sudo pacman -S --needed zsh zsh-autosuggestions zsh-syntax-highlighting starship
 ```
 
 | Package | Used for |
-|---|---|
+| --- | --- |
 | `zsh` | the shell |
 | `zsh-autosuggestions` | plugin (`init`) |
 | `zsh-syntax-highlighting` | plugin (`init`) |
@@ -32,7 +32,7 @@ reboot   # login shell only applies after logout/reboot
 No clone. Create each file, paste content from its GitHub page:
 
 | File | Target |
-|---|---|
+| --- | --- |
 | [`zshrc`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/zshrc) | `~/.zshrc` |
 | [`shell`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/shell) | `~/.config/zsh/shell` |
 | [`init`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/init) | `~/.config/zsh/init` |
@@ -40,7 +40,8 @@ No clone. Create each file, paste content from its GitHub page:
 | [`aliases`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/aliases) | `~/.config/zsh/aliases` |
 | [`functions`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/functions) | `~/.config/zsh/functions` |
 | [`prompt`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/prompt) | `~/.config/zsh/prompt` |
-| [`inputrc`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/inputrc) | `~/.config/zsh/inputrc` and `~/.inputrc` |
+| [`bindkeys`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/bindkeys) | `~/.config/zsh/bindkeys` |
+| [`inputrc`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/inputrc) | `~/.inputrc` |
 
 ```bash
 mkdir -p ~/.config/zsh
@@ -54,10 +55,3 @@ exec zsh
 ```
 
 Optional: `~/.config/zsh/secrets`, sourced if present, never tracked here.
-
-## Notes
-
-- `inputrc`: readline syntax, not zsh. `bindkey` lines work when zsh
-  sources it; `set ...` lines only work via the copy at `~/.inputrc`.
-- `aliases` has `git config --global alias.*` lines that belong in
-  [`git/config`](../git/README.md) `[alias]` instead — move next touch.
