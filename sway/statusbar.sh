@@ -1,10 +1,10 @@
 #!/bin/sh
-# Status line simples pro swaybar nativo — texto puro, sem ícones.
+# Simple status line for native swaybar — plain text, no icons.
 #
-# Volume atualiza na hora: "pactl subscribe" escuta eventos de
-# volume/mute (de qualquer origem — teclado, outro app, etc.) e manda
-# SIGUSR1 pro processo principal, que interrompe o sleep e redesenha a
-# linha imediatamente, sem esperar o polling de 5s.
+# Volume updates instantly: "pactl subscribe" listens for volume/mute
+# events (from any source — keyboard, another app, etc.) and sends
+# SIGUSR1 to the main process, which interrupts the sleep and redraws
+# the line right away, without waiting for the 5s poll.
 trap : USR1
 
 (
@@ -16,7 +16,7 @@ trap : USR1
 ) &
 
 while true; do
-    # Rede
+    # Network
     iface=$(ip route get 1.1.1.1 2>/dev/null | sed -n 's/.*dev \([^ ]*\).*/\1/p')
     if [ -z "$iface" ]; then
         network="Offline"
@@ -30,11 +30,11 @@ while true; do
                     [ "$pct" -gt 100 ] && pct=100
                     network="WiFi ${pct}%"
                 else
-                    network="WiFi conectado"
+                    network="WiFi connected"
                 fi
                 ;;
             *)
-                network="Ethernet conectado"
+                network="Ethernet connected"
                 ;;
         esac
     fi
@@ -48,7 +48,7 @@ while true; do
         volume="Volume ${vol_pct}%"
     fi
 
-    # Bateria
+    # Battery
     if [ -d /sys/class/power_supply/BAT0 ]; then
         cap=$(cat /sys/class/power_supply/BAT0/capacity)
         status=$(cat /sys/class/power_supply/BAT0/status)
