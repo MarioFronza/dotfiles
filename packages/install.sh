@@ -6,10 +6,6 @@
 # The GPU argument is optional and picks the matching gpu-<vendor>.txt.
 # Omit it to skip GPU-specific drivers entirely (mesa/vulkan-icd-loader are
 # already in pacman.txt, vendor-agnostic).
-#
-# Hyprland packages (pacman-hyprland.txt, aur-hyprland.txt) are NOT
-# installed by this script — they're for a different compositor setup, see
-# hypr/README.md. Install them separately if you need them.
 set -euo pipefail
 cd "$(dirname "$0")"
 

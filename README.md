@@ -15,10 +15,7 @@ packages/install.sh [amd|intel|nvidia]
 - [`bootstrap/`](bootstrap/README.md) — bare minimum to clone this repo on a fresh install
 - [`packages/`](packages/README.md) — pacman/AUR packages
 - [`mise/`](mise/README.md) — language/tool versions
-- [`hypr/`](hypr/README.md) — Hyprland (optional)
-- [`sway/`](sway/README.md) — Sway (optional, alternative to Hyprland)
-- [`fuzzel/`](fuzzel/README.md) — app launcher (used by Sway)
-- [`plymouth/`](plymouth/README.md) — boot/LUKS unlock screen theme
+- [`sway/`](sway/README.md) — Sway
 - [`alacritty/`](alacritty/README.md) — terminal
 - [`tmux/`](tmux/README.md) — terminal multiplexer
 - [`zsh/`](zsh/README.md) — shell

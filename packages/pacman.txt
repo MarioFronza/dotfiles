@@ -5,8 +5,8 @@
 #
 # Not listed here on purpose (already comes from the Arch install itself):
 # base, linux, linux-firmware. GPU drivers are vendor-specific — see
-# gpu-amd.txt / gpu-intel.txt / gpu-nvidia.txt. Sway/Hyprland packages are
-# split out too — see pacman-hyprland.txt.
+# gpu-amd.txt / gpu-intel.txt / gpu-nvidia.txt. Sway itself comes from
+# archinstall's Sway profile, not listed here.
 
 # --- Build essentials / core utilities ---
 base-devel
@@ -70,24 +70,24 @@ vulkan-icd-loader
 lib32-vulkan-icd-loader
 libva-utils
 
-# --- Wayland desktop basics (compositor-agnostic — works under Sway too) ---
+# --- Wayland desktop basics ---
+# grim, slurp, brightnessctl, xorg-xwayland aren't listed — archinstall's
+# Sway profile already installs them (see ../QUICKSTART.md).
 xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+polkit
+polkit-gnome
 sddm
-wofi
 mako
 cliphist
-grim
-slurp
 wl-clipboard
 wtype
-brightnessctl
 playerctl
 power-profiles-daemon
 qrencode
 xmlstarlet
 qt5-wayland
 qt6-imageformats
-xorg-xwayland
 
 # --- Fonts / theming ---
 fontconfig

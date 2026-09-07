@@ -23,4 +23,4 @@ then copy the config into place. No scripts.
 ## Order
 
 Suggested order after this one: `alacritty/`, `zsh/`, `tmux/`, `git/`,
-`github/`, `mise/`, `nvim/`, `sway/` (+ `fuzzel/` + `plymouth/`), `claude/`.
+`github/`, `mise/`, `nvim/`, `sway/`, `claude/`.

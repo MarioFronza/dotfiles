@@ -1,8 +1,8 @@
 # packages
 
 Every pacman/AUR package this machine had installed, mapped for a fresh
-Arch install. Split so a Sway (or any non-Hyprland) machine doesn't pull
-in Hyprland by accident, and so the GPU driver matches the actual hardware.
+Arch install. GPU drivers are split out by vendor so you only install
+the one that matches the actual hardware.
 
 ```bash
 cd packages
@@ -20,13 +20,6 @@ what the installer set up).
 - `gpu-amd.txt` / `gpu-intel.txt` / `gpu-nvidia.txt` — pick one, open-source
   drivers only (see the comments in `gpu-nvidia.txt` about `nvidia-open`
   needing a Turing-or-newer card)
-- `pacman-hyprland.txt` / `aur-hyprland.txt` — Hyprland only, not run by
-  `install.sh`, install manually if a machine actually uses Hyprland
-  (matches [`hypr/`](../hypr/README.md))
-- `pacman-sway.txt` — Sway only (`sway`, `swaylock`, `swayidle`,
-  `fuzzel`), not run by `install.sh`, install manually if a machine
-  actually uses Sway (matches [`sway/`](../sway/README.md) and
-  [`fuzzel/`](../fuzzel/README.md))
 - [`wifi-bluetooth.md`](wifi-bluetooth.md) — enabling `iwd`/`impala` and
   `bluetooth`/`bluetuith` after install.sh (no NetworkManager here)
 

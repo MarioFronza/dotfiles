@@ -3,13 +3,9 @@
 # install.sh, or manually with:
 #   grep -v '^#' aur.txt | xargs yay -S --needed
 #
-# Hyprland-only AUR packages live in aur-hyprland.txt instead.
 
 # --- Networking (bluetooth TUI, wifi's impala is in pacman.txt) ---
 bluetuith
-
-# --- Wayland desktop (compositor-agnostic, rest is in pacman.txt) ---
-wlogout
 
 # --- Apps ---
 1password
@@ -41,6 +37,3 @@ burpsuite
 dex2jar
 python-frida
 frida-tools
-
-# --- OBS plugins ---
-obs-shaderfilter-git
