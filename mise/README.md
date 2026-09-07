@@ -1,14 +1,22 @@
 # mise
 
-Global tool versions. Already installed by `packages/install.sh` (mise
-itself is in `pacman.txt`); this just copies the manifest and installs
-what it lists.
+Global tool versions.
+
+## Build deps
+
+Some tools compile from source and need extra packages beyond `base-devel`:
+
+```bash
+sudo pacman -S re2c gd   # php
+```
 
 ## Copy
 
+[`config.toml`](https://github.com/MarioFronza/dotfiles/blob/main/mise/config.toml) → `~/.config/mise/config.toml`
+
 ```bash
 mkdir -p ~/.config/mise
-cp config.toml ~/.config/mise/config.toml
+vim ~/.config/mise/config.toml
 mise install
 ```
 
