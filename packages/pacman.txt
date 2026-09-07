@@ -95,6 +95,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 ttf-jetbrains-mono-nerd
+adwaita-fonts
 woff2-font-awesome
 gnome-themes-extra
 
@@ -145,6 +146,8 @@ libyaml
 mariadb-libs
 postgresql-libs
 mise
+re2c # needed to build php from source via mise
+gd   # needed to build php from source via mise (--with-gd)
 
 # rust/ruby/dotnet aren't listed here — mise manages them (see ../mise/).
 # Exception: if an AUR build needs cargo/rustc and mise isn't active in
