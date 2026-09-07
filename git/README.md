@@ -1,16 +1,16 @@
 # git
 
-## Install (Arch)
-
-```bash
-sudo pacman -S git
-```
-
 ## Copy
+
+| File | Target |
+| --- | --- |
+| [`config`](https://github.com/MarioFronza/dotfiles/blob/main/git/config) | `~/.config/git/config` |
+| [`ignore`](https://github.com/MarioFronza/dotfiles/blob/main/git/ignore) | `~/.config/git/ignore` |
 
 ```bash
 mkdir -p ~/.config/git
-cp config ignore ~/.config/git/
+vim ~/.config/git/config
+vim ~/.config/git/ignore
 ```
 
 ## Notes

@@ -9,9 +9,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Copy
 
+[`tmux.conf`](https://github.com/MarioFronza/dotfiles/blob/main/tmux/tmux.conf) → `~/.config/tmux/tmux.conf`
+
 ```bash
 mkdir -p ~/.config/tmux
-cp tmux.conf ~/.config/tmux/tmux.conf
+vim ~/.config/tmux/tmux.conf
 ```
 
 ## Apply

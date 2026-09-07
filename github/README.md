@@ -11,9 +11,11 @@ sudo pacman -S github-cli
 
 ## Copy
 
+[`config.yml`](https://github.com/MarioFronza/dotfiles/blob/main/github/config.yml) → `~/.config/gh/config.yml`
+
 ```bash
 mkdir -p ~/.config/gh
-cp config.yml ~/.config/gh/config.yml
+vim ~/.config/gh/config.yml
 ```
 
 ## Apply
