@@ -5,11 +5,11 @@
 | Item | Used for |
 |---|---|
 | `alacritty` | terminal emulator |
-| `adwaita-fonts` | font (Adwaita Mono) |
+| `ttf-jetbrains-mono-nerd` | font (JetBrainsMono Nerd Font) |
 | [`alacritty-theme`](https://github.com/alacritty/alacritty-theme) | Tokyo Night (`themes/tokyo_night.toml`) |
 
 ```bash
-sudo pacman -S alacritty adwaita-fonts
+sudo pacman -S alacritty ttf-jetbrains-mono-nerd
 mkdir -p ~/.config/alacritty/themes
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 ```
