@@ -14,16 +14,27 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term alacritty 
 # Your preferred application launcher
 set $menu wmenu-run
 
-font pango:JetBrainsMono Nerd Font Mono 10
+#Font
+font pango:JetBrainsMono Nerd Font 10
+
+### Appearance
+#
+# Gaps between windows/screen edge, and a plain pixel border instead of
+# the default titlebar (no app title text).
+gaps inner 8
+default_border pixel 2
+default_floating_border pixel 2
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallpaper.jpg fill
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg #000000 solid_color
+output * bg ~/Pictures/Wallpapers/dinossaurs-v2/04-parasaurolophus-rainforest-night.png fill
 #
 # Example configuration:
 #
@@ -31,21 +42,18 @@ output * bg ~/Pictures/wallpaper.jpg fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Autostart
-#
-exec mako
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
 ### Idle configuration
 #
-set $lock swaylock -f -C ~/.config/swaylock/config
-exec swayidle -w \
-         timeout 600 '$lock' \
-         timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep '$lock' \
-         lock '$lock'
-
-bindsym $mod+Shift+x exec $lock
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
 #
@@ -66,7 +74,7 @@ input type:keyboard {
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
-# Teclado interno do ThinkPad: troca Ctrl <-> Caps Lock (não afeta teclado externo)
+# Switch Ctrl <-> Caps Lock
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options ctrl:swapcaps
 }
@@ -82,7 +90,6 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
     bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -174,18 +181,6 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     # Move focus to the parent container
     bindsym $mod+a focus parent
 #
-# Appearance (Tokyo Night):
-#
-    gaps inner 4
-    default_border pixel 2
-    default_floating_border pixel 2
-
-    # class                   border    backgr.   text      indicator  child_border
-    client.focused            #7aa2f7   #1a1b26   #c0caf5   #7aa2f7    #7aa2f7
-    client.focused_inactive   #414868   #1a1b26   #c0caf5   #414868    #414868
-    client.unfocused          #1a1b26   #1a1b26   #a9b1d6   #1a1b26    #1a1b26
-    client.urgent             #f7768e   #1a1b26   #c0caf5   #f7768e    #f7768e
-#
 # Scratchpad:
 #
     # Sway has a "scratchpad", which is a bag of holding for windows.
@@ -224,11 +219,11 @@ bindsym $mod+r mode "resize"
 #
 # Utilities:
 #
-    # Special keys to adjust volume via WirePlumber (capped at 100%, sem boost)
-    bindsym --locked XF86AudioMute exec wpctl set-mute \@DEFAULT_AUDIO_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume \@DEFAULT_AUDIO_SINK@ 5%-
-    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 \@DEFAULT_AUDIO_SINK@ 5%+
-    bindsym --locked XF86AudioMicMute exec wpctl set-mute \@DEFAULT_AUDIO_SOURCE@ toggle
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
 
     # Special keys to control media via playerctl
     bindsym --locked XF86AudioPlay exec playerctl play-pause
@@ -244,28 +239,14 @@ bindsym $mod+r mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
+    # Bluetooth TUI
+    bindsym $mod+Shift+b exec $term -e bluetuith
+
 #
-# Status Bar:
+# Status Bar: waybar, not the native swaybar (see waybar-config.jsonc)
 #
-# Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    status_command ~/.config/sway/statusbar.sh
-
-    # Tokyo Night
-    colors {
-        background         #1a1b26
-        statusline         #c0caf5
-        focused_statusline #c0caf5
-        focused_separator  #1a1b26
-
-        focused_workspace  #1a1b26 #1a1b26 #7aa2f7
-        active_workspace   #1a1b26 #1a1b26 #7aa2f7
-        inactive_workspace #1a1b26 #1a1b26 #a9b1d6
-        urgent_workspace   #1a1b26 #1a1b26 #f7768e
-    }
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
