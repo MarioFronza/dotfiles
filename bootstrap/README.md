@@ -25,9 +25,15 @@ cd dotfiles/packages
 ./install.sh [amd|intel|nvidia]
 ```
 
+`iwd`, `systemd-networkd`, `systemd-resolved`, and `bluetooth` are
+installed now but not enabled — see
+[`../packages/wifi-bluetooth.md`](../packages/wifi-bluetooth.md) before
+you lose your only connection to the machine.
+
 ## Order
 
-With packages installed, walk each folder's README for its "Copy" step
-(config files into place, no more per-folder install). Suggested order:
-`alacritty/`, `zsh/`, `tmux/`, `git/`, `github/`, `mise/`, `nvim/`,
-`sway/`, `claude/`.
+With packages installed, `cd` into the clone from the step above and
+walk each folder's README for its "Copy" step (`cp` into place, no more
+per-folder install — every module's commands assume you're standing at
+the repo root). Suggested order: `alacritty/`, `zsh/`, `tmux/`, `git/`,
+`github/`, `mise/`, `nvim/`, `sway/`, `claude/`.

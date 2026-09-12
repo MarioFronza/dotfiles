@@ -85,6 +85,13 @@ cd dotfiles/packages
 ./install.sh [amd|intel|nvidia]
 ```
 
+## 8. Enable wifi and bluetooth
+
+`iwd`, `systemd-networkd`, `systemd-resolved`, and `bluetooth` are
+installed by now, but not enabled as services — you're still on
+whatever wired/SSH connection you set up in step 4. See
+[`packages/wifi-bluetooth.md`](packages/wifi-bluetooth.md).
+
 From here on, every module's README skips its own package list — it's
 already installed. Each README only covers copying its config files into
 place (see [`bootstrap/README.md`](bootstrap/README.md) for the
