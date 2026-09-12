@@ -55,6 +55,7 @@ how to install them.
 | `wireless-regdb` | Central Regulatory Domain Database |
 | `bluez` | Daemons for the bluetooth protocol stack |
 | `bluez-utils` | Development and debugging utilities for the bluetooth protocol stack |
+| `bluetui` | TUI for managing bluetooth devices |
 | `tailscale` | A mesh VPN that makes it easy to connect your devices, wherever they are. |
 | `ufw` | Uncomplicated and easy to use CLI tool for managing a netfilter firewall |
 | `whois` | Intelligent WHOIS client |
@@ -168,6 +169,7 @@ how to install them.
 | `mise` | The front-end to your dev env |
 | `re2c` | A tool for generating C-based recognizers from regular expressions |
 | `gd` | Library for the dynamic creation of images by programmers |
+| `rust` | Systems programming language focused on safety, speed and concurrency |
 
 ### File manager
 
@@ -289,11 +291,11 @@ how to install them.
 | `claude-code` | An agentic coding tool that lives in your terminal |
 | `rtk` | CLI proxy that reduces LLM token consumption by 60-90% on common dev commands |
 
-### Networking (bluetooth TUI, wifi's impala is in pacman.txt)
+### TUI controls (wifi's impala, bluetooth's bluetui are in pacman.txt)
 
 | Package | Description |
 |---|---|
-| `bluetuith` | TUI-based bluetooth manager |
+| `wiremix-git` | A simple TUI audio mixer for PipeWire |
 
 ### Apps
 

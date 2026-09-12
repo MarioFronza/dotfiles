@@ -47,6 +47,7 @@ inetutils
 wireless-regdb
 bluez
 bluez-utils
+bluetui
 tailscale
 ufw
 whois
@@ -72,8 +73,9 @@ lib32-vulkan-icd-loader
 libva-utils
 
 # --- Wayland desktop basics ---
-# grim, slurp, brightnessctl, xorg-xwayland aren't listed — archinstall's
-# Sway profile already installs them (see ../QUICKSTART.md).
+# grim, slurp, brightnessctl, xorg-xwayland, swaylock, swayidle aren't
+# listed — archinstall's Sway profile already installs them (see
+# ../QUICKSTART.md).
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 polkit
@@ -145,10 +147,10 @@ mise
 re2c # needed to build php from source via mise
 gd   # needed to build php from source via mise (--with-gd)
 
-# rust/ruby/dotnet aren't listed here — mise manages them (see ../mise/).
-# Exception: if an AUR build needs cargo/rustc and mise isn't active in
-# that shell, install rust system-wide too:
-# rust
+# ruby/dotnet aren't listed here — mise manages them (see ../mise/). rust is
+# an exception: wiremix-git (aur.txt) needs cargo to build, and install.sh
+# runs AUR installs with /usr/bin first on PATH, ahead of mise's rust.
+rust
 
 # --- File manager ---
 nautilus

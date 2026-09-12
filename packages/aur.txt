@@ -8,8 +8,10 @@
 claude-code
 rtk
 
-# --- Networking (bluetooth TUI, wifi's impala is in pacman.txt) ---
-bluetuith
+# --- TUI controls (wifi's impala, bluetooth's bluetui are in pacman.txt) ---
+# wiremix-git: only a -git (VCS) package exists in the AUR, so it compiles
+# from source at install time — needs `rust` from pacman.txt on PATH.
+wiremix-git
 
 # --- Apps ---
 1password

@@ -7,7 +7,7 @@ swaybar. Waybar's own config isn't tracked in this repo yet.
 `$mod+space`) all come from selecting the Sway profile in `archinstall`
 (see [`../QUICKSTART.md`](../QUICKSTART.md)). Everything else the config
 below calls (`waybar`, `wireplumber`/`wpctl`, `grim`, `playerctl`,
-`brightnessctl`, `bluetuith`) is installed via
+`brightnessctl`, `bluetui`) is installed via
 [`../packages/`](../packages/README.md).
 
 ## Copy
@@ -38,4 +38,4 @@ swaymsg reload
   will boost past unity gain into distortion.
 - No `swaylock`/`swayidle` set up currently — the idle section in the
   config is left commented as a starting point if that changes.
-- `$mod+Shift+b` opens `bluetuith` in a terminal for Bluetooth management.
+- `$mod+Shift+b` opens `bluetui` in a terminal for Bluetooth management.

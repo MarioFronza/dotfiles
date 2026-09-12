@@ -1,7 +1,7 @@
 # Wifi + Bluetooth (no NetworkManager)
 
 `iwd` handles wifi, `systemd-networkd` handles wired + DHCP,
-`systemd-resolved` handles DNS. `impala` and `bluetuith` are the TUIs on
+`systemd-resolved` handles DNS. `impala` and `bluetui` are the TUIs on
 top.
 
 ## Enable the services
@@ -35,5 +35,5 @@ sudo systemctl restart systemd-networkd
 
 ```bash
 impala      # wifi: connect, scan, forget networks
-bluetuith   # bluetooth: pair, connect, trust devices
+bluetui     # bluetooth: pair, connect, trust devices
 ```

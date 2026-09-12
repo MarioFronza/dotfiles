@@ -169,3 +169,13 @@ gd() {
     fi
   fi
 }
+
+# Power menu, same TUI shape as `wifi`/`bt`/`audio`.
+power() {
+  case "$(gum choose Lock Suspend Reboot Poweroff)" in
+    Lock) swaylock ;;
+    Suspend) systemctl suspend ;;
+    Reboot) systemctl reboot ;;
+    Poweroff) systemctl poweroff ;;
+  esac
+}
