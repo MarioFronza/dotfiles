@@ -3,7 +3,7 @@
 # 1. nvidia-open: NVIDIA's own open-source kernel modules. Only supports
 #    Turing (RTX 20xx) or newer. This is the one to use if the card
 #    qualifies — install with:
-#      grep -v '^#' gpu-nvidia.txt | xargs sudo pacman -S --needed
+#      sed 's/#.*//' gpu-nvidia.txt | awk 'NF{print $1}' | xargs sudo pacman -S --needed
 #
 # 2. Older card (pre-Turing, GTX 16xx and below): nvidia-open doesn't
 #    support it. Use nouveau instead — it's already built into the kernel

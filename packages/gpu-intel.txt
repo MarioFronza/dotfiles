@@ -1,6 +1,6 @@
 # Intel GPU — open-source driver (i915 is built into the kernel already,
 # this is Vulkan + VAAPI userspace). Install with:
-#   grep -v '^#' gpu-intel.txt | xargs sudo pacman -S --needed
+#   sed 's/#.*//' gpu-intel.txt | awk 'NF{print $1}' | xargs sudo pacman -S --needed
 
 vulkan-intel
 lib32-vulkan-intel

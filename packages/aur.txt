@@ -1,8 +1,12 @@
 # AUR packages — every name here was confirmed to exist via the AUR RPC API
 # (https://aur.archlinux.org/rpc/v5/info) before being listed. Installed by
 # install.sh, or manually with:
-#   grep -v '^#' aur.txt | xargs yay -S --needed
+#   sed 's/#.*//' aur.txt | awk 'NF{print $1}' | xargs yay -S --needed
 #
+
+# --- Dev tools ---
+claude-code
+rtk
 
 # --- Networking (bluetooth TUI, wifi's impala is in pacman.txt) ---
 bluetuith

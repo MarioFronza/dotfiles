@@ -1,7 +1,8 @@
 # Official repos only (core/extra/multilib) — every name here was checked
 # with `pacman -Ss ^name$` against this machine's repos. Nothing from a
-# third-party repo. Installed by install.sh, or manually with:
-#   grep -v '^#' pacman.txt | xargs sudo pacman -S --needed
+# third-party repo. lib32-* packages need [multilib] uncommented in
+# /etc/pacman.conf first. Installed by install.sh, or manually with:
+#   sed 's/#.*//' pacman.txt | awk 'NF{print $1}' | xargs sudo pacman -S --needed
 #
 # Not listed here on purpose (already comes from the Arch install itself):
 # base, linux, linux-firmware. GPU drivers are vendor-specific — see

@@ -62,6 +62,31 @@ ssh <user>@<ip>
 ## 5. Bootstrap
 
 See [`bootstrap/README.md`](bootstrap/README.md) — installs `git` +
-`base-devel`. No clone yet: browse the repo on GitHub and type each
-folder's README commands by hand, one at a time.
+`base-devel`, the bare minimum to clone this repo.
+
+## 6. Enable multilib
+
+Off by default. Needed for `lib32-*` packages and `steam` (see
+[`packages/README.md`](packages/README.md)) — 32-bit libs that Steam and
+Proton/Wine games depend on even on a 64-bit system.
+
+```bash
+sudo sed -i '/^#\[multilib\]/,/^#Include = \/etc\/pacman.d\/mirrorlist/ s/^#//' /etc/pacman.conf
+sudo pacman -Sy
+```
+
+## 7. Clone and install every package
+
+One shot, everything the machine needs (pacman + AUR + GPU driver):
+
+```bash
+git clone https://github.com/MarioFronza/dotfiles.git
+cd dotfiles/packages
+./install.sh [amd|intel|nvidia]
+```
+
+From here on, every module's README skips its own package list — it's
+already installed. Each README only covers copying its config files into
+place (see [`bootstrap/README.md`](bootstrap/README.md) for the
+suggested order).
 

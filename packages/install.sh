@@ -15,15 +15,22 @@ if [[ -n "$gpu" && ! -f "gpu-${gpu}.txt" ]]; then
   exit 1
 fi
 
+# Strips full-line and inline comments, keeping just the package name per line.
+pkgs() {
+  sed 's/#.*//' "$1" | awk 'NF{print $1}'
+}
+
 echo "==> Updating package databases"
 sudo pacman -Sy
 
 echo "==> Installing official repo packages"
-grep -v '^#' pacman.txt | grep -v '^$' | xargs sudo pacman -S --needed
+mapfile -t official_pkgs < <(pkgs pacman.txt)
+sudo pacman -S --needed "${official_pkgs[@]}"
 
 if [[ -n "$gpu" ]]; then
   echo "==> Installing $gpu GPU driver"
-  grep -v '^#' "gpu-${gpu}.txt" | grep -v '^$' | xargs sudo pacman -S --needed
+  mapfile -t gpu_pkgs < <(pkgs "gpu-${gpu}.txt")
+  sudo pacman -S --needed "${gpu_pkgs[@]}"
 fi
 
 if ! command -v yay &>/dev/null; then
@@ -35,7 +42,8 @@ if ! command -v yay &>/dev/null; then
 fi
 
 echo "==> Installing AUR packages"
-grep -v '^#' aur.txt | grep -v '^$' | xargs yay -S --needed
+mapfile -t aur_pkgs < <(pkgs aur.txt)
+yay -S --needed "${aur_pkgs[@]}"
 
 echo "==> Installing mise tool versions"
 mkdir -p ~/.config/mise
