@@ -7,11 +7,11 @@ each machine.
 
 ## Copy
 
-[`config.yml`](https://github.com/MarioFronza/dotfiles/blob/main/github/config.yml) → `~/.config/gh/config.yml`
+From the root of your clone of this repo:
 
 ```bash
 mkdir -p ~/.config/gh
-vim ~/.config/gh/config.yml
+cp github/config.yml ~/.config/gh/config.yml
 ```
 
 ## Apply

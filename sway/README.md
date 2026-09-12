@@ -12,13 +12,11 @@ below calls (`waybar`, `wireplumber`/`wpctl`, `grim`, `playerctl`,
 
 ## Copy
 
-| File | Target |
-| --- | --- |
-| [`config`](https://github.com/MarioFronza/dotfiles/blob/main/sway/config) | `~/.config/sway/config` |
+From the root of your clone of this repo:
 
 ```bash
 mkdir -p ~/.config/sway
-vim ~/.config/sway/config
+cp sway/config ~/.config/sway/config
 ```
 
 ## Apply

@@ -7,11 +7,16 @@ installed via [`../packages/`](../packages/README.md).
 
 ## Copy
 
-[`config.toml`](https://github.com/MarioFronza/dotfiles/blob/main/mise/config.toml) → `~/.config/mise/config.toml`
+From the root of your clone of this repo:
 
 ```bash
 mkdir -p ~/.config/mise
-vim ~/.config/mise/config.toml
+cp mise/config.toml ~/.config/mise/config.toml
+```
+
+## Apply
+
+```bash
 mise install
 ```
 

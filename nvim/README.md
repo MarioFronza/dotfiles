@@ -18,9 +18,13 @@ rm -rf ~/.config/nvim/.git
 
 ## Copy
 
-[`navigator.lua`](https://github.com/MarioFronza/dotfiles/blob/main/nvim/lua/plugins/navigator.lua) → `~/.config/nvim/lua/plugins/navigator.lua`
+From the root of your clone of this repo:
 
 ```bash
 mkdir -p ~/.config/nvim/lua/plugins
-vim ~/.config/nvim/lua/plugins/navigator.lua
+cp nvim/lua/plugins/navigator.lua ~/.config/nvim/lua/plugins/navigator.lua
 ```
+
+## Apply
+
+Open `nvim` — LazyVim syncs plugins automatically on first launch.

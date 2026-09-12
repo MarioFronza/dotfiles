@@ -13,11 +13,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Copy
 
-[`tmux.conf`](https://github.com/MarioFronza/dotfiles/blob/main/tmux/tmux.conf) → `~/.config/tmux/tmux.conf`
+From the root of your clone of this repo:
 
 ```bash
 mkdir -p ~/.config/tmux
-vim ~/.config/tmux/tmux.conf
+cp tmux/tmux.conf ~/.config/tmux/tmux.conf
 ```
 
 ## Apply

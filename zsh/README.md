@@ -21,23 +21,25 @@ Optional, per alias: `tmux` (`t`), `docker` (`sgpt`), `ddcutil`
 
 ## Copy
 
-No clone. Create each file, paste content from its GitHub page:
+From the root of your clone of this repo:
 
 | File | Target |
 | --- | --- |
-| [`zshrc`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/zshrc) | `~/.zshrc` |
-| [`shell`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/shell) | `~/.config/zsh/shell` |
-| [`init`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/init) | `~/.config/zsh/init` |
-| [`envs`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/envs) | `~/.config/zsh/envs` |
-| [`aliases`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/aliases) | `~/.config/zsh/aliases` |
-| [`functions`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/functions) | `~/.config/zsh/functions` |
-| [`prompt`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/prompt) | `~/.config/zsh/prompt` |
-| [`bindkeys`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/bindkeys) | `~/.config/zsh/bindkeys` |
-| [`inputrc`](https://github.com/MarioFronza/dotfiles/blob/main/zsh/inputrc) | `~/.inputrc` |
+| `zsh/zshrc` | `~/.zshrc` |
+| `zsh/shell` | `~/.config/zsh/shell` |
+| `zsh/init` | `~/.config/zsh/init` |
+| `zsh/envs` | `~/.config/zsh/envs` |
+| `zsh/aliases` | `~/.config/zsh/aliases` |
+| `zsh/functions` | `~/.config/zsh/functions` |
+| `zsh/prompt` | `~/.config/zsh/prompt` |
+| `zsh/bindkeys` | `~/.config/zsh/bindkeys` |
+| `zsh/inputrc` | `~/.inputrc` |
 
 ```bash
 mkdir -p ~/.config/zsh
-vim ~/.config/zsh/shell
+cp zsh/shell zsh/init zsh/envs zsh/aliases zsh/functions zsh/prompt zsh/bindkeys ~/.config/zsh/
+cp zsh/zshrc ~/.zshrc
+cp zsh/inputrc ~/.inputrc
 ```
 
 ## Apply
