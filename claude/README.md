@@ -14,17 +14,18 @@ optional) are installed via [`../packages/`](../packages/README.md).
 ## Copy
 
 49 files (agents, skills with their own scripts) — too many to paste by
-hand one at a time. Clone just to copy from, no script run:
+hand one at a time. From the root of your clone of this repo (the one
+you used for `packages/install.sh`):
 
 ```bash
-git clone --depth 1 https://github.com/MarioFronza/dotfiles /tmp/dotfiles
 mkdir -p ~/.claude/skills
-cp /tmp/dotfiles/claude/CLAUDE.md /tmp/dotfiles/claude/RTK.md \
-   /tmp/dotfiles/claude/settings.json /tmp/dotfiles/claude/statusline-command.sh ~/.claude/
-cp -r /tmp/dotfiles/claude/rules /tmp/dotfiles/claude/agents \
-      /tmp/dotfiles/claude/hooks /tmp/dotfiles/claude/themes ~/.claude/
-cp -r /tmp/dotfiles/claude/skills/* ~/.claude/skills/
-rm -rf /tmp/dotfiles
+cp claude/CLAUDE.md claude/RTK.md claude/settings.json claude/statusline-command.sh ~/.claude/
+cp -r claude/rules claude/agents claude/hooks claude/themes ~/.claude/
+cp -r claude/skills/* ~/.claude/skills/
 ```
 
-`settings.json` still says `"theme": "dark"` (the built-in one) — `themes/tokyo_night.json` is copied in but not switched to automatically. Pick it with `/theme` inside Claude Code.
+## Apply
+
+`settings.json` still says `"theme": "dark"` (the built-in one) —
+`themes/tokyo_night.json` is copied in but not switched to
+automatically. Pick it with `/theme` inside Claude Code.
