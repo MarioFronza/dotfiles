@@ -43,7 +43,10 @@ fi
 
 echo "==> Installing AUR packages"
 mapfile -t aur_pkgs < <(pkgs aur.txt)
-yay -S --needed "${aur_pkgs[@]}"
+# /usr/bin first: some PKGBUILDs call bare `python`/etc. expecting system
+# site-packages (e.g. python-installer). mise's activate hook prepends its
+# own tool bin dirs ahead of /usr/bin, which silently breaks those builds.
+PATH="/usr/bin:$PATH" yay -S --needed "${aur_pkgs[@]}"
 
 echo "==> Installing mise tool versions"
 mkdir -p ~/.config/mise

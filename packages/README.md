@@ -14,6 +14,19 @@ from the Arch install itself. Review the bootloader section in
 `pacman.txt` too (assumes Limine; swap for grub/systemd-boot if that's
 what the installer set up).
 
+`install.sh` forces `/usr/bin` to the front of `PATH` for the AUR step.
+Without it, [`mise`](../mise/README.md)'s `activate` hook (already
+running by the time you get here) puts its own tool bin dirs ahead of
+`/usr/bin`, so a bare `python`/`node`/etc. inside a PKGBUILD's
+`package()` silently resolves to mise's version instead of the system
+one — missing modules like `python-installer` that only exist in the
+system interpreter's site-packages. If you ever run `yay` for an AUR
+package by hand outside this script, prefix it the same way:
+
+```bash
+PATH="/usr/bin:$PATH" yay -S --needed <package>
+```
+
 ## Files
 
 - `pacman.txt` / `aur.txt` — everything compositor-agnostic
