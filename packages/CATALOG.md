@@ -118,14 +118,6 @@ how to install them.
 | `woff2-font-awesome` | Iconic font designed for Bootstrap - woff2 format |
 | `gnome-themes-extra` | Extra GNOME themes (legacy HighContrast icon theme and index files for Adwaita) |
 
-### Input method (CJK)
-
-| Package | Description |
-|---|---|
-| `fcitx5` | Next generation of fcitx, cross-platform input method framework |
-| `fcitx5-gtk` | Fcitx5 gtk im module and glib based dbus client library |
-| `fcitx5-qt` | Fcitx5 Qt Library (Qt5 & Qt6 integrations) |
-
 ### Terminal / shell
 
 | Package | Description |
@@ -186,16 +178,6 @@ how to install them.
 | `sushi` | A quick previewer for Nautilus |
 | `gnome-keyring` | Stores passwords and encryption keys |
 | `libsecret` | Library for storing and retrieving passwords and other secrets |
-
-### Printing
-
-| Package | Description |
-|---|---|
-| `cups` | OpenPrinting CUPS - daemon package |
-| `cups-browsed` | a helper daemon to browse the network for remote CUPS queues and IPP network printers |
-| `cups-filters` | OpenPrinting CUPS Filters |
-| `cups-pdf` | PDF printer for cups |
-| `system-config-printer` | A CUPS printer configuration tool and status applet |
 
 ### Media
 

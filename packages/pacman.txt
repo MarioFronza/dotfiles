@@ -100,11 +100,6 @@ adwaita-fonts
 woff2-font-awesome
 gnome-themes-extra
 
-# --- Input method (CJK) ---
-fcitx5
-fcitx5-gtk
-fcitx5-qt
-
 # --- Terminal / shell ---
 alacritty
 zsh
@@ -161,13 +156,6 @@ nautilus-python
 sushi
 gnome-keyring
 libsecret
-
-# --- Printing ---
-cups
-cups-browsed
-cups-filters
-cups-pdf
-system-config-printer
 
 # --- Media ---
 mpv
