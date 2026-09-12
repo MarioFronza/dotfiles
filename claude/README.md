@@ -13,7 +13,7 @@ optional) are installed via [`../packages/`](../packages/README.md).
 
 ## Copy
 
-49 files (agents, skills with their own scripts) — too many to paste by
+48 files (agents, skills with their own scripts) — too many to paste by
 hand one at a time. From the root of your clone of this repo (the one
 you used for `packages/install.sh`):
 

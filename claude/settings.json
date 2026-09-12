@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.cargo/bin/rtk hook claude"
+            "command": "rtk hook claude"
           }
         ]
       }
