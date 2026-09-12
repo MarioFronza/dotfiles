@@ -3,11 +3,7 @@
 `hosts.yml` (holds the auth token) is never tracked here — log in fresh on
 each machine.
 
-## Install (Arch)
-
-```bash
-sudo pacman -S github-cli
-```
+`github-cli` is installed via [`../packages/`](../packages/README.md).
 
 ## Copy
 

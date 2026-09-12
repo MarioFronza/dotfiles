@@ -1,15 +1,14 @@
 # alacritty
 
-## Install (Arch)
+`alacritty` and `ttf-jetbrains-mono-nerd` (the font) are installed via
+[`../packages/`](../packages/README.md).
 
-| Item | Used for |
-|---|---|
-| `alacritty` | terminal emulator |
-| `ttf-jetbrains-mono-nerd` | font (JetBrainsMono Nerd Font) |
-| [`alacritty-theme`](https://github.com/alacritty/alacritty-theme) | Tokyo Night (`themes/tokyo_night.toml`) |
+## Theme
+
+[`alacritty-theme`](https://github.com/alacritty/alacritty-theme) isn't a
+package — clone it for the Tokyo Night theme (`themes/tokyo_night.toml`):
 
 ```bash
-sudo pacman -S alacritty ttf-jetbrains-mono-nerd
 mkdir -p ~/.config/alacritty/themes
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 ```

@@ -3,10 +3,15 @@
 Just my one personal plugin override for [LazyVim](https://lazyvim.github.io).
 Everything else is the stock [LazyVim starter](https://github.com/LazyVim/starter).
 
-## Install (Arch)
+`neovim`, `ripgrep`, `fd`, `unzip`, and `lazygit` are installed via
+[`../packages/`](../packages/README.md).
+
+## Setup
+
+[LazyVim starter](https://github.com/LazyVim/starter) isn't a package —
+clone it:
 
 ```bash
-sudo pacman -S neovim ripgrep fd unzip lazygit
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 ```

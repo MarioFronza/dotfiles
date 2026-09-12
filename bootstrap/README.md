@@ -16,11 +16,18 @@ sudo pacman -Sy --needed git base-devel
 
 ## From here
 
-No clone yet — browse [the repo on GitHub](https://github.com/MarioFronza/dotfiles),
-open each folder's README, and copy its commands by hand: install (Arch),
-then copy the config into place. No scripts.
+Clone the repo for real, then install every pacman/AUR package in one
+shot — see [`../packages/README.md`](../packages/README.md):
+
+```bash
+git clone https://github.com/MarioFronza/dotfiles.git
+cd dotfiles/packages
+./install.sh [amd|intel|nvidia]
+```
 
 ## Order
 
-Suggested order after this one: `alacritty/`, `zsh/`, `tmux/`, `git/`,
-`github/`, `mise/`, `nvim/`, `sway/`, `claude/`.
+With packages installed, walk each folder's README for its "Copy" step
+(config files into place, no more per-folder install). Suggested order:
+`alacritty/`, `zsh/`, `tmux/`, `git/`, `github/`, `mise/`, `nvim/`,
+`sway/`, `claude/`.

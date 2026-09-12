@@ -2,13 +2,8 @@
 
 Global tool versions.
 
-## Build deps
-
-Some tools compile from source and need extra packages beyond `base-devel`:
-
-```bash
-sudo pacman -S re2c gd   # php
-```
+Build deps for tools that compile from source (`re2c`, `gd` for php) are
+installed via [`../packages/`](../packages/README.md).
 
 ## Copy
 

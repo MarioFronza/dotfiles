@@ -8,18 +8,8 @@ Not tracked (machine/account-specific, never commit):
 `shell-snapshots/`, `session-env/`, `cache/`, `backups/`, `downloads/`,
 `file-history/`, `paste-cache/`, `settings.local.json`.
 
-## Install (Arch)
-
-```bash
-yay -S claude-code
-# or: npm install -g @anthropic-ai/claude-code
-```
-
-RTK (referenced by the Bash hook in `settings.json`) is optional:
-
-```bash
-cargo install rtk
-```
+`claude-code` and `rtk` (referenced by the Bash hook in `settings.json`,
+optional) are installed via [`../packages/`](../packages/README.md).
 
 ## Copy
 
