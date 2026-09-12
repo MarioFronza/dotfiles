@@ -3,15 +3,12 @@
 Sway config for the ThinkPad. Status bar is `waybar`, not the native
 swaybar. Waybar's own config isn't tracked in this repo yet.
 
-## Install (Arch)
-
 `sway`, `swaybg`, `swayidle`, and `wmenu` (launcher, bound to
 `$mod+space`) all come from selecting the Sway profile in `archinstall`
-(see [`../QUICKSTART.md`](../QUICKSTART.md)) — nothing to install here.
-
-Everything else the config below calls (`waybar`, `grim`, `playerctl`,
-`brightnessctl`, `bluetuith`) is already in
-[`../packages/pacman.txt`](../packages/README.md).
+(see [`../QUICKSTART.md`](../QUICKSTART.md)). Everything else the config
+below calls (`waybar`, `wireplumber`/`wpctl`, `grim`, `playerctl`,
+`brightnessctl`, `bluetuith`) is installed via
+[`../packages/`](../packages/README.md).
 
 ## Copy
 
@@ -38,7 +35,9 @@ swaymsg reload
   only swaps the *internal* keyboard, so an external keyboard isn't
   affected. On another machine, find the right device name with `swaymsg
   -t get_inputs` and update the identifier, or drop the block entirely.
-- Volume/mic keys go through `pactl` (PulseAudio/pipewire-pulse), not `wpctl`.
+- Volume/mic keys go through `wpctl` (WirePlumber), capped at 100%
+  (`-l 1.0`) on raise — `pactl set-sink-volume +N%` has no ceiling and
+  will boost past unity gain into distortion.
 - No `swaylock`/`swayidle` set up currently — the idle section in the
   config is left commented as a starting point if that changes.
 - `$mod+Shift+b` opens `bluetuith` in a terminal for Bluetooth management.
