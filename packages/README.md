@@ -35,6 +35,10 @@ PATH="/usr/bin:$PATH" yay -S --needed <package>
   needing a Turing-or-newer card)
 - [`wifi-bluetooth.md`](wifi-bluetooth.md) — enabling `iwd`/`impala` and
   `bluetooth`/`bluetuith` after install.sh (no NetworkManager here)
+- [`CATALOG.md`](CATALOG.md) — every package above with a one-line
+  description, grouped the same way as the `.txt` files. Regenerate it
+  after editing any package list (pull descriptions from `pacman -Si`
+  for repo packages, the AUR RPC `info` endpoint for AUR ones).
 
 ## Dropped entirely
 
