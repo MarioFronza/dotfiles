@@ -3,10 +3,12 @@
 Sway config for the ThinkPad. Status bar is `waybar`, not the native
 swaybar. Waybar's own config isn't tracked in this repo yet.
 
-`sway`, `swaybg`, `swayidle`, and `wmenu` (launcher, bound to
-`$mod+space`) all come from selecting the Sway profile in `archinstall`
-(see [`../QUICKSTART.md`](../QUICKSTART.md)). Everything else the config
-below calls (`waybar`, `wireplumber`/`wpctl`, `grim`, `playerctl`,
+`sway`, `swaybg`, and `swayidle` come from selecting the Sway profile in
+`archinstall` (see [`../QUICKSTART.md`](../QUICKSTART.md)) — that
+profile also installs `wmenu`, which isn't used; remove it
+(`sudo pacman -Rns wmenu`). The launcher bound to `$mod+space` is
+[`fuzzel`](../fuzzel/README.md). Everything else the config below
+calls (`waybar`, `wireplumber`/`wpctl`, `grim`, `playerctl`,
 `brightnessctl`, `bluetui`, `jq`) is installed via
 [`../packages/`](../packages/README.md).
 
