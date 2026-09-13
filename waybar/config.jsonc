@@ -17,8 +17,6 @@
     ],
     "modules-right": [
         "mpd",
-        "idle_inhibitor",
-        "custom/separator",
         "pulseaudio",
         "custom/separator",
         "network",
@@ -30,27 +28,13 @@
         "memory",
         "custom/separator",
         "battery",
-        "battery#bat2",
-        "custom/separator",
-        "tray"
+        "battery#bat2"
     ],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "sway/workspaces": {
+        "disable-click": true,
+        "disable-scroll": true
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -87,24 +71,8 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
-    },
     "clock": {
-        "format": "{:L%A %H:%M}",
-        "format-alt": "{:L%d %B W%V %Y}",
+        "format": "{:L%d/%m %H:%M}",
         "tooltip": false
     },
     "cpu": {
@@ -124,7 +92,6 @@
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -150,15 +117,16 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip": false
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "",
         "format-muted": "",
+        "on-scroll-up": "",
+        "on-scroll-down": "",
         "format-icons": {
             "default": ["", "", ""]
         }

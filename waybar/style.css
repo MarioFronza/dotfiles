@@ -46,7 +46,6 @@ window#waybar {
 #scratchpad,
 #custom-media,
 #mpd,
-#idle_inhibitor,
 #pulseaudio,
 #network,
 #power-profiles-daemon,
@@ -55,7 +54,6 @@ window#waybar {
 #language,
 #battery,
 #clock,
-#tray,
 #custom-power {
   padding: 0 8px;
 }
@@ -66,14 +64,6 @@ window#waybar {
 
 #pulseaudio.muted {
   color: @inactive;
-}
-
-#idle_inhibitor.activated {
-  color: @accent;
-}
-
-#tray > .needs-attention {
-  color: @accent;
 }
 
 #custom-separator {
