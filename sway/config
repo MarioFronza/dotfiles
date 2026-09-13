@@ -20,6 +20,26 @@ default_floating_border pixel 2
 ### Output configuration
 output * bg ~/Pictures/Wallpapers/dinossaurs-v2/04-parasaurolophus-rainforest-night.png fill
 
+# Known-monitor tuning: refresh rate only. Position and workspace
+# assignment are generic (any external monitor), handled below by
+# scripts/monitor-setup.sh. 144Hz is the ceiling over HDMI at 2560x1440
+# — the ASUS VG27AQL3A's 180Hz overclock only shows up over DisplayPort
+# with its OSD overclock toggle on.
+output "ASUSTek COMPUTER INC VG27AQL3A T2LMQS038887" {
+    mode 2560x1440@144Hz
+}
+
+# Whichever external monitor is plugged in becomes the main work surface
+# (workspaces 1-9); the laptop panel always keeps workspace 10. Re-runs
+# on every output hotplug, so it works no matter which monitor connects.
+exec ~/.config/sway/scripts/monitor-setup.sh
+
+# Turn the laptop panel off/on with the lid, instead of leaving it lit
+# while docked. Suspend-on-lid-close is already skipped while docked
+# (systemd-logind's HandleLidSwitchDocked=ignore default).
+bindswitch --reload lid:on output eDP-1 disable
+bindswitch --reload lid:off output eDP-1 enable
+
 ### Input configuration
 input type:keyboard {
     xkb_layout "us"
@@ -29,6 +49,11 @@ input type:keyboard {
 # Switch Ctrl <-> Caps Lock
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options ctrl:swapcaps
+}
+
+# No acceleration curve: 1:1 with physical mouse movement
+input type:pointer {
+    accel_profile flat
 }
 
 ### Key bindings
