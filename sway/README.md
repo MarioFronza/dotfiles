@@ -5,8 +5,9 @@ swaybar. Waybar's own config isn't tracked in this repo yet.
 
 `sway`, `swaybg`, and `swayidle` come from selecting the Sway profile in
 `archinstall` (see [`../QUICKSTART.md`](../QUICKSTART.md)) — that
-profile also installs `wmenu`, which isn't used; remove it
-(`sudo pacman -Rns wmenu`). The launcher bound to `$mod+space` is
+profile also installs `wmenu` and `foot`, neither used; remove both
+(`sudo pacman -Rns wmenu foot`). Terminal is `alacritty` (`$term`),
+launcher bound to `$mod+space` is
 [`fuzzel`](../fuzzel/README.md). Everything else the config below
 calls (`waybar`, `wireplumber`/`wpctl`, `grim`, `playerctl`,
 `brightnessctl`, `bluetui`, `jq`) is installed via
