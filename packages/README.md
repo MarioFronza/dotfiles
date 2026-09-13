@@ -35,6 +35,8 @@ PATH="/usr/bin:$PATH" yay -S --needed <package>
   needing a Turing-or-newer card)
 - [`wifi-bluetooth.md`](wifi-bluetooth.md) — enabling `iwd`/`impala` and
   `bluetooth`/`bluetui` after install.sh (no NetworkManager here)
+- [`battery.md`](battery.md) — ThinkPad charge thresholds via
+  `thinkpad_acpi` (built into the kernel, no extra package)
 - [`CATALOG.md`](CATALOG.md) — every package above with a one-line
   description, grouped the same way as the `.txt` files. Regenerate it
   after editing any package list (pull descriptions from `pacman -Si`
