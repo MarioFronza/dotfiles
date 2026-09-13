@@ -24,4 +24,6 @@ Suggested order (also in [`bootstrap/README.md`](bootstrap/README.md)):
 - [`mise/`](mise/README.md) — language/tool versions
 - [`nvim/`](nvim/README.md) — editor
 - [`sway/`](sway/README.md) — Sway
+- [`fuzzel/`](fuzzel/README.md) — app launcher
+- [`waybar/`](waybar/README.md) — status bar
 - [`claude/`](claude/README.md) — Claude Code config

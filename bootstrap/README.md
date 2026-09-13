@@ -36,4 +36,4 @@ With packages installed, `cd` into the clone from the step above and
 walk each folder's README for its "Copy" step (`cp` into place, no more
 per-folder install — every module's commands assume you're standing at
 the repo root). Suggested order: `alacritty/`, `zsh/`, `tmux/`, `git/`,
-`github/`, `mise/`, `nvim/`, `sway/`, `claude/`.
+`github/`, `mise/`, `nvim/`, `sway/`, `fuzzel/`, `waybar/`, `claude/`.

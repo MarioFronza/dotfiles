@@ -1,7 +1,7 @@
 # sway
 
-Sway config for the ThinkPad. Status bar is `waybar`, not the native
-swaybar. Waybar's own config isn't tracked in this repo yet.
+Sway config for the ThinkPad. Status bar is [`waybar`](../waybar/README.md),
+not the native swaybar.
 
 `sway`, `swaybg`, and `swayidle` come from selecting the Sway profile in
 `archinstall` (see [`../QUICKSTART.md`](../QUICKSTART.md)) — that
@@ -9,9 +9,8 @@ profile also installs `wmenu` and `foot`, neither used; remove both
 (`sudo pacman -Rns wmenu foot`). Terminal is `alacritty` (`$term`),
 launcher bound to `$mod+space` is
 [`fuzzel`](../fuzzel/README.md). Everything else the config below
-calls (`waybar`, `wireplumber`/`wpctl`, `grim`, `playerctl`,
-`brightnessctl`, `bluetui`, `jq`) is installed via
-[`../packages/`](../packages/README.md).
+calls (`wireplumber`/`wpctl`, `grim`, `playerctl`, `brightnessctl`,
+`jq`) is installed via [`../packages/`](../packages/README.md).
 
 ## Copy
 
