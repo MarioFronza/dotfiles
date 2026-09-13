@@ -1,9 +1,9 @@
-@define-color background #1a1b26;
-@define-color foreground #a9b1d6;
-@define-color accent #7aa2f7;
-@define-color inactive #707590;
-@define-color warning #e0af68;
-@define-color critical #f7768e;
+@define-color background #100f0f;
+@define-color foreground #cecdc3;
+@define-color accent #4385be;
+@define-color inactive #878580;
+@define-color warning #d0a215;
+@define-color critical #d14d41;
 
 * {
   background-color: @background;
@@ -40,26 +40,19 @@
   opacity: 0.5;
 }
 
-#battery,
-#pulseaudio {
-  min-width: 12px;
-  margin: 0 7.5px;
+#tray,
+#custom-expand-icon,
+#bluetooth,
+#network,
+#pulseaudio,
+#battery {
+  padding: 0 8px;
 }
 
-#tray {
-  margin-right: 16px;
-}
-
-#bluetooth {
-  margin-right: 17px;
-}
-
-#network {
-  margin-right: 13px;
-}
-
-#custom-expand-icon {
-  margin-right: 18px;
+#tray-expander,
+.tray-group-item {
+  padding: 0;
+  margin: 0;
 }
 
 tooltip {
@@ -69,7 +62,7 @@ tooltip {
 }
 
 #clock {
-  margin-left: 8.75px;
+  padding: 0 8px;
 }
 
 #battery.warning {

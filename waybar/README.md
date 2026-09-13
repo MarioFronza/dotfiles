@@ -1,18 +1,15 @@
 # waybar
 
-Status bar for [`../sway/`](../sway/README.md). Layout adapted from
-[Omarchy](https://github.com/basecamp/omarchy)'s waybar config
-(`hyprland/workspaces` → `sway/workspaces`, dropped everything tied to
-Omarchy's own scripts — `custom/omarchy`, `custom/update`,
-`custom/weather`, `custom/voxtype`, and the screenrecording/idle/
-notification-silencing indicators). Colors are the same Tokyo Night
-palette as [`../fuzzel/`](../fuzzel/README.md) and
-[`../claude/themes/tokyo_night.json`](../claude/themes/tokyo_night.json).
+Status bar for [`../sway/`](../sway/README.md), `sway/workspaces` on
+the left, `clock` centered, tray/bluetooth/network/pulseaudio/battery
+on the right. Colors are the same
+[Flexoki](https://github.com/kepano/flexoki) dark palette as
+[`../fuzzel/`](../fuzzel/README.md).
 
-Click actions call this machine's own TUIs instead of Omarchy's
-`omarchy-launch-*` wrappers: network → `impala`, bluetooth → `bluetui`,
-pulseaudio → `wiremix` (right-click: mute via `pamixer -t`), battery →
-the `power` shell function ([`../zsh/functions`](../zsh/functions)).
+Click actions call this machine's own TUIs: network → `impala`,
+bluetooth → `bluetui`, pulseaudio → `wiremix` (right-click: mute via
+`pamixer -t`), battery → the `power` shell function
+([`../zsh/functions`](../zsh/functions)).
 
 `waybar` itself is installed via [`../packages/`](../packages/README.md).
 
@@ -40,9 +37,16 @@ the Sway config)
   files with `cp`, don't retype them**. Hand-typing them (even via an
   editor) can silently turn a glyph into an empty string with no
   visible diff, which looks identical in most terminals/renderers but
-  makes that bar segment disappear. This actually happened once with
-  the `bluetooth` and `pulseaudio` icons while adapting this config —
-  not obvious until checked byte-by-byte (`xxd`).
+  makes that bar segment disappear. This happened three times while
+  adapting this config (`bluetooth`, `pulseaudio`, and the tray's own
+  expand arrow) — not obvious until checked byte-by-byte (`xxd`), and
+  in the tray's case it also looked like a spacing bug (a much bigger
+  gap before the next module) rather than a missing icon.
+- `group/tray-expander` hides `tray` behind an arrow (`custom/expand-icon`),
+  revealed on hover (`drawer.click-to-reveal` defaults to `false`). The
+  hidden module gets `drawer.children-class` (`tray-group-item`) — style
+  that class directly (`margin: 0; padding: 0;`), not just `#tray-expander`;
+  the group wrapper's own box isn't where the extra spacing came from.
 - `pulseaudio`'s icon comes from `format-icons.headphone` here, not
   `.default` — the default sink on this machine is literally named
   "Headphones" (`wpctl status`), so the headphone-specific field wins.
