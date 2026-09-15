@@ -96,6 +96,7 @@ how to install them.
 | `polkit-gnome` | Legacy polkit authentication agent for GNOME |
 | `sddm` | QML based X11 and Wayland display manager |
 | `mako` | Lightweight notification daemon for Wayland |
+| `swayosd` | GTK based on-screen display for volume, brightness, and lock keys |
 | `fuzzel` | Application launcher for wlroots based Wayland compositors |
 | `cliphist` | wayland clipboard manager |
 | `wl-clipboard` | Command-line copy/paste utilities for Wayland |

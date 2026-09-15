@@ -7,10 +7,11 @@ not the native swaybar.
 `archinstall` (see [`../QUICKSTART.md`](../QUICKSTART.md)) — that
 profile also installs `wmenu` and `foot`, neither used; remove both
 (`sudo pacman -Rns wmenu foot`). Terminal is `alacritty` (`$term`),
-launcher bound to `$mod+space` is
-[`fuzzel`](../fuzzel/README.md). Everything else the config below
-calls (`wireplumber`/`wpctl`, `grim`, `playerctl`, `brightnessctl`,
-`jq`) is installed via [`../packages/`](../packages/README.md).
+launcher bound to `$mod+space` is [`fuzzel`](../fuzzel/README.md),
+notifications are [`mako`](../mako/README.md), volume/brightness OSD
+is [`swayosd`](../swayosd/README.md). Everything else the config below
+calls (`wireplumber`, `grim`, `playerctl`, `jq`) is installed via
+[`../packages/`](../packages/README.md).
 
 ## Copy
 
@@ -36,9 +37,10 @@ swaymsg reload
   only swaps the *internal* keyboard, so an external keyboard isn't
   affected. On another machine, find the right device name with `swaymsg
   -t get_inputs` and update the identifier, or drop the block entirely.
-- Volume/mic keys go through `wpctl` (WirePlumber), capped at 100%
-  (`-l 1.0`) on raise — `pactl set-sink-volume +N%` has no ceiling and
-  will boost past unity gain into distortion.
+- Volume/mic/brightness keys go through `swayosd-client`, which shows
+  the on-screen indicator and wraps WirePlumber/brightnessctl itself —
+  capped at 100% volume (`max_volume` in
+  [`../swayosd/`](../swayosd/README.md)), no boost past unity gain.
 - No `swaylock`/`swayidle` set up currently — the idle section in the
   config is left commented as a starting point if that changes.
 - `$mod+Shift+b` opens `bluetui` in a terminal for Bluetooth management.

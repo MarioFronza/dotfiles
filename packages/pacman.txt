@@ -82,6 +82,7 @@ polkit
 polkit-gnome
 sddm
 mako
+swayosd
 fuzzel
 cliphist
 wl-clipboard

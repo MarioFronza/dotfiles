@@ -34,6 +34,10 @@ output "ASUSTek COMPUTER INC VG27AQL3A T2LMQS038887" {
 # on every output hotplug, so it works no matter which monitor connects.
 exec ~/.config/sway/scripts/monitor-setup.sh
 
+# Notifications (mako) and volume/brightness/lock-key OSD (swayosd)
+exec mako
+exec swayosd-server
+
 # Turn the laptop panel off/on with the lid, instead of leaving it lit
 # while docked. Suspend-on-lid-close is already skipped while docked
 # (systemd-logind's HandleLidSwitchDocked=ignore default).
@@ -137,11 +141,12 @@ bindsym $mod+r mode "resize"
 
 # Utilities
 #
-# Volume via WirePlumber (capped at 100%, no boost)
-bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
-bindsym --locked XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+# Volume/brightness via SwayOSD (capped at 100% in swayosd/config.toml,
+# no boost) — shows the on-screen indicator, not just a silent set
+bindsym --locked XF86AudioMute exec swayosd-client --output-volume mute-toggle
+bindsym --locked XF86AudioLowerVolume exec swayosd-client --output-volume -5
+bindsym --locked XF86AudioRaiseVolume exec swayosd-client --output-volume +5
+bindsym --locked XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
 
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioPause exec playerctl play-pause
@@ -149,8 +154,8 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioStop exec playerctl stop
 
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec swayosd-client --brightness -5
+bindsym --locked XF86MonBrightnessUp exec swayosd-client --brightness +5
 
 bindsym Print exec grim
 
