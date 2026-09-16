@@ -21,7 +21,7 @@
         "custom/separator",
         "network",
         "custom/separator",
-        "power-profiles-daemon",
+        "custom/power-profile",
         "custom/separator",
         "cpu",
         "custom/separator",
@@ -99,17 +99,6 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -142,6 +131,11 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power-profile": {
+        "exec": "$HOME/.config/waybar/power-profile.sh",
+        "return-type": "json",
+        "interval": 5
     },
     "custom/separator": {
         "format": "│",
