@@ -162,6 +162,9 @@ bindsym Print exec grim
 # Bluetooth TUI
 bindsym $mod+Shift+b exec $term -e bluetui
 
+# Power profile TUI
+bindsym $mod+Shift+p exec $term -e ~/.config/sway/scripts/power-profile-tui.sh
+
 # Status bar: waybar, not the native swaybar
 bar {
     swaybar_command waybar

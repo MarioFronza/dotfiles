@@ -10,7 +10,7 @@ profile also installs `wmenu` and `foot`, neither used; remove both
 launcher bound to `$mod+space` is [`fuzzel`](../fuzzel/README.md),
 notifications are [`mako`](../mako/README.md), volume/brightness OSD
 is [`swayosd`](../swayosd/README.md). Everything else the config below
-calls (`wireplumber`, `grim`, `playerctl`, `jq`) is installed via
+calls (`wireplumber`, `grim`, `playerctl`, `jq`, `gum`) is installed via
 [`../packages/`](../packages/README.md).
 
 ## Copy
@@ -44,6 +44,10 @@ swaymsg reload
 - No `swaylock`/`swayidle` set up currently — the idle section in the
   config is left commented as a starting point if that changes.
 - `$mod+Shift+b` opens `bluetui` in a terminal for Bluetooth management.
+- `$mod+Shift+p` opens `scripts/power-profile-tui.sh` (a `gum choose`
+  picker over the power-profiles-daemon dbus API) to switch power
+  profile — the waybar icon (`custom/power-profile`) is read-only by
+  design, so this is the only way to change it.
 - **Mouse has no acceleration curve** (`input type:pointer { accel_profile
   flat }`) — 1:1 with physical movement.
 - **Multi-monitor**: `scripts/monitor-setup.sh` runs once at Sway startup
