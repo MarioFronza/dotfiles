@@ -23,7 +23,6 @@ Suggested order (also in [`bootstrap/README.md`](bootstrap/README.md)):
 - [`github/`](github/README.md) — gh CLI config
 - [`mise/`](mise/README.md) — language/tool versions
 - [`nvim/`](nvim/README.md) — editor
-- [`sway/`](sway/README.md) — Sway
-- [`fuzzel/`](fuzzel/README.md) — app launcher
-- [`waybar/`](waybar/README.md) — status bar
+- [`sway/`](sway/README.md) — Sway (includes waybar)
+- [`hypr/`](hypr/README.md) — personal Hyprland overrides (Omarchy-dependent, not standalone)
 - [`claude/`](claude/README.md) — Claude Code config
