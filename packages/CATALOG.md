@@ -10,7 +10,7 @@ how to install them.
 ### Build essentials / core utilities
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `base-devel` | Basic tools to build Arch Linux packages |
 | `sudo` | Give certain users the ability to run some commands as root |
 | `man-db` | A utility for reading man pages |
@@ -21,7 +21,7 @@ how to install them.
 ### Bootloader / snapshots
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `limine` | An advanced, portable, multiprotocol bootloader |
 | `snapper` | A tool for managing BTRFS and LVM snapshots |
 | `plymouth` | Graphical boot splash screen |
@@ -33,7 +33,7 @@ how to install them.
 ### Filesystem / disk tools
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `dosfstools` | DOS filesystem utilities |
 | `exfatprogs` | exFAT filesystem userspace utilities for the Linux Kernel exfat driver |
 | `dua-cli` | A tool to conveniently learn about the disk usage of directories, fast! |
@@ -46,7 +46,7 @@ how to install them.
 ### Networking (iwd for wifi, no NetworkManager)
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `iwd` | Internet Wireless Daemon |
 | `impala` | TUI for managing wifi |
 | `avahi` | Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour) |
@@ -65,7 +65,7 @@ how to install them.
 ### Audio
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `pipewire` | Low-latency audio/video router and processor |
 | `pipewire-alsa` | Low-latency audio/video router and processor - ALSA configuration |
 | `pipewire-jack` | Low-latency audio/video router and processor - JACK replacement |
@@ -79,7 +79,7 @@ how to install them.
 ### Graphics (vendor-agnostic base; see gpu-*.txt for the driver)
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `mesa` | Open-source OpenGL drivers |
 | `lib32-mesa` | Open-source OpenGL drivers - 32-bit |
 | `vulkan-icd-loader` | Vulkan Installable Client Driver (ICD) Loader |
@@ -89,7 +89,7 @@ how to install them.
 ### Wayland desktop basics
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `xdg-desktop-portal-gtk` | A backend implementation for xdg-desktop-portal using GTK |
 | `xdg-desktop-portal-wlr` | xdg-desktop-portal backend for wlroots |
 | `polkit` | Application development toolkit for controlling system-wide privileges |
@@ -111,7 +111,7 @@ how to install them.
 ### Fonts / theming
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `fontconfig` | Library for configuring and customizing font access |
 | `noto-fonts` | Google Noto TTF fonts |
 | `noto-fonts-cjk` | Google Noto CJK fonts |
@@ -124,7 +124,7 @@ how to install them.
 ### Terminal / shell
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `alacritty` | A cross-platform, GPU-accelerated terminal emulator |
 | `zsh` | A very advanced and programmable command interpreter (shell) for UNIX |
 | `zsh-autosuggestions` | Fish-like autosuggestions for zsh |
@@ -153,7 +153,7 @@ how to install them.
 ### Editor / dev tools
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `neovim` | Fork of Vim aiming to improve user experience, plugins, and GUIs |
 | `git` | the fast distributed version control system |
 | `github-cli` | The GitHub CLI |
@@ -176,7 +176,7 @@ how to install them.
 ### File manager
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `nautilus` | Default file manager for GNOME |
 | `nautilus-python` | Python bindings for the Nautilus Extension API |
 | `sushi` | A quick previewer for Nautilus |
@@ -186,7 +186,7 @@ how to install them.
 ### Media
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `mpv` | a free, open source, and cross-platform media player |
 | `mpv-mpris` | MPRIS plugin for mpv |
 | `ffmpegthumbnailer` | Lightweight video thumbnailer that can be used by file managers |
@@ -206,7 +206,7 @@ how to install them.
 ### Office / productivity
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `libreoffice-fresh` | LibreOffice branch which contains new features and program enhancements |
 | `evince` | Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt) |
 | `xournalpp` | Handwriting notetaking software with PDF annotation support |
@@ -225,7 +225,7 @@ how to install them.
 ### Virtualization / gaming
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `virtualbox` | Powerful x86 virtualization for enterprise as well as home use |
 | `qemu-user-static-binfmt` | Binary format rules for QEMU static user mode emulation |
 | `steam` | Valve's digital software delivery system |
@@ -233,7 +233,7 @@ how to install them.
 ### Hardware-specific utilities
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `ddcutil` | Query and change Linux monitor settings using DDC/CI and USB. |
 | `bolt` | Thunderbolt 3 device manager |
 | `fwupd` | Simple daemon to allow session software to update firmware |
@@ -242,7 +242,7 @@ how to install them.
 ### Security / reverse engineering (dual-use, personal research tooling)
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `ghidra` | Software reverse engineering framework |
 | `radare2` | Open-source tools to disasm, debug, analyze and manipulate binary files |
 | `jadx` | Command line and GUI tools to produce Java source code from Android Dex and APK files |
@@ -252,7 +252,7 @@ how to install them.
 ### Misc
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `inotify-tools` | inotify-tools is a C library and a set of command-line programs for Linux providing a simple interface to inotify. |
 | `unzip` | For extracting and viewing files in .zip archives |
 | `python-gobject` | Python bindings for GLib/GObject/GIO/GTK |
@@ -263,14 +263,14 @@ how to install them.
 ### AMD
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `vulkan-radeon` | Open-source Vulkan driver for AMD GPUs |
 | `lib32-vulkan-radeon` | Open-source Vulkan driver for AMD GPUs - 32-bit |
 
 ### Intel
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `vulkan-intel` | Open-source Vulkan driver for Intel GPUs |
 | `lib32-vulkan-intel` | Open-source Vulkan driver for Intel GPUs - 32-bit |
 | `intel-media-driver` | Intel Media Driver for VAAPI — Broadwell+ iGPUs |
@@ -278,7 +278,7 @@ how to install them.
 ### NVIDIA
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `nvidia-open` | NVIDIA open kernel modules |
 | `nvidia-utils` | NVIDIA drivers utilities |
 | `lib32-nvidia-utils` | NVIDIA drivers utilities (32-bit) |
@@ -289,7 +289,7 @@ how to install them.
 ### Dev tools
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `claude-code` | An agentic coding tool that lives in your terminal |
 | `rtk` | CLI proxy that reduces LLM token consumption by 60-90% on common dev commands |
 
@@ -302,7 +302,7 @@ how to install them.
 ### Apps
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `1password` | Password manager and secure wallet |
 | `1password-cli` | 1Password command line tool |
 | `spotify` | A proprietary music streaming service |
@@ -312,14 +312,14 @@ how to install them.
 ### Bootloader (Limine + Snapper integration)
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `limine-mkinitcpio-hook` | Install kernels for the Limine bootloader. |
 | `limine-snapper-sync` | Integrates Limine boot entries with Snapper snapshots. |
 
 ### Misc tools
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `xdg-terminal-exec` | Proposed standard to launching desktop apps with Terminal=true |
 | `cliamp` | A retro terminal music player inspired by Winamp 2.x |
 | `tensaku` | Modern screenshot annotation tool for Wayland |
@@ -331,14 +331,14 @@ how to install them.
 ### Android / mobile RE
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `android-apktool` | A tool for reengineering Android apk files |
 | `android-sdk-build-tools-36` | Build-Tools for Google Android SDK (aapt, aidl, dexdump, dx, llvm-rs-cc) |
 
 ### Security / reverse engineering
 
 | Package | Description |
-|---|---|
+| --- | --- |
 | `burpsuite` | An integrated platform for performing security testing of web applications (free edition) |
 | `dex2jar` | Tools to work with android .dex and java .class files. ThexXTURBOXx's fork. |
 | `python-frida-bin` | Inject JavaScript to explore native apps on Windows, Mac, Linux, iOS and Android. Python 3 binary version from PyPi |
