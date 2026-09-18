@@ -28,8 +28,5 @@ require("default.hypr.toggles")
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
 
--- Alacritty fully opaque (remove default translucency/"blur" look).
-o.window("^Alacritty$", { tag = "-default-opacity", opacity = "1 1" })
-
 -- Added by hyprmoncfg: its generated monitor rules load last, so nothing before this can override the applied layout.
 dofile((os.getenv("XDG_CONFIG_HOME") or os.getenv("HOME") .. "/.config") .. "/hypr/hyprmoncfg-monitors.lua")
