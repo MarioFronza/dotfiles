@@ -41,24 +41,30 @@ swaymsg reload
   the on-screen indicator and wraps WirePlumber/brightnessctl itself —
   capped at 100% volume (`max_volume` in
   [`../swayosd/`](../swayosd/README.md)), no boost past unity gain.
-- No `swaylock`/`swayidle` set up currently — the idle section in the
-  config is left commented as a starting point if that changes.
 - `$mod+Shift+b` opens `bluetui` in a terminal for Bluetooth management.
-- `$mod+Shift+p` opens `scripts/power-profile-tui.sh` (a `gum choose`
-  picker over the power-profiles-daemon dbus API) to switch power
+- `$mod+Shift+p` opens `perf` (the `zsh/functions` TUI over the
+  power-profiles-daemon dbus API) in a terminal, to switch CPU perf
   profile — the waybar icon (`custom/power-profile`) is read-only by
   design, so this is the only way to change it.
+- `$mod+Shift+Escape` opens `power` (the `zsh/functions` TUI for
+  Lock/Suspend/Reboot/Poweroff) in a terminal.
+- `$mod+Shift+w` opens `impala` (wifi), `$mod+Shift+a` opens `wiremix`
+  (audio) — same `zsh/aliases` tools as `wifi`/`audio` from a terminal.
 - **Mouse has no acceleration curve** (`input type:pointer { accel_profile
   flat }`) — 1:1 with physical movement.
 - **Multi-monitor**: `scripts/monitor-setup.sh` runs once at Sway startup
   and again on every output hotplug. Whichever monitor isn't the laptop
-  panel (`eDP-1`) becomes the main surface for workspaces 1-9; `eDP-1`
-  always keeps workspace 10 — no per-monitor identifier needed for this
-  part. To pin a specific resolution/refresh rate for a monitor you use
-  often, add an `output "<make> <model> <serial>"` block in `config`
-  (get the identifier from `swaymsg -t get_outputs`) — optional,
-  otherwise Sway just uses that monitor's own default mode.
-- **Lid switch**: `bindswitch lid:on/off` disables/enables `eDP-1` when
-  the lid closes/opens, instead of leaving the panel lit. Suspending on
-  lid-close while docked is already skipped by systemd-logind's
-  `HandleLidSwitchDocked=ignore` default — no config needed there.
+  panel (`eDP-1`) becomes the main surface for workspaces 1-9, set to its
+  highest advertised resolution (refresh rate as tiebreaker) — no
+  per-monitor identifier or hardcoded `mode` block needed. `eDP-1` always
+  keeps workspace 10.
+- **Lid switch**: `scripts/lid-close.sh` disables `eDP-1` on lid close
+  only when an external monitor is active (docked) — avoids leaving the
+  panel lit while docked, where systemd-logind's
+  `HandleLidSwitchDocked=ignore` default means no suspend happens.
+  Undocked, lid close leaves `eDP-1` alone and suspends normally (the
+  panel blanks via hardware, not sway); disabling it there raced with
+  `idle-lock.sh`'s `before-sleep` lock, sometimes leaving a black,
+  unresponsive screen on resume. `bindswitch lid:off output eDP-1
+  enable` re-enables unconditionally either way. See
+  [`../swaylock/README.md`](../swaylock/README.md) for the lock itself.

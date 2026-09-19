@@ -179,3 +179,19 @@ power() {
     Poweroff) systemctl poweroff ;;
   esac
 }
+
+# CPU perf profile picker, same TUI shape as `power`.
+perf() {
+  local current profiles chosen
+  current=$(busctl --system --json=short get-property net.hadess.PowerProfiles \
+    /net/hadess/PowerProfiles net.hadess.PowerProfiles ActiveProfile | jq -r .data)
+  profiles=$(busctl --system --json=short get-property net.hadess.PowerProfiles \
+    /net/hadess/PowerProfiles net.hadess.PowerProfiles Profiles \
+    | jq -r '.data[].Profile.data')
+
+  chosen=$(echo "$profiles" | gum choose --header "CPU perf profile (current: $current)")
+  [ -z "$chosen" ] && return
+
+  busctl --system set-property net.hadess.PowerProfiles /net/hadess/PowerProfiles \
+    net.hadess.PowerProfiles ActiveProfile s "$chosen"
+}

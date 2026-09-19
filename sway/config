@@ -1,4 +1,3 @@
-### Variables
 set $mod Mod4
 set $left h
 set $down j
@@ -9,58 +8,33 @@ set $menu fuzzel
 
 font pango:JetBrainsMono Nerd Font 10
 
-### Appearance
-#
-# Gaps between windows/screen edge, and a plain pixel border instead of
-# the default titlebar (no app title text).
 gaps inner 8
 default_border pixel 2
 default_floating_border pixel 2
 
-### Output configuration
-output * bg ~/Pictures/Wallpapers/dinossaurs-v2/04-parasaurolophus-rainforest-night.png fill
+output * bg ~/Pictures/Wallpapers/dark-sun.jpg fill
 
-# Known-monitor tuning: refresh rate only. Position and workspace
-# assignment are generic (any external monitor), handled below by
-# scripts/monitor-setup.sh. 144Hz is the ceiling over HDMI at 2560x1440
-# — the ASUS VG27AQL3A's 180Hz overclock only shows up over DisplayPort
-# with its OSD overclock toggle on.
-output "ASUSTek COMPUTER INC VG27AQL3A T2LMQS038887" {
-    mode 2560x1440@144Hz
-}
-
-# Whichever external monitor is plugged in becomes the main work surface
-# (workspaces 1-9); the laptop panel always keeps workspace 10. Re-runs
-# on every output hotplug, so it works no matter which monitor connects.
 exec ~/.config/sway/scripts/monitor-setup.sh
-
-# Notifications (mako) and volume/brightness/lock-key OSD (swayosd)
+exec ~/.config/sway/scripts/idle-lock.sh
 exec mako
 exec swayosd-server
 
-# Turn the laptop panel off/on with the lid, instead of leaving it lit
-# while docked. Suspend-on-lid-close is already skipped while docked
-# (systemd-logind's HandleLidSwitchDocked=ignore default).
-bindswitch --reload lid:on output eDP-1 disable
+bindswitch --reload lid:on exec ~/.config/sway/scripts/lid-close.sh
 bindswitch --reload lid:off output eDP-1 enable
 
-### Input configuration
 input type:keyboard {
     xkb_layout "us"
     xkb_variant "intl"
 }
 
-# Switch Ctrl <-> Caps Lock
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options ctrl:swapcaps
 }
 
-# No acceleration curve: 1:1 with physical mouse movement
 input type:pointer {
     accel_profile flat
 }
 
-### Key bindings
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+space exec $menu
@@ -68,7 +42,6 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-# Moving around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
@@ -87,7 +60,6 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Workspaces
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -109,7 +81,6 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# Layout
 bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+s layout stacking
@@ -120,11 +91,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+Tab focus mode_toggle
 bindsym $mod+a focus parent
 
-# Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-# Resizing
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
@@ -139,10 +108,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Utilities
-#
-# Volume/brightness via SwayOSD (capped at 100% in swayosd/config.toml,
-# no boost) — shows the on-screen indicator, not just a silent set
 bindsym --locked XF86AudioMute exec swayosd-client --output-volume mute-toggle
 bindsym --locked XF86AudioLowerVolume exec swayosd-client --output-volume -5
 bindsym --locked XF86AudioRaiseVolume exec swayosd-client --output-volume +5
@@ -159,13 +124,12 @@ bindsym --locked XF86MonBrightnessUp exec swayosd-client --brightness +5
 
 bindsym Print exec grim
 
-# Bluetooth TUI
 bindsym $mod+Shift+b exec $term -e bluetui
+bindsym $mod+Shift+p exec $term -e zsh -ic perf
+bindsym $mod+Shift+Escape exec $term -e zsh -ic power
+bindsym $mod+Shift+w exec $term -e impala
+bindsym $mod+Shift+a exec $term -e wiremix
 
-# Power profile TUI
-bindsym $mod+Shift+p exec $term -e ~/.config/sway/scripts/power-profile-tui.sh
-
-# Status bar: waybar, not the native swaybar
 bar {
     swaybar_command waybar
 }

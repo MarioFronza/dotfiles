@@ -24,5 +24,6 @@ Suggested order (also in [`bootstrap/README.md`](bootstrap/README.md)):
 - [`mise/`](mise/README.md) — language/tool versions
 - [`nvim/`](nvim/README.md) — editor
 - [`sway/`](sway/README.md) — Sway (includes waybar)
+- [`swaylock/`](swaylock/README.md) — lock screen
 - [`hypr/`](hypr/README.md) — personal Hyprland overrides (Omarchy-dependent, not standalone)
 - [`claude/`](claude/README.md) — Claude Code config
