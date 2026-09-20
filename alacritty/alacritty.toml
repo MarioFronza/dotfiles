@@ -1,4 +1,4 @@
-general.import = ["~/.config/alacritty/flexoki.toml"]
+general.import = ["~/.config/alacritty/themes/themes/tokyo_night.toml"]
 
 [env]
 TERM = "xterm-256color"
