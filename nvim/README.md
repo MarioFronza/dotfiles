@@ -1,12 +1,7 @@
 # nvim
 
-My personal plugin overrides for [LazyVim](https://lazyvim.github.io).
+Just my one personal plugin override for [LazyVim](https://lazyvim.github.io).
 Everything else is the stock [LazyVim starter](https://github.com/LazyVim/starter).
-
-Colorscheme is [Flexoki](https://github.com/kepano/flexoki-neovim) dark,
-same theme as [`alacritty`](../alacritty/README.md), [`swaylock`](../swaylock/README.md),
-[`fuzzel`](../fuzzel/README.md), [`mako`](../mako/README.md),
-[`swayosd`](../swayosd/README.md) and [`waybar`](../waybar/README.md).
 
 `neovim`, `ripgrep`, `fd`, `unzip`, and `lazygit` are installed via
 [`../packages/`](../packages/README.md).
@@ -27,7 +22,7 @@ From the root of your clone of this repo:
 
 ```bash
 mkdir -p ~/.config/nvim/lua/plugins
-cp nvim/lua/plugins/*.lua ~/.config/nvim/lua/plugins/
+cp nvim/lua/plugins/navigator.lua ~/.config/nvim/lua/plugins/navigator.lua
 ```
 
 ## Apply
