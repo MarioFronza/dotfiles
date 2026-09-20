@@ -3,13 +3,11 @@
 My personal plugin overrides for [LazyVim](https://lazyvim.github.io).
 Everything else is the stock [LazyVim starter](https://github.com/LazyVim/starter).
 
-Colorscheme is [Flexoki](https://github.com/kepano/flexoki-neovim) dark,
-same theme as [`alacritty`](../alacritty/README.md), [`swaylock`](../swaylock/README.md),
-[`fuzzel`](../fuzzel/README.md), [`mako`](../mako/README.md),
-[`swayosd`](../swayosd/README.md) and [`waybar`](../waybar/README.md).
-Still missing highlight support for `snacks.nvim` upstream — the
-sidebar/picker background comes out a slightly different shade than the
-editor.
+Colorscheme is [Tokyo Night](https://github.com/folke/tokyonight.nvim)
+(Night variant), same theme as [`alacritty`](../alacritty/README.md),
+[`swaylock`](../swaylock/README.md), [`fuzzel`](../fuzzel/README.md),
+[`mako`](../mako/README.md), [`swayosd`](../swayosd/README.md) and
+[`waybar`](../waybar/README.md).
 
 `neovim`, `ripgrep`, `fd`, `unzip`, and `lazygit` are installed via
 [`../packages/`](../packages/README.md).
