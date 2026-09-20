@@ -13,6 +13,7 @@ return {
           SnacksTitle = { fg = c["tx"], bg = c["bg-2"] },
           SnacksFooter = { fg = c["tx-2"], bg = c["bg-2"] },
           SnacksWinSeparator = { fg = c["bg-2"], bg = c["bg-2"] },
+          SnacksPicker = { fg = c["tx-2"], bg = c["bg-2"] },
         },
       }
     end,
