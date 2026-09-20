@@ -5,10 +5,9 @@ Application launcher, bound to `$mod+space` in [`../sway/config`](../sway/config
 profile but isn't used). `fuzzel` itself is installed via
 [`../packages/`](../packages/README.md).
 
-Colors are [Flexoki](https://github.com/kepano/flexoki) dark
-(`#4385be` accent/blue-400, `#cecdc3` text, `#100f0f` background,
-hex values from the project's `css/flexoki.css`) — same font as the
-rest of the setup.
+Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
+variant: `#7aa2f7` accent, `#c0caf5` text, `#1a1b26` background) — same
+font as the rest of the setup.
 
 ## Copy
 

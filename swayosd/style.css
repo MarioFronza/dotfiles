@@ -1,12 +1,12 @@
 window#osd {
   border-radius: 999px;
   border: none;
-  background: alpha(#100f0f, 0.9); }
+  background: alpha(#1a1b26, 0.9); }
   window#osd #container {
     margin: 16px; }
   window#osd image,
   window#osd label {
-    color: #cecdc3; }
+    color: #c0caf5; }
   window#osd progressbar:disabled,
   window#osd image:disabled {
     opacity: 0.5; }
@@ -21,13 +21,13 @@ window#osd {
     min-height: inherit;
     border-radius: inherit;
     border: none;
-    background: alpha(#878580, 0.5); }
+    background: alpha(#565f89, 0.5); }
   window#osd progress,
   window#osd segment.active {
     min-height: inherit;
     border-radius: inherit;
     border: none;
-    background: #4385be; }
+    background: #7aa2f7; }
   window#osd segment {
     margin-left: 8px; }
     window#osd segment:first-child {

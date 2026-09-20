@@ -10,8 +10,8 @@ notifications. `swayosd` itself is installed via
 Volume is capped at 100% (`max_volume = 100` in `config.toml`) — no
 boost past unity gain.
 
-Colors are [Flexoki](https://github.com/kepano/flexoki) dark, same as
-the rest of the setup.
+Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
+variant), same as the rest of the setup.
 
 ## Copy
 

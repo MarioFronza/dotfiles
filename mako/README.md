@@ -6,8 +6,8 @@ app popups) — separate from [`swayosd`](../swayosd/README.md), which
 only shows volume/brightness/lock-key OSDs. `mako` itself is
 installed via [`../packages/`](../packages/README.md).
 
-Colors are [Flexoki](https://github.com/kepano/flexoki) dark, same as
-the rest of the setup.
+Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
+variant), same as the rest of the setup.
 
 ## Copy
 

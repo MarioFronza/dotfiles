@@ -14,7 +14,8 @@ View-only by design: workspace and volume scrolling/clicking are
 disabled, since switching workspaces and adjusting volume already
 have keyboard binds in [`../sway/config`](../sway/config).
 
-Colors are [Flexoki](https://github.com/kepano/flexoki) dark.
+Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
+variant).
 
 `waybar` itself is installed via [`../packages/`](../packages/README.md).
 

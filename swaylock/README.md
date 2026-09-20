@@ -10,9 +10,9 @@ lock any time via `power` (Lock option, see [`../sway/README.md`](../sway/README
 — archinstall's Sway profile already installs them (see
 [`../QUICKSTART.md`](../QUICKSTART.md)).
 
-Colors are [Flexoki](https://github.com/kepano/flexoki) dark, same as
-the rest of the setup — red-600 (`af3029`) for the wrong-password ring,
-otherwise same palette as [`fuzzel`](../fuzzel/README.md).
+Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
+variant), same as the rest of the setup — `#f7768e` (red) for the
+wrong-password ring, otherwise same palette as [`fuzzel`](../fuzzel/README.md).
 
 ## Copy
 
