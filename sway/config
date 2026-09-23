@@ -19,8 +19,8 @@ exec ~/.config/sway/scripts/idle-lock.sh
 exec mako
 exec swayosd-server
 
-bindswitch --reload lid:on exec ~/.config/sway/scripts/lid-close.sh
-bindswitch --reload lid:off output eDP-1 enable
+bindswitch --reload lid:on exec ~/.config/sway/scripts/monitor-setup.sh once
+bindswitch --reload lid:off exec ~/.config/sway/scripts/monitor-setup.sh once
 
 input type:keyboard {
     xkb_layout "us"

@@ -52,19 +52,41 @@ swaymsg reload
   (audio) — same `zsh/aliases` tools as `wifi`/`audio` from a terminal.
 - **Mouse has no acceleration curve** (`input type:pointer { accel_profile
   flat }`) — 1:1 with physical movement.
-- **Multi-monitor**: `scripts/monitor-setup.sh` runs once at Sway startup
-  and again on every output hotplug. Whichever monitor isn't the laptop
-  panel (`eDP-1`) becomes the main surface for workspaces 1-9, set to its
-  highest advertised resolution (refresh rate as tiebreaker) — no
-  per-monitor identifier or hardcoded `mode` block needed. `eDP-1` always
-  keeps workspace 10.
-- **Lid switch**: `scripts/lid-close.sh` disables `eDP-1` on lid close
-  only when an external monitor is active (docked) — avoids leaving the
-  panel lit while docked, where systemd-logind's
-  `HandleLidSwitchDocked=ignore` default means no suspend happens.
-  Undocked, lid close leaves `eDP-1` alone and suspends normally (the
-  panel blanks via hardware, not sway); disabling it there raced with
-  `idle-lock.sh`'s `before-sleep` lock, sometimes leaving a black,
-  unresponsive screen on resume. `bindswitch lid:off output eDP-1
-  enable` re-enables unconditionally either way. See
+- **Multi-monitor and lid switch**: `scripts/monitor-setup.sh` is the only
+  thing that configures outputs. It runs once at Sway startup, on every
+  output hotplug (via its own `swaymsg -t subscribe`), and on both lid
+  transitions (`bindswitch ... exec monitor-setup.sh once`). Whichever
+  monitor isn't the laptop panel (`eDP-1`) becomes the main surface for
+  workspaces 1-9, set to its highest advertised resolution (refresh rate
+  as tiebreaker) — no per-monitor identifier or hardcoded `mode` block
+  needed. Workspace 10 is assigned `eDP-1 <external>`, so it falls back to
+  the external monitor whenever the panel is off.
+- **The hotplug loop must never react to its own events.** Applying a
+  layout emits `output` events, so a naive `subscribe | while read` that
+  re-applies on every event feeds itself: each pass emits roughly three
+  more events than it consumes. Unplugging and replugging quickly used to
+  turn that into an event storm, which saturated Sway's main loop with
+  modesets and starved every client of frame callbacks — Firefox, Spotify
+  and Alacritty would stop repainting and look frozen, with only a reboot
+  to recover. The loop therefore compares a fingerprint of *connected
+  output names plus lid state* and re-applies only when that changes.
+  `layout()` only enables, disables, moves and re-modes outputs, so it can
+  never move its own fingerprint.
+- **There must always be at least one active output.** Sway emits no frame
+  callbacks with zero outputs, which freezes clients the same way. Closing
+  the lid while docked disables `eDP-1`; unplugging the external monitor
+  from that state used to leave nothing active at all, so `layout()` now
+  re-enables the panel whenever no external monitor is present.
+- Docked lid close disables `eDP-1` rather than suspending, because
+  systemd-logind's `HandleLidSwitchDocked=ignore` default means no suspend
+  happens and the panel would otherwise stay lit. Undocked, the panel is
+  left strictly alone and the machine suspends normally (the panel blanks
+  via hardware, not sway) — `layout()` issues no command at all when
+  `eDP-1` is already active, because a redundant modeset there raced
+  `idle-lock.sh`'s `before-sleep` lock and sometimes resumed to a black,
+  unresponsive screen. See
   [`../swaylock/README.md`](../swaylock/README.md) for the lock itself.
+- Unplugging the external monitor while the lid is closed is logind's
+  business, not sway's: the machine stops counting as docked and suspends on
+  the spot. Plugging back in only wakes it because of the USB rule in
+  [`../udev/README.md`](../udev/README.md).
