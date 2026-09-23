@@ -35,6 +35,8 @@ PATH="/usr/bin:$PATH" yay -S --needed <package>
   needing a Turing-or-newer card)
 - [`wifi-bluetooth.md`](wifi-bluetooth.md) — enabling `iwd`/`impala` and
   `bluetooth`/`bluetui` after install.sh (no NetworkManager here)
+- [`tailscale.md`](tailscale.md) — enabling `tailscaled` and joining the
+  tailnet after install.sh (installed by it, but left disabled)
 - [`battery.md`](battery.md) — ThinkPad charge thresholds via
   `thinkpad_acpi` (built into the kernel, no extra package)
 - [`CATALOG.md`](CATALOG.md) — every package above with a one-line
