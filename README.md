@@ -16,6 +16,7 @@ Suggested order (also in [`bootstrap/README.md`](bootstrap/README.md)):
 
 - [`bootstrap/`](bootstrap/README.md) — bare minimum to clone this repo on a fresh install
 - [`packages/`](packages/README.md) — pacman/AUR packages
+- [`udev/`](udev/README.md) — system udev rules (USB wake-on-connect)
 - [`alacritty/`](alacritty/README.md) — terminal
 - [`zsh/`](zsh/README.md) — shell
 - [`tmux/`](tmux/README.md) — terminal multiplexer
