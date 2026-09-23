@@ -72,6 +72,12 @@ swaymsg reload
   output names plus lid state* and re-applies only when that changes.
   `layout()` only enables, disables, moves and re-modes outputs, so it can
   never move its own fingerprint.
+- **That guard is deliberately blind to resume**, which needs its own trigger.
+  Waking restores Sway's default output config — the external monitor drops to
+  its preferred mode (60Hz instead of 120Hz here) and the panel comes back on
+  even with the lid shut — but nothing connects or disconnects, so the
+  fingerprint never moves. `idle-lock.sh` therefore hands swayidle an
+  `after-resume` hook that re-runs `monitor-setup.sh once`.
 - **There must always be at least one active output.** Sway emits no frame
   callbacks with zero outputs, which freezes clients the same way. Closing
   the lid while docked disables `eDP-1`; unplugging the external monitor
