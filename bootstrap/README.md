@@ -25,10 +25,10 @@ cd dotfiles/packages
 ./install.sh [amd|intel|nvidia]
 ```
 
-`iwd`, `systemd-networkd`, `systemd-resolved`, and `bluetooth` are
-installed now but not enabled — see
-[`../packages/wifi-bluetooth.md`](../packages/wifi-bluetooth.md) before
-you lose your only connection to the machine.
+The network daemons are installed by that step but left stopped. Turning
+them on takes the current connection down, so do it from the machine's own
+console with `packages/enable-services.sh` — see
+[`../QUICKSTART.md`](../QUICKSTART.md).
 
 ## Order
 

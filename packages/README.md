@@ -33,12 +33,10 @@ PATH="/usr/bin:$PATH" yay -S --needed <package>
 - `gpu-amd.txt` / `gpu-intel.txt` / `gpu-nvidia.txt` — pick one, open-source
   drivers only (see the comments in `gpu-nvidia.txt` about `nvidia-open`
   needing a Turing-or-newer card)
-- [`wifi-bluetooth.md`](wifi-bluetooth.md) — enabling `iwd`/`impala` and
-  `bluetooth`/`bluetui` after install.sh (no NetworkManager here)
-- [`tailscale.md`](tailscale.md) — enabling `tailscaled` and joining the
-  tailnet after install.sh (installed by it, but left disabled)
-- [`battery.md`](battery.md) — ThinkPad charge thresholds via
-  `thinkpad_acpi` (built into the kernel, no extra package)
+- `enable-services.sh` — `install.sh` installs `iwd`, `systemd-networkd`,
+  `systemd-resolved`, `bluetooth` and `tailscaled` but leaves every one of
+  them stopped. This turns them on. It takes the network with it, so run
+  it from the machine's own console, not over ssh.
 - [`CATALOG.md`](CATALOG.md) — every package above with a one-line
   description, grouped the same way as the `.txt` files. Regenerate it
   after editing any package list (pull descriptions from `pacman -Si`

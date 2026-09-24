@@ -93,10 +93,20 @@ cd dotfiles/packages
 
 ## 8. Enable wifi and bluetooth
 
-`iwd`, `systemd-networkd`, `systemd-resolved`, and `bluetooth` are
-installed by now, but not enabled as services — you're still on
-whatever wired/SSH connection you set up in step 4. See
-[`packages/wifi-bluetooth.md`](packages/wifi-bluetooth.md).
+`iwd`, `systemd-networkd`, `systemd-resolved`, `bluetooth` and
+`tailscaled` are installed by now, but none of them are enabled — you're
+still on whatever wired/SSH connection you set up in step 4.
+
+Go back to the machine's own console for this part, because enabling them
+takes that connection down:
+
+```bash
+cd dotfiles/packages
+./enable-services.sh
+```
+
+Then `impala` to join a wifi network, and `sudo tailscale up` if you want
+this machine on the tailnet.
 
 From here on, every module's README skips its own package list — it's
 already installed. Each README only covers copying its config files into
