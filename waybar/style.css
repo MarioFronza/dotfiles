@@ -44,17 +44,13 @@ window#waybar {
 
 #mode,
 #scratchpad,
-#custom-media,
-#mpd,
 #pulseaudio,
 #network,
 #custom-power-profile,
 #cpu,
 #memory,
-#language,
 #battery,
-#clock,
-#custom-power {
+#clock {
   padding: 0 8px;
 }
 

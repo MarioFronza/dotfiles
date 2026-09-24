@@ -5,14 +5,13 @@ Status bar for [`../sway/`](../sway/README.md), started by sway itself
 Based on the stock config shipped by the `waybar` package
 (`/etc/xdg/waybar/`), trimmed down and restyled.
 
-`sway/workspaces`, `sway/mode`, `sway/scratchpad`, `custom/media` on
-the left, `clock` centered. On the right: `mpd`, `pulseaudio`,
-`network`, `custom/power-profile`, `cpu`, `memory`, `battery` (+
-`battery#bat2`) — separated by a dim `│`.
+`sway/workspaces`, `sway/mode` and `sway/scratchpad` on the left, `clock`
+centered. On the right: `pulseaudio`, `network`, `custom/power-profile`,
+`cpu`, `memory`, `battery`, separated by a dim `│`.
 
-View-only by design: workspace and volume scrolling/clicking are
-disabled, since switching workspaces and adjusting volume already
-have keyboard binds in [`../sway/config`](../sway/config).
+View-only by design: workspace and volume scrolling and clicking are
+disabled, since switching workspaces and adjusting volume already have
+keyboard binds in [`../sway/config`](../sway/config).
 
 Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
 variant).
@@ -21,11 +20,9 @@ variant).
 
 ## Copy
 
-From the root of your clone of this repo:
-
 ```bash
 mkdir -p ~/.config/waybar
-cp waybar/config.jsonc waybar/style.css ~/.config/waybar/
+cp waybar/config.jsonc waybar/style.css waybar/power-profile.sh ~/.config/waybar/
 ```
 
 ## Apply
@@ -34,20 +31,20 @@ cp waybar/config.jsonc waybar/style.css ~/.config/waybar/
 swaymsg reload
 ```
 
-(sway owns the waybar process via its `bar` block — don't run
-`waybar &` by hand, it'll leave a second instance running alongside
-the one sway manages)
+(sway owns the waybar process through its `bar` block — don't run
+`waybar &` by hand, it leaves a second instance alongside the one sway
+manages)
 
 ## Notes
 
 - Icons are Nerd Font glyphs from the private-use area — **copy the
-  files with `cp`, don't retype them**. Hand-typing them (even via an
-  editor) can silently turn a glyph into an empty string with no
-  visible diff, which looks identical in most terminals/renderers but
-  makes that bar segment disappear. Not obvious until checked
-  byte-by-byte (`xxd` or `python3 -c "open(path,'rb').read()"`).
+  files with `cp`, don't retype them**. Hand-typing them, even through an
+  editor, can silently turn a glyph into an empty string with no visible
+  diff, which looks identical in most terminals but makes that bar
+  segment disappear. Not obvious until checked byte by byte (`xxd`, or
+  `python3 -c "open(path,'rb').read()"`).
 - `custom/power-profile` (`power-profile.sh`) replaces the stock
-  `power-profiles-daemon` module — that module cycles the profile on
-  click with no config option to disable it, which conflicts with the
-  view-only design above. The script just reads the active profile
-  over dbus and prints it, no click handler at all.
+  `power-profiles-daemon` module, which cycles the profile on click with
+  no option to disable that, against the view-only design above. The
+  script only reads the active profile over dbus and prints it, with no
+  click handler at all.
