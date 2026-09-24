@@ -1,12 +1,3 @@
-[alias]
-	a = add
-	b = branch
-	c = commit -m
-	co = checkout
-	l = log
-	pl = pull
-	ps = push
-	s = status
 [init]
 	defaultBranch = main
 [pull]
