@@ -12,7 +12,8 @@ cd dotfiles
 packages/install.sh [amd|intel|nvidia]
 ```
 
-Suggested order (also in [`bootstrap/README.md`](bootstrap/README.md)):
+Then walk the modules in this order, running each one's "Copy" step from
+the repo root:
 
 - [`bootstrap/`](bootstrap/README.md) — bare minimum to clone this repo on a fresh install
 - [`packages/`](packages/README.md) — pacman/AUR packages

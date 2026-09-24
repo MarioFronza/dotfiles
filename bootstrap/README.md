@@ -32,9 +32,10 @@ you lose your only connection to the machine.
 
 ## Order
 
-With packages installed, `cd` into the clone from the step above and
-walk each folder's README for its "Copy" step (`cp` into place, no more
-per-folder install — every module's commands assume you're standing at
-the repo root). Suggested order: `udev/`, `alacritty/`, `zsh/`, `tmux/`,
-`git/`, `github/`, `mise/`, `nvim/`, `sway/`, `swaylock/`, `fuzzel/`,
-`waybar/`, `claude/`.
+With packages installed, `cd` into the clone and walk each folder's
+README for its "Copy" step. There is no per-folder install left, only
+`cp` into place, and every module's commands assume you are standing at
+the repo root.
+
+The order to walk them in is the module list in
+[`../README.md`](../README.md).
