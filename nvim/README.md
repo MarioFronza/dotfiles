@@ -13,6 +13,7 @@ stock [LazyVim starter](https://github.com/LazyVim/starter).
   crosses between vim splits and [`tmux`](../tmux/README.md) panes
 - `lazyvim.json` — enabled extras: docker, java, json, kotlin, markdown,
   toml
+- `lazy-lock.json` — the commit each of the 37 plugins sits on
 
 `neovim`, `ripgrep`, `fd`, `unzip`, and `lazygit` are installed via
 [`../packages/`](../packages/README.md).
@@ -29,13 +30,14 @@ rm -rf ~/.config/nvim/.git
 ## Copy
 
 ```bash
-cp nvim/lazyvim.json ~/.config/nvim/lazyvim.json
+cp nvim/lazyvim.json nvim/lazy-lock.json ~/.config/nvim/
 cp nvim/lua/plugins/*.lua ~/.config/nvim/lua/plugins/
 ```
 
 ## Apply
 
-Open `nvim` — LazyVim syncs plugins automatically on first launch.
+Open `nvim` — LazyVim syncs plugins automatically on first launch, at the
+commits `lazy-lock.json` names.
 
 ## Notes
 
@@ -43,6 +45,10 @@ Open `nvim` — LazyVim syncs plugins automatically on first launch.
   come up with no LSP at all. LazyVim rewrites that file itself, both from
   `:LazyExtras` and on its own upgrades, so mirror it back here after
   changing extras.
-- `lazy-lock.json` is deliberately untracked: plugins follow upstream
-  instead of a pinned set, which means two machines set up on different
-  days do not get the same plugin versions.
+- `lazy-lock.json` pins every plugin to a commit, so two machines set up
+  months apart run the same set. `:Lazy update` moves the pins and
+  rewrites the file — copy it back here afterwards, the same as
+  `lazyvim.json`.
+- When an update breaks something, the previous commit of that file is the
+  way back: `git checkout HEAD~1 nvim/lazy-lock.json`, copy it into place,
+  then `:Lazy restore`.
