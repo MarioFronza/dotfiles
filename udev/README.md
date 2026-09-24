@@ -3,14 +3,16 @@
 System-level `udev` rules for the ThinkPad. These are the only files in this
 repo that land outside `$HOME`, so every step here needs `sudo`.
 
-**Laptops only — skip this folder on a desktop.** Everything here exists
-because closing the lid and undocking put the machine to sleep. A desktop
-never reaches that situation and gains nothing from the rule.
+- `90-usb-wakeup.rules` — plugging anything into USB wakes the machine
+- `99-battery-charge-threshold.rules` — stop charging at 80%, resume at 75%
+
+**Laptops only — skip this folder on a desktop.** Both rules exist because
+the machine sleeps when the lid closes and spends its days on AC.
 
 ## Copy
 
 ```bash
-sudo cp udev/90-usb-wakeup.rules /etc/udev/rules.d/
+sudo cp udev/90-usb-wakeup.rules udev/99-battery-charge-threshold.rules /etc/udev/rules.d/
 ```
 
 ## Apply
@@ -18,20 +20,24 @@ sudo cp udev/90-usb-wakeup.rules /etc/udev/rules.d/
 ```bash
 sudo udevadm control --reload
 sudo udevadm trigger --subsystem-match=usb --action=add
+sudo udevadm trigger --action=add /sys/class/power_supply/BAT0
 ```
 
-`control --reload` re-reads the rules, `trigger` re-processes the USB devices
-that are already connected so the rule takes effect without a reboot.
+`control --reload` re-reads the rules, the `trigger` calls re-process the
+devices that are already present so neither rule waits for a reboot.
 
 ## Verify
 
 ```bash
 grep . /sys/bus/usb/devices/usb*/power/wakeup
+cat /sys/class/power_supply/BAT0/charge_control_{start,end}_threshold
 ```
 
-All four root hubs should read `enabled`.
+All four root hubs should read `enabled`, and the thresholds `75` and `80`.
 
 ## Notes
+
+### USB wake-on-connect
 
 - **`90-usb-wakeup.rules` makes plugging the dock in wake the machine.** This
   laptop only supports `s2idle` (there is no `deep`/S3 — check with
@@ -65,7 +71,35 @@ All four root hubs should read `enabled`.
   The dock's Realtek `r8152` ethernet enables wake-on-LAN by itself and is the
   usual culprit; the keyboard is normally wanted (a keypress wakes the
   machine). Neither is set by this rule.
-- **Revert:** `sudo rm /etc/udev/rules.d/90-usb-wakeup.rules`, then reboot.
+
+### Battery charge thresholds
+
+- `thinkpad_acpi` is built into the kernel and already loaded on boot, so the
+  thresholds sit on `BAT0` directly. No TLP, no tp-smapi, no extra package.
+- The embedded controller enforces them, not Linux polling in the background.
+  Plugged in, the battery charges to 80% and stops, and the laptop runs off AC
+  pass-through. If use drags it back under 75% while still plugged in, the EC
+  charges to 80% again. The 5-point gap is what stops it cycling on and off at
+  the edge. Unplugged, the thresholds do not apply at all.
+- **The rule only fires when `BAT0` appears**, at boot and on resume. It is
+  not a running process. Some ThinkPad ECs forget the threshold across a cold
+  boot, which is the only reason it needs reapplying.
+- To charge to 100% once, before travelling:
+
+  ```bash
+  echo 100 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold
+  ```
+
+  That lasts until the next boot, when the rule puts it back to 80%.
+
+### Revert
+
+```bash
+sudo rm /etc/udev/rules.d/90-usb-wakeup.rules
+sudo rm /etc/udev/rules.d/99-battery-charge-threshold.rules
+```
+
+Then reboot.
 
 See [`../sway/README.md`](../sway/README.md) for the lid and external-monitor
-behavior this pairs with.
+behavior the USB rule pairs with.
