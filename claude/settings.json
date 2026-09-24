@@ -1,5 +1,4 @@
 {
-  "model": "sonnet",
   "hooks": {
     "PreToolUse": [
       {
@@ -64,5 +63,6 @@
   },
   "tui": "fullscreen",
   "theme": "dark",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "model": "opus"
 }
