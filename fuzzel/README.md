@@ -11,8 +11,6 @@ font as the rest of the setup.
 
 ## Copy
 
-From the root of your clone of this repo:
-
 ```bash
 mkdir -p ~/.config/fuzzel
 cp fuzzel/fuzzel.ini ~/.config/fuzzel/fuzzel.ini

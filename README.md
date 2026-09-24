@@ -24,7 +24,11 @@ Suggested order (also in [`bootstrap/README.md`](bootstrap/README.md)):
 - [`github/`](github/README.md) — gh CLI config
 - [`mise/`](mise/README.md) — language/tool versions
 - [`nvim/`](nvim/README.md) — editor
-- [`sway/`](sway/README.md) — Sway (includes waybar)
+- [`sway/`](sway/README.md) — Sway
+- [`waybar/`](waybar/README.md) — status bar
+- [`fuzzel/`](fuzzel/README.md) — app launcher
+- [`mako/`](mako/README.md) — notifications
+- [`swayosd/`](swayosd/README.md) — volume/brightness OSD
 - [`swaylock/`](swaylock/README.md) — lock screen
 - [`hypr/`](hypr/README.md) — personal Hyprland overrides (Omarchy-dependent, not standalone)
 - [`claude/`](claude/README.md) — Claude Code config

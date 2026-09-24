@@ -11,8 +11,6 @@ variant), same as the rest of the setup.
 
 ## Copy
 
-From the root of your clone of this repo:
-
 ```bash
 mkdir -p ~/.config/mako
 cp mako/config ~/.config/mako/config
