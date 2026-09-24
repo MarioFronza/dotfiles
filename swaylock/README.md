@@ -21,13 +21,8 @@ mkdir -p ~/.config/swaylock
 cp swaylock/config ~/.config/swaylock/config
 ```
 
-`idle-lock.sh` is copied along with the rest of [`sway/`](../sway/README.md):
-
-```bash
-mkdir -p ~/.config/sway
-cp sway/config ~/.config/sway/config
-cp -r sway/scripts ~/.config/sway/
-```
+`idle-lock.sh` comes along with the copy step in
+[`sway/`](../sway/README.md), so there is nothing extra to do here.
 
 ## Apply
 
