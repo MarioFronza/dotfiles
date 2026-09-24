@@ -1,7 +1,2 @@
-export OPENAI_API_BASE="https://openrouter.ai/api/v1"
 export OLLAMA_API_BASE=http://127.0.0.1:11434
 export OLLAMA_HOME=http://127.0.0.1:11434
-
-# Point this at a dedicated disk if you have one; unset it to use Ollama's
-# default (~/.ollama/models) otherwise.
-# export OLLAMA_MODELS=/path/to/models
