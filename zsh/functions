@@ -1,4 +1,3 @@
-# Smart cd: falls back to zoxide when the argument isn't a literal directory.
 alias cd="zd"
 zd() {
   if (( $# == 0 )); then
@@ -16,11 +15,9 @@ zd() {
   fi
 }
 
-# Fuzzy file picker with a bat preview; eff opens the pick in $EDITOR.
 ff() { fzf --preview 'bat --style=numbers --color=always {}'; }
 eff() { $EDITOR "$(ff)"; }
 
-# nvim with no args opens the current directory.
 n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
 
 # Wrap ssh to clean up the terminal and reconnect when a connection drops.
@@ -112,7 +109,6 @@ _ssh_interactive() {
   ! grep -i '^remotecommand ' <<<"$resolved" | grep -qvi '^remotecommand none$'
 }
 
-# SSH port forwarding: fip forwards, dip drops, lip lists active forwards.
 fip() {
   (( $# < 2 )) && echo "Usage: fip <host> <port1> [port2] ..." && return 1
   local host="$1"
@@ -133,7 +129,6 @@ lip() {
   pgrep -af "ssh.*-L [0-9]+:localhost:[0-9]+" || echo "No active forwards"
 }
 
-# Create a new worktree and branch from within the current git directory.
 ga() {
   if [[ -z "$1" ]]; then
     echo "Usage: ga [branch name]"
@@ -149,7 +144,6 @@ ga() {
   cd "$wt_path"
 }
 
-# Remove worktree and branch from within the active worktree directory.
 gd() {
   if gum confirm "Remove worktree and branch?"; then
     local cwd base branch root worktree
@@ -157,7 +151,6 @@ gd() {
     cwd="$(pwd)"
     worktree="$(basename "$cwd")"
 
-    # split on first `--`
     root="${worktree%%--*}"
     branch="${worktree#*--}"
 
@@ -170,7 +163,6 @@ gd() {
   fi
 }
 
-# Power menu, same TUI shape as `wifi`/`bt`/`audio`.
 power() {
   case "$(gum choose Lock Suspend Reboot Poweroff)" in
     Lock) swaylock ;;
@@ -180,7 +172,6 @@ power() {
   esac
 }
 
-# CPU perf profile picker, same TUI shape as `power`.
 perf() {
   local current profiles chosen
   current=$(busctl --system --json=short get-property net.hadess.PowerProfiles \

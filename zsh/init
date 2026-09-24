@@ -26,7 +26,6 @@ if command -v atuin &> /dev/null; then
 fi
 
 if [ -d /usr/share/zsh/plugins/zsh-autosuggestions ]; then
-  # plugins (from system packages)
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
