@@ -1,21 +1,25 @@
 # claude
 
 [Claude Code](https://claude.com/claude-code) config: `CLAUDE.md` (global
-instructions), agents, skills, hooks, rules, settings, statusline, theme.
+instructions), `rules/`, `agents/`, `skills/`, `hooks/`, `settings.json`,
+`statusline-command.sh` and a Tokyo Night `themes/` entry.
 
-Not tracked (machine/account-specific, never commit):
+The two hooks talk to [`../tmux/`](../tmux/README.md). `notify-ready.sh`
+plays a sound and paints the window and session red when a run finishes
+somewhere you are not looking; tmux repaints them when you switch to it.
+`agent-state.sh` writes `working`/`idle` per pane under `/tmp`.
+
+Not tracked (machine or account specific, never commit):
 `.credentials.json`, `sessions/`, `projects/`, `history.jsonl`,
 `shell-snapshots/`, `session-env/`, `cache/`, `backups/`, `downloads/`,
 `file-history/`, `paste-cache/`, `settings.local.json`.
 
-`claude-code` and `rtk` (referenced by the Bash hook in `settings.json`,
-optional) are installed via [`../packages/`](../packages/README.md).
+`claude-code` and `rtk` (the Bash hook in `settings.json`, optional) are
+installed via [`../packages/`](../packages/README.md).
 
 ## Copy
 
-48 files (agents, skills with their own scripts) — too many to paste by
-hand one at a time. From the root of your clone of this repo (the one
-you used for `packages/install.sh`):
+48 files, so copy the trees rather than listing them:
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -26,6 +30,6 @@ cp -r claude/skills/* ~/.claude/skills/
 
 ## Apply
 
-`settings.json` still says `"theme": "dark"` (the built-in one) —
-`themes/tokyo_night.json` is copied in but not switched to
-automatically. Pick it with `/theme` inside Claude Code.
+`settings.json` still says `"theme": "dark"`, the built-in one.
+`themes/tokyo_night.json` is copied in but not selected automatically —
+pick it with `/theme` inside Claude Code.
