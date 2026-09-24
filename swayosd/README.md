@@ -15,8 +15,6 @@ variant), same as the rest of the setup.
 
 ## Copy
 
-From the root of your clone of this repo:
-
 ```bash
 mkdir -p ~/.config/swayosd
 cp swayosd/config.toml swayosd/style.css ~/.config/swayosd/

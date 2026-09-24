@@ -2,5 +2,3 @@
 max_volume = 100
 min_brightness = 5
 duration = 1000
-
-[client]
