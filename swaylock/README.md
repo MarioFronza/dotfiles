@@ -16,8 +16,6 @@ wrong-password ring, otherwise same palette as [`fuzzel`](../fuzzel/README.md).
 
 ## Copy
 
-From the root of your clone of this repo:
-
 ```bash
 mkdir -p ~/.config/swaylock
 cp swaylock/config ~/.config/swaylock/config

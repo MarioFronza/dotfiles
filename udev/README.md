@@ -9,8 +9,6 @@ never reaches that situation and gains nothing from the rule.
 
 ## Copy
 
-From the root of your clone of this repo:
-
 ```bash
 sudo cp udev/90-usb-wakeup.rules /etc/udev/rules.d/
 ```
