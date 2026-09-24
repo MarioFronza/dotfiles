@@ -1,7 +1,7 @@
 # claude
 
 [Claude Code](https://claude.com/claude-code) config: `CLAUDE.md` (global
-instructions), `rules/`, `agents/`, `skills/`, `hooks/`, `settings.json`,
+instructions), `agents/`, `skills/`, `hooks/`, `settings.json`,
 `statusline-command.sh` and a Tokyo Night `themes/` entry.
 
 The two hooks talk to [`../tmux/`](../tmux/README.md). `notify-ready.sh`
@@ -21,18 +21,19 @@ the model. Check it with `rtk --version` and `rtk gain` — if `gain` is not
 a subcommand, the `rtk` on `PATH` is reachingforthejack/rtk (Rust Type
 Kit), a different tool with the same name.
 
-`CLAUDE.md`, `RTK.md` and everything in `rules/` are read on every
-request, so they stay short and hold only instructions worth acting on.
-Reference material belongs in a skill, which loads on demand.
+`CLAUDE.md` and `RTK.md` are read on every request, so they stay short and
+hold only instructions worth acting on. Language and framework conventions
+belong in a project's own `CLAUDE.md` or `.claude/rules/`, where the
+`/sync` skill maintains them and they cost nothing on unrelated work.
 
 ## Copy
 
-48 files, so copy the trees rather than listing them:
+47 files, so copy the trees rather than listing them:
 
 ```bash
 mkdir -p ~/.claude/skills
 cp claude/CLAUDE.md claude/RTK.md claude/settings.json claude/statusline-command.sh ~/.claude/
-cp -r claude/rules claude/agents claude/hooks claude/themes ~/.claude/
+cp -r claude/agents claude/hooks claude/themes ~/.claude/
 cp -r claude/skills/* ~/.claude/skills/
 ```
 
