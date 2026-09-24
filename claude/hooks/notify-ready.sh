@@ -10,7 +10,7 @@ active_session=$(tmux list-clients -F '#{session_name}' | head -1)
 
 # Always highlight session if Claude is in a different one
 if [ "$claude_session" != "$active_session" ]; then
-  tmux set-option -t "$active_session" status-left "#[fg=#FFFFFF,bg=red,bold] #S #[bg=#2D353B] "
+  tmux set-option -t "$active_session" status-left "#[fg=#FFFFFF,bg=red,bold] #S #[bg=default] "
 fi
 
 # Skip sound + highlight only when you're actually looking: same window AND the
