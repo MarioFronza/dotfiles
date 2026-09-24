@@ -1,8 +1,7 @@
 # fuzzel
 
-Application launcher, bound to `$mod+space` in [`../sway/config`](../sway/config)
-(replaces `wmenu-run`, which still ships with archinstall's Sway
-profile but isn't used). `fuzzel` itself is installed via
+Application launcher, bound to `$mod+space` in
+[`../sway/config`](../sway/config). `fuzzel` is installed via
 [`../packages/`](../packages/README.md).
 
 Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night

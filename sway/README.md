@@ -3,18 +3,13 @@
 Sway config for the ThinkPad. Status bar is [`waybar`](../waybar/README.md),
 not the native swaybar.
 
-`sway`, `swaybg`, `swayidle`, `swaylock`, `waybar` and `grim` come from
-selecting the Sway profile in `archinstall` (see
-[`../QUICKSTART.md`](../QUICKSTART.md)). That profile also installs
-`wmenu`, `foot` and `pavucontrol`, none of them used here; remove them
-(`sudo pacman -Rns wmenu foot pavucontrol`).
-
 Terminal is `alacritty` (`$term`), launcher bound to `$mod+space` is
 [`fuzzel`](../fuzzel/README.md), notifications are
 [`mako`](../mako/README.md), volume/brightness OSD is
-[`swayosd`](../swayosd/README.md). The rest of what the config calls
-(`playerctl`, `jq`, `gum`, `bluetui`, `impala`, `wiremix`) is installed
-via [`../packages/`](../packages/README.md).
+[`swayosd`](../swayosd/README.md). `sway` itself and everything the config
+calls (`swaybg`, `swayidle`, `swaylock`, `grim`, `playerctl`, `jq`, `gum`,
+`bluetui`, `impala`, `wiremix`) are installed via
+[`../packages/`](../packages/README.md).
 
 ## Copy
 

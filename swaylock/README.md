@@ -6,9 +6,8 @@ Lock screen, driven by [`../sway/scripts/idle-lock.sh`](../sway/scripts/idle-loc
 suspend (lid close included) always locks; nothing else does. Force a
 lock any time via `power` (Lock option, see [`../sway/README.md`](../sway/README.md)).
 
-`swaylock` and `swayidle` aren't installed via [`../packages/`](../packages/README.md)
-— archinstall's Sway profile already installs them (see
-[`../QUICKSTART.md`](../QUICKSTART.md)).
+`swaylock` and `swayidle` are installed via
+[`../packages/`](../packages/README.md).
 
 Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
 variant), same as the rest of the setup — `#f7768e` (red) for the
