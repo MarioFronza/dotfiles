@@ -4,6 +4,9 @@
 options, `PATH`), `init` (tool hooks), `envs`, `aliases`, `functions`,
 `prompt`, `bindkeys`.
 
+`~/.zprofile` is what starts the desktop: logging in on tty1 replaces the
+shell with [`sway`](../sway/README.md). There is no display manager.
+
 Installed via [`../packages/`](../packages/README.md): `zsh`,
 `zsh-autosuggestions`, `zsh-syntax-highlighting`, `starship` (prompt),
 `zoxide`, `fzf`, `bat`, `gum`, `mise`, `atuin` (history, `Ctrl+R`).
@@ -15,6 +18,7 @@ Installed via [`../packages/`](../packages/README.md): `zsh`,
 mkdir -p ~/.config/zsh
 cp zsh/shell zsh/init zsh/envs zsh/aliases zsh/functions zsh/prompt zsh/bindkeys ~/.config/zsh/
 cp zsh/zshrc ~/.zshrc
+cp zsh/zprofile ~/.zprofile
 cp zsh/inputrc ~/.inputrc
 ```
 
