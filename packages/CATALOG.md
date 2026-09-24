@@ -74,6 +74,7 @@ how to install them.
 | `gst-plugin-pipewire` | Multimedia graph framework - pipewire plugin |
 | `alsa-utils` | Advanced Linux Sound Architecture - Utilities |
 | `libpulse` | A featureful, general-purpose sound server (client library) |
+| `sof-firmware` | Sound Open Firmware |
 | `pamixer` | Pulseaudio command-line mixer like amixer |
 
 ### Graphics (vendor-agnostic base; see gpu-*.txt for the driver)
@@ -90,11 +91,18 @@ how to install them.
 
 | Package | Description |
 | --- | --- |
+| `sway` | Tiling Wayland compositor and replacement for the i3 window manager |
+| `swaybg` | Wallpaper tool for Wayland compositors |
+| `swayidle` | Idle management daemon for Wayland |
+| `swaylock` | Screen locker for Wayland |
+| `waybar` | Highly customizable Wayland bar for Sway and Wlroots based compositors |
+| `xorg-xwayland` | run X clients under wayland |
+| `brightnessctl` | Lightweight brightness control tool |
+| `grim` | Screenshot utility for Wayland |
 | `xdg-desktop-portal-gtk` | A backend implementation for xdg-desktop-portal using GTK |
 | `xdg-desktop-portal-wlr` | xdg-desktop-portal backend for wlroots |
 | `polkit` | Application development toolkit for controlling system-wide privileges |
 | `polkit-gnome` | Legacy polkit authentication agent for GNOME |
-| `sddm` | QML based X11 and Wayland display manager |
 | `mako` | Lightweight notification daemon for Wayland |
 | `swayosd` | GTK based on-screen display for volume, brightness, and lock keys |
 | `fuzzel` | Application launcher for wlroots based Wayland compositors |

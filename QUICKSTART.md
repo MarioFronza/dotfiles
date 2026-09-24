@@ -33,10 +33,16 @@ archinstall
 | Hostname | whatever you want |
 | Authentication > Root password | set one |
 | Authentication > User account | add yourself, Superuser: yes |
-| Profile | Type: Desktop > Sway |
-| Applications > Audio | pipewire |
+| Profile | leave empty |
+| Applications > Audio | no audio server |
 | Network configuration | copy ISO network config |
 | Timezone | yours |
+
+Leave the profile and audio sections alone on purpose. Every desktop
+profile drags in a compositor, a launcher and a terminal of its own
+choosing, and this repo installs its own set in step 7 — see
+[`packages/pacman.txt`](packages/pacman.txt). Picking one only means
+uninstalling the parts you don't want afterwards.
 
 Reboot, log in as the user you created.
 

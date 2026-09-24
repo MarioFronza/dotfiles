@@ -4,10 +4,11 @@
 # /etc/pacman.conf first. Installed by install.sh, or manually with:
 #   sed 's/#.*//' pacman.txt | awk 'NF{print $1}' | xargs sudo pacman -S --needed
 #
-# Not listed here on purpose (already comes from the Arch install itself):
-# base, linux, linux-firmware. GPU drivers are vendor-specific — see
-# gpu-amd.txt / gpu-intel.txt / gpu-nvidia.txt. Sway itself comes from
-# archinstall's Sway profile, not listed here.
+# This list assumes a bare Arch install with no desktop profile selected, so
+# it carries the compositor and its tools too. Not listed here on purpose
+# (comes from the Arch install itself): base, linux, linux-firmware, and CPU
+# microcode. GPU drivers are vendor-specific — see gpu-amd.txt /
+# gpu-intel.txt / gpu-nvidia.txt.
 
 # --- Build essentials / core utilities ---
 base-devel
@@ -64,6 +65,7 @@ gst-plugin-pipewire
 alsa-utils
 libpulse
 pamixer
+sof-firmware # ThinkPad's internal audio is sof-hda-dsp; silent without it
 
 # --- Graphics (vendor-agnostic base; see gpu-*.txt for the driver) ---
 mesa
@@ -73,14 +75,18 @@ lib32-vulkan-icd-loader
 libva-utils
 
 # --- Wayland desktop basics ---
-# sway, swaybg, swayidle, swaylock, waybar, grim, slurp, brightnessctl and
-# xorg-xwayland aren't listed — archinstall's Sway profile already installs
-# them (see ../QUICKSTART.md).
+sway
+swaybg
+swayidle
+swaylock
+waybar
+xorg-xwayland # X11 apps under sway: steam, virtualbox, ghidra, burpsuite
+brightnessctl # sway's brightness backend, driven through swayosd-client
+grim          # screenshots, bound to Print in ../sway/config
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 polkit
 polkit-gnome
-sddm
 mako
 swayosd
 fuzzel
