@@ -126,7 +126,7 @@ bindsym Print exec grim
 
 bindsym $mod+Shift+b exec $term -e bluetui
 bindsym $mod+Shift+p exec $term -e zsh -ic perf
-bindsym $mod+Shift+Escape exec $term -e zsh -ic power
+bindsym $mod+Escape exec $term -e zsh -ic power
 bindsym $mod+Shift+w exec $term -e impala
 bindsym $mod+Shift+a exec $term -e wiremix
 

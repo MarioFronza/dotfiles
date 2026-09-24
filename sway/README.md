@@ -3,19 +3,20 @@
 Sway config for the ThinkPad. Status bar is [`waybar`](../waybar/README.md),
 not the native swaybar.
 
-`sway`, `swaybg`, and `swayidle` come from selecting the Sway profile in
-`archinstall` (see [`../QUICKSTART.md`](../QUICKSTART.md)) — that
-profile also installs `wmenu` and `foot`, neither used; remove both
-(`sudo pacman -Rns wmenu foot`). Terminal is `alacritty` (`$term`),
-launcher bound to `$mod+space` is [`fuzzel`](../fuzzel/README.md),
-notifications are [`mako`](../mako/README.md), volume/brightness OSD
-is [`swayosd`](../swayosd/README.md). Everything else the config below
-calls (`wireplumber`, `grim`, `playerctl`, `jq`, `gum`) is installed via
-[`../packages/`](../packages/README.md).
+`sway`, `swaybg`, `swayidle`, `swaylock`, `waybar` and `grim` come from
+selecting the Sway profile in `archinstall` (see
+[`../QUICKSTART.md`](../QUICKSTART.md)). That profile also installs
+`wmenu`, `foot` and `pavucontrol`, none of them used here; remove them
+(`sudo pacman -Rns wmenu foot pavucontrol`).
+
+Terminal is `alacritty` (`$term`), launcher bound to `$mod+space` is
+[`fuzzel`](../fuzzel/README.md), notifications are
+[`mako`](../mako/README.md), volume/brightness OSD is
+[`swayosd`](../swayosd/README.md). The rest of what the config calls
+(`playerctl`, `jq`, `gum`, `bluetui`, `impala`, `wiremix`) is installed
+via [`../packages/`](../packages/README.md).
 
 ## Copy
-
-From the root of your clone of this repo:
 
 ```bash
 mkdir -p ~/.config/sway
@@ -31,7 +32,11 @@ swaymsg reload
 
 ## Notes
 
-- **Wallpaper**: `output * bg ~/Pictures/Wallpapers/dinossaurs-v2/04-parasaurolophus-rainforest-night.png fill` is hardcoded to my own file — point it at whatever you have.
+- **Wallpaper**: `output * bg ~/Pictures/Wallpapers/dark-sun.jpg fill` is
+  hardcoded to my own file, which this repo does not ship. Point it at
+  whatever you have, or swap it for a flat colour with `output * bg
+  #1a1b26 solid_color` — a missing file just leaves the background
+  unpainted.
 - **Ctrl/CapsLock swap is ThinkPad-specific**: the `input
   "1:1:AT_Translated_Set_2_keyboard" { xkb_options ctrl:swapcaps }` block
   only swaps the *internal* keyboard, so an external keyboard isn't
@@ -46,7 +51,7 @@ swaymsg reload
   power-profiles-daemon dbus API) in a terminal, to switch CPU perf
   profile — the waybar icon (`custom/power-profile`) is read-only by
   design, so this is the only way to change it.
-- `$mod+Shift+Escape` opens `power` (the `zsh/functions` TUI for
+- `$mod+Escape` opens `power` (the `zsh/functions` TUI for
   Lock/Suspend/Reboot/Poweroff) in a terminal.
 - `$mod+Shift+w` opens `impala` (wifi), `$mod+Shift+a` opens `wiremix`
   (audio) — same `zsh/aliases` tools as `wifi`/`audio` from a terminal.
