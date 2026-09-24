@@ -16,7 +16,8 @@ keyboard binds in [`../sway/config`](../sway/config).
 Colors are [Tokyo Night](https://github.com/folke/tokyonight.nvim) (Night
 variant).
 
-`waybar` itself is installed via [`../packages/`](../packages/README.md).
+`waybar` isn't in [`../packages/`](../packages/README.md) — archinstall's
+Sway profile already installs it (see [`../QUICKSTART.md`](../QUICKSTART.md)).
 
 ## Copy
 
