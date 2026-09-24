@@ -1,3 +1,2 @@
 version: 1
-aliases:
-    co: pr checkout
+git_protocol: ssh
