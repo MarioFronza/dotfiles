@@ -14,8 +14,16 @@ Not tracked (machine or account specific, never commit):
 `shell-snapshots/`, `session-env/`, `cache/`, `backups/`, `downloads/`,
 `file-history/`, `paste-cache/`, `settings.local.json`.
 
-`claude-code` and `rtk` (the Bash hook in `settings.json`, optional) are
-installed via [`../packages/`](../packages/README.md).
+`claude-code` and `rtk` are installed via
+[`../packages/`](../packages/README.md). `rtk` is optional: it backs the
+Bash hook in `settings.json` and trims command output before it reaches
+the model. Check it with `rtk --version` and `rtk gain` — if `gain` is not
+a subcommand, the `rtk` on `PATH` is reachingforthejack/rtk (Rust Type
+Kit), a different tool with the same name.
+
+`CLAUDE.md`, `RTK.md` and everything in `rules/` are read on every
+request, so they stay short and hold only instructions worth acting on.
+Reference material belongs in a skill, which loads on demand.
 
 ## Copy
 

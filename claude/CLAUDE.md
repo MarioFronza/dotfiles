@@ -58,7 +58,7 @@ Skip for: typo fixes, doc-only edits, IDE renames, single-line comment changes, 
 - **Response length matches task size.** One-line answers for one-line questions. Code examples over prose when the code makes the point. Skip throat-clearing and closing summaries.
 - **Adaptive thinking.** Think harder on hard problems (debugging, race conditions, architecture decisions). Respond directly when the answer is obvious.
 - **Effort level: xhigh by default.** Use `high` for concurrent sessions or cost-sensitive work. Reserve `max` for genuinely hard problems; it tends to overthink.
-- **Fewer subagents on 4.7.** Spell parallel work out explicitly. Keep tasks that fit one response in one response.
+- **Fewer subagents.** Spell parallel work out explicitly. Keep tasks that fit one response in one response.
 
 ## Communication
 
