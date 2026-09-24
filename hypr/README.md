@@ -15,5 +15,6 @@ Kept here as personal backup/reference, not for the Sway/ThinkPad setup.
 Only meaningful on a machine that already has Omarchy installed:
 
 ```bash
-cp autostart.lua bindings.lua hyprland.lua input.lua looknfeel.lua monitors.lua ~/.config/hypr/
+mkdir -p ~/.config/hypr
+cp hypr/*.lua ~/.config/hypr/
 ```
