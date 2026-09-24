@@ -1,43 +1,40 @@
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
 	a = add
-	ps = push
-	pl = pull
-	l = log
-	c = commit -m
-	s = status
 	b = branch
+	c = commit -m
+	co = checkout
+	l = log
+	pl = pull
+	ps = push
+	s = status
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [pull]
-	rebase = true 			 # Rebase (instead of merge) on pull
+	rebase = true
 [push]
-	autoSetupRemote = true   # Automatically set upstream branch on push
+	autoSetupRemote = true
 	default = simple
 [diff]
-	algorithm = histogram    # Clearer diffs on moved/edited lines
-	colorMoved = plain       # Highlight moved blocks in diffs
-	mnemonicPrefix = true    # More intuitive refs in diff output
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
 [commit]
-	verbose = true           # Include diff comment in commit message template
+	verbose = true
 	gpgsign = true
 [column]
-	ui = auto 			     # Output in columns when possible
+	ui = auto
 [branch]
-	sort = -committerdate    # Sort branches by most recent commit first
+	sort = -committerdate
 [tag]
-	sort = -version:refname  # Sort version numbers as you would expect
+	sort = -version:refname
 	gpgsign = true
 [rerere]
-	enabled = true           # Record and reuse conflict resolutions
-	autoupdate = true        # Apply stored conflict resolutions automatically
+	enabled = true
+	autoupdate = true
 [user]
 	name = Mario Fronza
 	email = mariofronza1@gmail.com
-	signingkey = /home/mlfronza/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 [gpg]
 	format = ssh
 [transfer]
@@ -49,5 +46,3 @@
 	fsckObjects = true
 [merge]
 	ff = only
-
-
