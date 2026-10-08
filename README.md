@@ -1,34 +1,24 @@
 # Dotfiles
 
-Arch Linux, standalone. No symlinks — copy files into place, per folder's
-own `README.md`.
+Config under `$HOME` for my Arch machines (ThinkPad and desktop). Installed
+by [dark-sun](https://github.com/MarioFronza/dark-sun), which owns packages,
+system files and everything else outside `$HOME`.
 
-Starting from a blank machine? See [`QUICKSTART.md`](QUICKSTART.md)
-(install media through a working, SSH-reachable base system).
+| Folder | Lands in |
+|---|---|
+| `alacritty/` | `~/.config/alacritty/` |
+| `claude/` | `~/.claude/` |
+| `fuzzel/` | `~/.config/fuzzel/` |
+| `git/` | `~/.config/git/` (`identity.example` becomes `identity`, filled by hand) |
+| `github/` | `~/.config/gh/` |
+| `mako/` | `~/.config/mako/` |
+| `mise/` | `~/.config/mise/` |
+| `nvim/` | `~/.config/nvim/` |
+| `sway/` | `~/.config/sway/` |
+| `swaylock/` | `~/.config/swaylock/` |
+| `swayosd/` | `~/.config/swayosd/` |
+| `tmux/` | `~/.config/tmux/` |
+| `waybar/` | `~/.config/waybar/` |
+| `zsh/` | `zshrc`, `zprofile`, `inputrc` as `~/.<name>`, the rest in `~/.config/zsh/` |
 
-```
-git clone https://github.com/MarioFronza/dotfiles.git
-cd dotfiles
-packages/install.sh [amd|intel|nvidia]
-```
-
-Then walk the modules in this order, running each one's "Copy" step from
-the repo root:
-
-- [`bootstrap/`](bootstrap/README.md) — bare minimum to clone this repo on a fresh install
-- [`packages/`](packages/README.md) — pacman/AUR packages
-- [`udev/`](udev/README.md) — system udev rules (USB wake-on-connect)
-- [`alacritty/`](alacritty/README.md) — terminal
-- [`zsh/`](zsh/README.md) — shell
-- [`tmux/`](tmux/README.md) — terminal multiplexer
-- [`git/`](git/README.md) — git config
-- [`github/`](github/README.md) — gh CLI config
-- [`mise/`](mise/README.md) — language/tool versions
-- [`nvim/`](nvim/README.md) — editor
-- [`sway/`](sway/README.md) — Sway
-- [`waybar/`](waybar/README.md) — status bar
-- [`fuzzel/`](fuzzel/README.md) — app launcher
-- [`mako/`](mako/README.md) — notifications
-- [`swayosd/`](swayosd/README.md) — volume/brightness OSD
-- [`swaylock/`](swaylock/README.md) — lock screen
-- [`claude/`](claude/README.md) — Claude Code config
+Moving to GNU Stow: each folder becomes a package mirroring `$HOME`.
