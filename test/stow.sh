@@ -16,6 +16,14 @@ for pkg in "${PACKAGES[@]}"; do
   rm -rf "$tmphome"
 done
 
+tmphome=$(mktemp -d)
+stow --no-folding -d "$REPO" -t "$tmphome" claude
+if [[ -L "$tmphome/.claude/settings.json" ]]; then
+  echo "FAIL: claude/.claude/settings.json must not be a symlink"
+  failures=$((failures + 1))
+fi
+rm -rf "$tmphome"
+
 if [[ $failures -gt 0 ]]; then
   exit 1
 fi
