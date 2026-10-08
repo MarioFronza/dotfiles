@@ -12,6 +12,7 @@ gaps inner 8
 default_border pixel 2
 default_floating_border pixel 2
 
+# Not shipped by this repo; a missing file just leaves the background unpainted.
 output * bg ~/Pictures/Wallpapers/dark-sun.jpg fill
 
 exec ~/.config/sway/scripts/monitor-setup.sh
@@ -25,9 +26,6 @@ bindswitch --reload lid:off exec ~/.config/sway/scripts/monitor-setup.sh once
 input type:keyboard {
     xkb_layout "us"
     xkb_variant "intl"
-}
-
-input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_options ctrl:swapcaps
 }
 

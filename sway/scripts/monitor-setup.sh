@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 set -u
 
-INTERNAL=eDP-1
 LOCK=/tmp/sway-monitor-setup.lock
+
+# Desktops have no built-in panel and no lid, so there is nothing to manage:
+# sway's own defaults handle plain multi-monitor fine.
+INTERNAL=$(swaymsg -t get_outputs | jq -r '[.[] | select(.name | test("^(eDP|LVDS|DSI)"))][0].name // empty')
+[ -z "$INTERNAL" ] && exit 0
 
 lid_closed() { grep -qw closed /proc/acpi/button/lid/*/state 2>/dev/null; }
 
@@ -47,7 +51,10 @@ layout() {
 apply() { ( flock 9; layout ) 9>"$LOCK"; }
 
 # Only physical changes move this: layout() never connects or disconnects an
-# output, so its own events can never re-trigger apply.
+# output, so its own events can never re-trigger apply. Without the guard,
+# applying a layout emits more output events than it consumes and the loop
+# feeds itself into a modeset storm that starves every client of frame
+# callbacks.
 fingerprint() {
   printf '%s|%s\n' \
     "$(swaymsg -t get_outputs | jq -r '[.[].name] | sort | join(",")')" \
