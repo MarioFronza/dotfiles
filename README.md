@@ -1,24 +1,32 @@
 # Dotfiles
 
-Config under `$HOME` for my Arch machines (ThinkPad and desktop). Installed
-by [dark-sun](https://github.com/MarioFronza/dark-sun), which owns packages,
+Config under `$HOME` for my Arch machines (ThinkPad and desktop), one GNU
+Stow package per folder, each mirroring `$HOME`. Installed by
+[dark-sun](https://github.com/MarioFronza/dark-sun), which owns packages,
 system files and everything else outside `$HOME`.
 
-| Folder | Lands in |
-|---|---|
-| `alacritty/` | `~/.config/alacritty/` |
-| `claude/` | `~/.claude/` |
-| `fuzzel/` | `~/.config/fuzzel/` |
-| `git/` | `~/.config/git/` (`identity.example` becomes `identity`, filled by hand) |
-| `github/` | `~/.config/gh/` |
-| `mako/` | `~/.config/mako/` |
-| `mise/` | `~/.config/mise/` |
-| `nvim/` | `~/.config/nvim/` |
-| `sway/` | `~/.config/sway/` |
-| `swaylock/` | `~/.config/swaylock/` |
-| `swayosd/` | `~/.config/swayosd/` |
-| `tmux/` | `~/.config/tmux/` |
-| `waybar/` | `~/.config/waybar/` |
-| `zsh/` | `zshrc`, `zprofile`, `inputrc` as `~/.<name>`, the rest in `~/.config/zsh/` |
+## Install by hand
 
-Moving to GNU Stow: each folder becomes a package mirroring `$HOME`.
+```bash
+git clone https://github.com/MarioFronza/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+stow --no-folding -t ~ alacritty claude fuzzel git github mako mise nvim sway swaylock swayosd tmux waybar zsh
+cp claude/.claude/settings.json ~/.claude/settings.json
+cp git/.config/git/identity.example ~/.config/git/identity   # then fill it in
+```
+
+`--no-folding` links files, never whole directories, so runtime state in
+`~/.claude` and `~/.config/*` stays out of the repo.
+
+Two files are never linked (see each package's `.stow-local-ignore`):
+
+- `claude/.claude/settings.json`: Claude Code rewrites it on `/model`,
+  `/theme` and plugin toggles, so it is copied once instead.
+- `git/.config/git/identity.example`: template for `identity`, which holds
+  your name, email and signing key and stays untracked.
+
+## Test
+
+```bash
+bash test/stow.sh
+```
