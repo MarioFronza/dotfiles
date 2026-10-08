@@ -31,5 +31,4 @@ the repo root:
 - [`mako/`](mako/README.md) — notifications
 - [`swayosd/`](swayosd/README.md) — volume/brightness OSD
 - [`swaylock/`](swaylock/README.md) — lock screen
-- [`hypr/`](hypr/README.md) — personal Hyprland overrides (Omarchy-dependent, not standalone)
 - [`claude/`](claude/README.md) — Claude Code config
