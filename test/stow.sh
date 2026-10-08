@@ -23,6 +23,13 @@ if [[ -L "$tmphome/.claude/settings.json" ]]; then
   failures=$((failures + 1))
 fi
 rm -rf "$tmphome"
+tmphome=$(mktemp -d)
+stow --no-folding -d "$REPO" -t "$tmphome" git
+if [[ -L "$tmphome/.config/git/identity.example" ]]; then
+  echo "FAIL: git/.config/git/identity.example must not be a symlink"
+  failures=$((failures + 1))
+fi
+rm -rf "$tmphome"
 
 if [[ $failures -gt 0 ]]; then
   exit 1
