@@ -1,7 +1,7 @@
 # Dotfiles
 
-Config under `$HOME` for my Arch machines (ThinkPad and desktop), one GNU
-Stow package per folder, each mirroring `$HOME`. Installed by
+My personal config under `$HOME` for Arch, one GNU Stow package per folder,
+each mirroring `$HOME`. Installed by
 [dark-sun](https://github.com/MarioFronza/dark-sun), which owns packages,
 system files and everything else outside `$HOME`.
 
