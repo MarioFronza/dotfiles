@@ -2,7 +2,7 @@
 
 My personal config under `$HOME` for Arch, one GNU Stow package per folder,
 each mirroring `$HOME`. Installed by
-[dark-sun](https://github.com/MarioFronza/dark-sun), which owns packages,
+[arch-linux-setup](https://github.com/MarioFronza/arch-linux-setup), which owns packages,
 system files and everything else outside `$HOME`.
 
 ## Install by hand

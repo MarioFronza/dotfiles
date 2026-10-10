@@ -1,19 +1,19 @@
 # dotfiles
 
 User config for Arch, managed by GNU Stow. Consumed by
-[dark-sun](https://github.com/MarioFronza/dark-sun), the installer. This file
+[arch-linux-setup](https://github.com/MarioFronza/arch-linux-setup), the installer. This file
 describes the **target state**; code is mid-migration, and when it disagrees
 with this file, this file is the goal.
 
 ## Boundary
 
-**dotfiles owns everything under `$HOME`.** dark-sun owns everything else.
+**dotfiles owns everything under `$HOME`.** arch-linux-setup owns everything else.
 
 - Config files only. No package lists, no `sudo`, no hardware detection, no
   install scripts beyond a thin stow wrapper.
 - Packages, GPU drivers, system files (`/etc`, udev, services) and the login
-  shell live in dark-sun.
-- Only what dark-sun installs lives here. No personal leftovers for other setups.
+  shell live in arch-linux-setup.
+- Only what arch-linux-setup installs lives here. No personal leftovers for other setups.
 - One source of truth per file. If a config exists in both repos, it's a bug.
 
 ## Layout
@@ -38,4 +38,4 @@ claude/    .claude/CLAUDE.md .claude/skills/...  (settings.json copied, not link
 
 - One README at the root. No per-package READMEs.
 - Conventional commit prefixes. A change spanning both repos is two commits,
-  dotfiles first (dark-sun consumes it).
+  dotfiles first (arch-linux-setup consumes it).
