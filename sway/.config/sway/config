@@ -12,7 +12,7 @@ gaps inner 8
 default_border pixel 2
 default_floating_border pixel 2
 
-output * bg ~/.config/sway/dark-sun.jpg fill
+output * bg ~/.config/sway/wallpapers/a_fog_over_water_with_a_black_background.jpg fill
 
 exec ~/.config/sway/scripts/monitor-setup.sh
 exec ~/.config/sway/scripts/idle-lock.sh
