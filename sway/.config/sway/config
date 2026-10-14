@@ -6,7 +6,7 @@ set $right l
 set $term alacritty
 set $menu fuzzel
 
-font pango:JetBrainsMono Nerd Font 10
+font pango:AdwaitaMono Nerd Font 10
 
 gaps inner 8
 default_border pixel 2
