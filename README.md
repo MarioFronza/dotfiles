@@ -1,7 +1,8 @@
 # Dotfiles
 
-My personal config under `$HOME` for Arch, one GNU Stow package per folder,
-each mirroring `$HOME`. Installed by
+My personal config under `$HOME`, one GNU Stow package per folder, each
+mirroring `$HOME`. Not tied to one OS: it can hold config for macOS or other
+Linux systems too. On Arch it is installed by
 [arch-linux-setup](https://github.com/MarioFronza/arch-linux-setup), which owns packages,
 system files and everything else outside `$HOME`.
 

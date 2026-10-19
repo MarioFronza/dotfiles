@@ -1,6 +1,7 @@
 # dotfiles
 
-User config for Arch, managed by GNU Stow. Consumed by
+User config under `$HOME`, managed by GNU Stow. OS-agnostic: packages for
+macOS or other Linux systems belong here too. On Arch it is consumed by
 [arch-linux-setup](https://github.com/MarioFronza/arch-linux-setup), the installer.
 
 ## Boundary
@@ -11,7 +12,6 @@ User config for Arch, managed by GNU Stow. Consumed by
   install scripts beyond a thin stow wrapper.
 - Packages, GPU drivers, system files (`/etc`, udev, services) and the login
   shell live in arch-linux-setup.
-- Only what arch-linux-setup installs lives here. No personal leftovers for other setups.
 - One source of truth per file. If a config exists in both repos, it's a bug.
 
 ## Layout
