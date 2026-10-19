@@ -18,6 +18,7 @@ exec ~/.config/sway/scripts/monitor-setup.sh
 exec ~/.config/sway/scripts/idle-lock.sh
 exec mako
 exec swayosd-server
+exec gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 bindswitch --reload lid:on exec ~/.config/sway/scripts/monitor-setup.sh once
 bindswitch --reload lid:off exec ~/.config/sway/scripts/monitor-setup.sh once
