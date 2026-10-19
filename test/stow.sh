@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
-PACKAGES=(alacritty claude fuzzel git github mako mise nvim sway swaylock swayosd tmux waybar zsh)
+PACKAGES=(alacritty btop claude fuzzel git github gtk mako mise nvim sway swaylock swayosd tmux waybar zsh)
 
 failures=0
 
@@ -28,6 +28,7 @@ assert_not_linked() {
   rm -rf "$tmphome"
 }
 
+assert_not_linked btop    .config/btop/btop.conf
 assert_not_linked claude  .claude/settings.json
 assert_not_linked git     .config/git/identity.example
 
