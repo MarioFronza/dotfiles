@@ -1,9 +1,7 @@
 # dotfiles
 
 User config for Arch, managed by GNU Stow. Consumed by
-[arch-linux-setup](https://github.com/MarioFronza/arch-linux-setup), the installer. This file
-describes the **target state**; code is mid-migration, and when it disagrees
-with this file, this file is the goal.
+[arch-linux-setup](https://github.com/MarioFronza/arch-linux-setup), the installer.
 
 ## Boundary
 
@@ -25,6 +23,7 @@ zsh/       .zshrc .zprofile .inputrc .config/zsh/...
 alacritty/ .config/alacritty/...
 sway/      .config/sway/...
 claude/    .claude/CLAUDE.md .claude/skills/...  (settings.json copied, not linked)
+btop/      .config/btop/btop.conf               (copied, not linked)
 ```
 
 - Cloned to `~/dotfiles`. Install: `stow --no-folding -t ~ <package>`.
