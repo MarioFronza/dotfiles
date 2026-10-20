@@ -29,6 +29,21 @@ Three files are never linked (see each package's `.stow-local-ignore`):
 - `git/.config/git/identity.example`: template for `identity`, which holds
   your name, email and signing key and stays untracked.
 
+## Wallpaper
+
+The repo ships one default wallpaper. To use another one on a single
+machine, without touching the repo, write a local override:
+
+```bash
+mkdir -p ~/.config/sway/config.d
+echo 'output * bg ~/Pictures/wallpaper.jpg fill' > ~/.config/sway/config.d/wallpaper
+swaymsg reload
+```
+
+The sway config includes `~/.config/sway/config.d/*` right after the
+default, and stow never touches that folder, so each machine keeps its own.
+Delete the file to go back to the default.
+
 ## Test
 
 ```bash
