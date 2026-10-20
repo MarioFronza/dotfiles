@@ -36,7 +36,7 @@ machine, without touching the repo, write a local override:
 
 ```bash
 mkdir -p ~/.config/sway/config.d
-echo 'output * bg ~/Pictures/wallpaper.jpg fill' > ~/.config/sway/config.d/wallpaper
+echo 'output * bg ~/Pictures/wallpapers/wallpaper.jpg fill' > ~/.config/sway/config.d/wallpaper
 swaymsg reload
 ```
 
