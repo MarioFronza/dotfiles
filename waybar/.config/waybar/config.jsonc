@@ -11,15 +11,10 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "custom/separator",
         "network",
-        "custom/separator",
-        "custom/power-profile",
-        "custom/separator",
+        "power-profiles-daemon",
         "cpu",
-        "custom/separator",
         "memory",
-        "custom/separator",
         "battery"
     ],
     "sway/workspaces": {
@@ -90,13 +85,13 @@
             ]
         }
     },
-    "custom/power-profile": {
-        "exec": "$HOME/.config/waybar/power-profile.sh",
-        "return-type": "json",
-        "interval": 5
-    },
-    "custom/separator": {
-        "format": "│",
-        "tooltip": false
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}",
+        "format-icons": {
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     }
 }
