@@ -44,14 +44,17 @@ window#waybar {
 
 #mode,
 #scratchpad,
+#clock {
+  padding: 0 8px;
+}
+
 #pulseaudio,
 #network,
 #power-profiles-daemon,
 #cpu,
 #memory,
-#battery,
-#clock {
-  padding: 0 8px;
+#battery {
+  padding: 0 12px;
 }
 
 #network.disconnected {
@@ -68,8 +71,7 @@ window#waybar {
 #memory,
 #battery {
   border-left: 1px solid alpha(@inactive, 0.5);
-  margin: 5px 0 5px 8px;
-  padding-left: 16px;
+  margin: 5px 0;
 }
 
 tooltip {
