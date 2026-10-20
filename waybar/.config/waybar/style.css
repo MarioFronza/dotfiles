@@ -4,7 +4,7 @@
 @define-color inactive #565f89;
 
 * {
-  background-color: @background;
+  background-color: transparent;
   color: @foreground;
   border: none;
   border-radius: 0;
@@ -14,7 +14,7 @@
 }
 
 window#waybar {
-  background-color: @background;
+  background-color: alpha(@background, 0.8);
 }
 
 .modules-left {
