@@ -14,7 +14,7 @@
 }
 
 window#waybar {
-  background-color: alpha(@background, 0.8);
+  background: rgba(26, 27, 38, 0.8);
 }
 
 .modules-left {
