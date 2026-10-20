@@ -72,6 +72,15 @@ window#waybar {
   padding-left: 16px;
 }
 
+#pulseaudio,
+#network,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#battery {
+  padding-right: 4px;
+}
+
 tooltip {
   padding: 2px;
   background-color: @background;
