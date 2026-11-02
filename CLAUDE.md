@@ -35,6 +35,7 @@ btop/      .config/btop/btop.conf               (copied, not linked)
 
 ## Conventions
 
-- One README at the root. No per-package READMEs.
+- One README at the root, plus USAGE.md for keys, menus and commands. Keep
+  USAGE.md in step with the config it describes. No per-package READMEs.
 - Conventional commit prefixes. A change spanning both repos is two commits,
   dotfiles first (arch-linux-setup consumes it).
