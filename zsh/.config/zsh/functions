@@ -172,6 +172,15 @@ power() {
   esac
 }
 
+shot() {
+  local edit='satty --filename - --copy-command wl-copy --output-filename ~/Pictures/screenshots/$(date +%F_%T).png'
+  mkdir -p ~/Pictures/screenshots
+  case "$(gum choose Region Screen)" in
+    Region) setsid -f sh -c "sleep 0.2; grim -g \"\$(slurp)\" - | $edit" >/dev/null 2>&1 ;;
+    Screen) setsid -f sh -c "sleep 0.2; grim - | $edit" >/dev/null 2>&1 ;;
+  esac
+}
+
 perf() {
   local current profiles chosen
   current=$(busctl --system --json=short get-property net.hadess.PowerProfiles \

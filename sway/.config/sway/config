@@ -125,7 +125,7 @@ bindsym --locked XF86AudioStop exec playerctl stop
 bindsym --locked XF86MonBrightnessDown exec swayosd-client --brightness -5
 bindsym --locked XF86MonBrightnessUp exec swayosd-client --brightness +5
 
-bindsym Print exec grim
+bindsym $mod+Shift+t exec $term -e zsh -ic shot
 
 bindsym $mod+Shift+b exec $term -e bluetui
 bindsym $mod+Shift+p exec $term -e zsh -ic perf
