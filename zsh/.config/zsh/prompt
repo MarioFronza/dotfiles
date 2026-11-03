@@ -2,4 +2,4 @@ force_color_prompt=yes
 color_prompt=yes
 
 autoload -Uz add-zsh-hook
-[[ -f ~/.config/starship.toml ]] || starship preset bracketed-segments -o ~/.config/starship.toml
+[[ -f ~/.config/starship.toml ]] || { echo "command_timeout = 1000"; starship preset bracketed-segments; } > ~/.config/starship.toml
