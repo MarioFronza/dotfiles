@@ -4,10 +4,11 @@ set -u
 LOCK=/tmp/sway-monitor-setup.lock
 
 best_modes() {
-  swaymsg -t get_outputs | jq -r '
+  swaymsg -t get_outputs | jq -r --argjson stale_only "${1:-false}" '
     .[]
     | select(.modes != [])
     | (.modes | sort_by(.width * .height, .refresh) | last) as $best
+    | select(($stale_only | not) or (.active and (.current_mode | {width, height, refresh}) != ($best | {width, height, refresh})))
     | "\(.name) \($best.width) \($best.height) \($best.refresh)"'
 }
 
@@ -17,9 +18,14 @@ hz() { printf "%d.%03d" $(($1 / 1000)) $(($1 % 1000)); }
 # each output's mode: sway's EDID preferred one is often 60Hz.
 INTERNAL=$(swaymsg -t get_outputs | jq -r '[.[] | select(.name | test("^(eDP|LVDS|DSI)"))][0].name // empty')
 if [ -z "$INTERNAL" ]; then
-  best_modes | while read -r out width height refresh; do
-    swaymsg output "$out" mode "${width}x${height}@$(hz "$refresh")Hz"
-  done
+  apply_best_modes() {
+    best_modes true | while read -r out width height refresh; do
+      swaymsg output "$out" mode "${width}x${height}@$(hz "$refresh")Hz"
+    done
+  }
+  apply_best_modes
+  [ "${1:-}" = once ] && exit 0
+  swaymsg -t subscribe -m '["output"]' | while read -r _; do apply_best_modes; done
   exit 0
 fi
 
