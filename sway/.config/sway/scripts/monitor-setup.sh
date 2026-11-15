@@ -3,10 +3,25 @@ set -u
 
 LOCK=/tmp/sway-monitor-setup.lock
 
-# Desktops have no built-in panel and no lid, so there is nothing to manage:
-# sway's own defaults handle plain multi-monitor fine.
+best_modes() {
+  swaymsg -t get_outputs | jq -r '
+    .[]
+    | select(.modes != [])
+    | (.modes | sort_by(.width * .height, .refresh) | last) as $best
+    | "\(.name) \($best.width) \($best.height) \($best.refresh)"'
+}
+
+hz() { printf "%d.%03d" $(($1 / 1000)) $(($1 % 1000)); }
+
+# Desktops have no built-in panel and no lid, so the only thing to manage is
+# each output's mode: sway's EDID preferred one is often 60Hz.
 INTERNAL=$(swaymsg -t get_outputs | jq -r '[.[] | select(.name | test("^(eDP|LVDS|DSI)"))][0].name // empty')
-[ -z "$INTERNAL" ] && exit 0
+if [ -z "$INTERNAL" ]; then
+  best_modes | while read -r out width height refresh; do
+    swaymsg output "$out" mode "${width}x${height}@$(hz "$refresh")Hz"
+  done
+  exit 0
+fi
 
 lid_closed() { grep -qw closed /proc/acpi/button/lid/*/state 2>/dev/null; }
 
@@ -15,15 +30,11 @@ internal_active() {
 }
 
 external_best() {
-  swaymsg -t get_outputs | jq -r --arg int "$INTERNAL" '
-    [.[] | select(.name != $int)][0]
-    | select(.)
-    | (.modes | sort_by(.width * .height, .refresh) | last) as $best
-    | "\(.name) \($best.width) \($best.height) \($best.refresh)"'
+  best_modes | awk -v internal="$INTERNAL" '$1 != internal' | head -n 1
 }
 
 layout() {
-  local ext width height refresh hz
+  local ext width height refresh
   read -r ext width height refresh < <(external_best)
 
   if [ -z "${ext:-}" ]; then
@@ -35,8 +46,7 @@ layout() {
     return
   fi
 
-  hz=$(printf "%d.%03d" $((refresh / 1000)) $((refresh % 1000)))
-  swaymsg output "$ext" enable mode "${width}x${height}@${hz}Hz" pos 0 0
+  swaymsg output "$ext" enable mode "${width}x${height}@$(hz "$refresh")Hz" pos 0 0
 
   if lid_closed; then
     swaymsg output "$INTERNAL" disable
